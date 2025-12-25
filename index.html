@@ -31,9 +31,13 @@
             background-color: #11A663;
             border-radius: 40px;
             color: white;
-            padding: 80px 60px;
+            /* Adjusted padding for mobile */
+            padding: 40px 20px;
             position: relative;
             overflow: hidden;
+        }
+        @media (min-width: 1024px) {
+            .hero-banner { padding: 80px 60px; }
         }
 
         .stat-circle {
@@ -49,73 +53,75 @@
 <body class="antialiased">
 
     <!-- NAVIGATION -->
-    <header class="max-w-7xl mx-auto px-6 py-8">
-        <nav class="bg-white rounded-full px-10 py-4 flex justify-between items-center shadow-soft border border-gray-100">
-            <div class="flex gap-8 items-center">
+    <header class="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
+        <nav class="bg-white rounded-full px-6 md:px-10 py-4 flex justify-between items-center shadow-soft border border-gray-100">
+            <!-- Hidden on mobile to save space -->
+            <div class="hidden lg:flex gap-8 items-center">
                 <a href="#" class="nav-link">Benefits</a>
                 <a href="#" class="nav-link">Success Stories</a>
                 <a href="#" class="nav-link">Coaches</a>
             </div>
             
             <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-fittr-green rounded-lg flex items-center justify-center rotate-45">
+                <div class="w-6 h-6 md:w-8 md:h-8 bg-fittr-green rounded-lg flex items-center justify-center rotate-45">
                     <div class="w-3 h-3 bg-white rounded-full -rotate-45"></div>
                 </div>
-                <span class="font-bold text-2xl tracking-tighter uppercase">Fittr <span class="text-fittr-green">/ 2025</span></span>
+                <span class="font-bold text-xl md:text-2xl tracking-tighter uppercase">Fittr <span class="text-fittr-green">/ 2025</span></span>
             </div>
 
-            <div class="flex gap-8 items-center">
-                <a href="#" class="nav-link">App</a>
-                <button class="bg-black text-white px-8 py-2.5 btn-pill text-sm font-semibold hover:bg-fittr-green transition-colors">
-                    Book Consultation
+            <div class="flex gap-4 md:gap-8 items-center">
+                <a href="#" class="nav-link hidden md:block">App</a>
+                <button class="bg-black text-white px-5 md:px-8 py-2 md:py-2.5 btn-pill text-xs md:text-sm font-semibold hover:bg-fittr-green transition-colors">
+                    Book <span class="hidden sm:inline">Consultation</span>
                 </button>
             </div>
         </nav>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="max-w-7xl mx-auto px-6 pt-12">
-        <div class="text-center mb-16">
+    <section class="max-w-7xl mx-auto px-4 md:px-6 pt-8 md:pt-12">
+        <div class="text-center mb-12 md:mb-16">
             <div class="inline-flex items-center gap-2 bg-fittr-light px-4 py-1.5 rounded-full mb-6">
                 <div class="w-2 h-2 bg-fittr-green rounded-full"></div>
                 <span class="text-[10px] font-bold text-fittr-green uppercase tracking-widest">Transformation Start</span>
             </div>
-            <h1 class="text-8xl font-medium leading-[0.9] mb-4">
+            <!-- Responsive Font Size -->
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-medium leading-[1.1] md:leading-[0.9] mb-4">
                 400k+ Lives <br> <span class="text-gray-300 font-light italic">Transformed.</span>
             </h1>
         </div>
 
-        <div class="hero-banner grid lg:grid-cols-2 gap-12 items-center">
+        <div class="hero-banner grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-8">
-                <h2 class="text-4xl font-medium leading-tight text-white">Fitness simplified <br>for real results.</h2>
+                <h2 class="text-3xl md:text-4xl font-medium leading-tight text-white">Fitness simplified <br>for real results.</h2>
                 <p class="text-emerald-50 max-w-sm text-sm leading-relaxed">
                     Join Asia's largest fitness community and start your journey today. We use science-backed nutrition and training to help you reach your goals.
                 </p>
                 
-                <div class="grid grid-cols-2 gap-4 pt-10">
+                <div class="grid grid-cols-2 gap-4 pt-4 md:pt-10">
                     <div class="stat-circle">
-                        <p class="text-3xl font-bold">400K+</p>
+                        <p class="text-2xl md:text-3xl font-bold">400K+</p>
                         <p class="text-[10px] text-emerald-100 uppercase font-bold tracking-wider">Happy Users</p>
                     </div>
                     <div class="stat-circle">
-                        <p class="text-3xl font-bold">4.8/5</p>
+                        <p class="text-2xl md:text-3xl font-bold">4.8/5</p>
                         <p class="text-[10px] text-emerald-100 uppercase font-bold tracking-wider">App Rating</p>
                     </div>
                 </div>
             </div>
 
             <div class="relative">
-                <div class="bg-white/10 backdrop-blur rounded-[40px] p-4 border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=600&h=700&auto=format&fit=crop" class="rounded-[30px] w-full aspect-[4/5] object-cover grayscale brightness-110" alt="Transformation">
+                <div class="bg-white/10 backdrop-blur rounded-[30px] md:rounded-[40px] p-3 md:p-4 border border-white/20">
+                    <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=600&h=700&auto=format&fit=crop" class="rounded-[20px] md:rounded-[30px] w-full aspect-[4/5] object-cover grayscale brightness-110" alt="Transformation">
                     <!-- UI Overlay -->
-                    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4">
-                        <div class="w-12 h-12 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center border border-white/30 text-white">🥗</div>
-                        <div class="w-12 h-12 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center border border-white/30 text-white">💪</div>
-                        <div class="w-12 h-12 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center border border-white/30 text-white">📈</div>
+                    <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex gap-3 md:gap-4">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center border border-white/30 text-white">🥗</div>
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center border border-white/30 text-white">💪</div>
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center border border-white/30 text-white">📈</div>
                     </div>
                 </div>
-                <!-- Float Card -->
-                <div class="absolute -right-10 top-20 bg-white text-black p-8 rounded-fittr shadow-2xl max-w-[220px] text-xs leading-relaxed hidden lg:block">
+                <!-- Float Card - Hidden on small mobile -->
+                <div class="absolute -right-4 md:-right-10 top-10 md:top-20 bg-white text-black p-6 md:p-8 rounded-fittr shadow-2xl max-w-[180px] md:max-w-[220px] text-[10px] md:text-xs leading-relaxed hidden sm:block">
                     <div class="text-fittr-green font-bold mb-2">Quantified Nutrition</div>
                     Every gram matters. We help you track what you eat with scientific precision.
                     <button class="mt-4 text-fittr-green font-bold flex items-center gap-2">View MyDNA <span>→</span></button>
@@ -125,11 +131,11 @@
     </section>
 
     <!-- REGISTRATION SECTION -->
-    <section class="max-w-7xl mx-auto px-6 py-32">
-        <div class="grid lg:grid-cols-2 gap-20 items-center">
-            <div class="space-y-8">
+    <section class="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-32">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="space-y-6 md:space-y-8">
                 <div class="bg-fittr-light text-fittr-green px-4 py-1.5 rounded-full inline-block text-[11px] font-bold">Step 1 of 4</div>
-                <h2 class="text-5xl font-medium leading-tight">Start your journey to <span class="text-fittr-green">healthier</span> you</h2>
+                <h2 class="text-4xl md:text-5xl font-medium leading-tight">Start your journey to <span class="text-fittr-green">healthier</span> you</h2>
                 <p class="text-gray-500 max-w-lg leading-relaxed">Get access to certified nutritionists and dieticians. No crash diets, no harmful supplements—just sustainable results based on your lifestyle.</p>
                 <div class="flex gap-4">
                     <div class="flex -space-x-3">
@@ -144,9 +150,9 @@
                 </div>
             </div>
 
-            <div class="bg-white p-12 rounded-fittr shadow-soft border border-gray-100">
-                <p class="text-fittr-green font-bold mb-10 text-center italic text-sm">LET'S GET STARTED</p>
-                <div class="space-y-8">
+            <div class="bg-white p-6 md:p-12 rounded-fittr shadow-soft border border-gray-100">
+                <p class="text-fittr-green font-bold mb-6 md:mb-10 text-center italic text-sm">LET'S GET STARTED</p>
+                <div class="space-y-6 md:space-y-8">
                     <div>
                         <label class="text-[10px] text-gray-400 font-bold uppercase block mb-2 tracking-widest">Full Name</label>
                         <input type="text" placeholder="John Doe" class="w-full border-b border-gray-200 py-3 focus:outline-none focus:border-fittr-green text-xl font-medium bg-transparent transition">
@@ -172,7 +178,7 @@
                             <input type="tel" placeholder="Mobile number" class="w-full focus:outline-none text-xl font-medium bg-transparent">
                         </div>
                     </div>
-                    <button class="w-full bg-black text-white py-6 rounded-3xl font-bold text-xl hover:bg-fittr-green hover:scale-[1.02] transition shadow-lg shadow-emerald-100">
+                    <button class="w-full bg-black text-white py-5 md:py-6 rounded-3xl font-bold text-lg md:text-xl hover:bg-fittr-green hover:scale-[1.02] transition shadow-lg shadow-emerald-100">
                         Next Step →
                     </button>
                 </div>
@@ -180,11 +186,11 @@
         </div>
     </section>
 
-    <!-- WHY FITTR (6 GRID) -->
-    <section class="bg-fittr-light py-32 px-6">
+    <!-- WHY FITTR (GRID) -->
+    <section class="bg-fittr-light py-16 md:py-32 px-4 md:px-6">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-4xl font-medium mb-20 text-center">Why You Need <span class="text-fittr-green">Fittr</span></h3>
-            <div class="grid md:grid-cols-3 gap-12">
+            <h3 class="text-3xl md:text-4xl font-medium mb-12 md:mb-20 text-center">Why You Need <span class="text-fittr-green">Fittr</span></h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-12">
                 <div class="flex gap-6 items-start">
                     <div class="text-3xl">🛡️</div>
                     <div><h4 class="font-bold mb-2">Proven Results</h4><p class="text-gray-500 text-sm leading-relaxed">400,000+ successful transformations across the globe.</p></div>
@@ -214,9 +220,9 @@
     </section>
 
     <!-- SUCCESS STORIES -->
-    <section class="max-w-7xl mx-auto px-6 py-32">
-        <h3 class="text-4xl font-medium text-center mb-16">Transformation <span class="text-fittr-green font-light italic">Success Stories</span></h3>
-        <div class="grid md:grid-cols-3 gap-8">
+    <section class="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-32">
+        <h3 class="text-3xl md:text-4xl font-medium text-center mb-12 md:mb-16">Transformation <span class="text-fittr-green font-light italic">Success Stories</span></h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-white p-8 rounded-fittr shadow-soft border border-gray-50">
                 <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=400&h=250&auto=format&fit=crop" class="rounded-3xl mb-6 w-full object-cover">
                 <h4 class="font-bold text-lg">Shilpa Mehta</h4>
@@ -245,35 +251,35 @@
     </section>
 
     <!-- PROCESS SECTION -->
-    <section class="max-w-7xl mx-auto px-6 py-32 bg-gray-50 rounded-[60px]">
-        <h3 class="text-4xl font-medium text-center mb-16">6 Steps to <span class="text-fittr-green">Transformation</span></h3>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-1px bg-gray-200 rounded-3xl overflow-hidden border border-gray-200">
-            <div class="bg-white p-10 hover:bg-fittr-light transition">
+    <section class="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-32 bg-gray-50 rounded-[40px] md:rounded-[60px]">
+        <h3 class="text-3xl md:text-4xl font-medium text-center mb-12 md:mb-16">6 Steps to <span class="text-fittr-green">Transformation</span></h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1px bg-gray-200 rounded-3xl overflow-hidden border border-gray-200">
+            <div class="bg-white p-8 md:p-10 hover:bg-fittr-light transition">
                 <span class="text-fittr-green font-bold text-sm">01</span>
                 <h5 class="font-bold mt-2">Book Consultation</h5>
                 <p class="text-xs text-gray-400 mt-2">Schedule a free call with an expert to discuss your goals.</p>
             </div>
-            <div class="bg-white p-10 hover:bg-fittr-light transition">
+            <div class="bg-white p-8 md:p-10 hover:bg-fittr-light transition">
                 <span class="text-fittr-green font-bold text-sm">02</span>
                 <h5 class="font-bold mt-2">Get a Plan</h5>
                 <p class="text-xs text-gray-400 mt-2">Receive your personalized diet & lifestyle plan based on science.</p>
             </div>
-            <div class="bg-white p-10 hover:bg-fittr-light transition">
+            <div class="bg-white p-8 md:p-10 hover:bg-fittr-light transition">
                 <span class="text-fittr-green font-bold text-sm">03</span>
                 <h5 class="font-bold mt-2">Plan in Action</h5>
                 <p class="text-xs text-gray-400 mt-2">Follow your journey and track meals in the Fittr App.</p>
             </div>
-            <div class="bg-white p-10 hover:bg-fittr-light transition">
+            <div class="bg-white p-8 md:p-10 hover:bg-fittr-light transition">
                 <span class="text-fittr-green font-bold text-sm">04</span>
                 <h5 class="font-bold mt-2">Weekly Check-ins</h5>
                 <p class="text-xs text-gray-400 mt-2">Stay on track with 1-on-1 calls with your mentor.</p>
             </div>
-            <div class="bg-white p-10 hover:bg-fittr-light transition">
+            <div class="bg-white p-8 md:p-10 hover:bg-fittr-light transition">
                 <span class="text-fittr-green font-bold text-sm">05</span>
                 <h5 class="font-bold mt-2">Join the Community</h5>
                 <p class="text-xs text-gray-400 mt-2">Access 4M+ members for inspiration and daily tips.</p>
             </div>
-            <div class="bg-white p-10 hover:bg-fittr-light transition">
+            <div class="bg-white p-8 md:p-10 hover:bg-fittr-light transition">
                 <span class="text-fittr-green font-bold text-sm">06</span>
                 <h5 class="font-bold mt-2">Sustain Goals</h5>
                 <p class="text-xs text-gray-400 mt-2">Maintain results with continuous support and knowledge.</p>
@@ -282,32 +288,32 @@
     </section>
 
     <!-- COMPARISON TABLE -->
-    <section class="max-w-5xl mx-auto py-32 px-6">
-        <h3 class="text-4xl font-medium mb-16 text-center">What makes us different</h3>
-        <div class="bg-white rounded-fittr shadow-soft overflow-hidden border border-gray-100">
-            <table class="w-full text-left">
+    <section class="max-w-5xl mx-auto py-16 md:py-32 px-4 md:px-6">
+        <h3 class="text-3xl md:text-4xl font-medium mb-12 md:mb-16 text-center">What makes us different</h3>
+        <div class="bg-white rounded-[30px] md:rounded-fittr shadow-soft overflow-hidden border border-gray-100 overflow-x-auto">
+            <table class="w-full text-left min-w-[450px]">
                 <thead>
                     <tr class="bg-gray-50">
-                        <th class="p-8 font-bold text-gray-400 uppercase text-[10px] tracking-widest">Features</th>
-                        <th class="p-8 text-center text-fittr-green font-bold">FITTR</th>
-                        <th class="p-8 text-center text-gray-400 font-medium">Others</th>
+                        <th class="p-6 md:p-8 font-bold text-gray-400 uppercase text-[10px] tracking-widest">Features</th>
+                        <th class="p-6 md:p-8 text-center text-fittr-green font-bold">FITTR</th>
+                        <th class="p-6 md:p-8 text-center text-gray-400 font-medium">Others</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-50">
-                    <tr><td class="p-6 pl-8 font-medium text-sm">Personalised Diet Plans</td><td class="text-center text-fittr-green font-bold">✔</td><td class="text-center text-red-300">✖</td></tr>
-                    <tr><td class="p-6 pl-8 font-medium text-sm">1-on-1 Expert Coaching</td><td class="text-center text-fittr-green font-bold">✔</td><td class="text-center text-fittr-green">✔</td></tr>
-                    <tr><td class="p-6 pl-8 font-medium text-sm">Quantified Nutrition Tech</td><td class="text-center text-fittr-green font-bold">✔</td><td class="text-center text-red-300">✖</td></tr>
-                    <tr><td class="p-6 pl-8 font-medium text-sm">Community Access (4M+)</td><td class="text-center text-fittr-green font-bold">✔</td><td class="text-center text-red-300">✖</td></tr>
-                    <tr><td class="p-6 pl-8 font-medium text-sm">No Supplements Policy</td><td class="text-center text-fittr-green font-bold">✔</td><td class="text-center text-red-300">✖</td></tr>
+                    <tr><td class="p-5 md:p-6 pl-8 font-medium text-sm">Personalised Diet Plans</td><td class="text-center text-fittr-green font-bold">✔</td><td class="text-center text-red-300">✖</td></tr>
+                    <tr><td class="p-5 md:p-6 pl-8 font-medium text-sm">1-on-1 Expert Coaching</td><td class="text-center text-fittr-green font-bold">✔</td><td class="text-center text-fittr-green">✔</td></tr>
+                    <tr><td class="p-5 md:p-6 pl-8 font-medium text-sm">Quantified Nutrition Tech</td><td class="text-center text-fittr-green font-bold">✔</td><td class="text-center text-red-300">✖</td></tr>
+                    <tr><td class="p-5 md:p-6 pl-8 font-medium text-sm">Community Access (4M+)</td><td class="text-center text-fittr-green font-bold">✔</td><td class="text-center text-red-300">✖</td></tr>
+                    <tr><td class="p-5 md:p-6 pl-8 font-medium text-sm">No Supplements Policy</td><td class="text-center text-fittr-green font-bold">✔</td><td class="text-center text-red-300">✖</td></tr>
                 </tbody>
             </table>
         </div>
     </section>
 
     <!-- FAQ SECTION -->
-    <section class="max-w-3xl mx-auto py-32 px-6">
-        <h3 class="text-4xl font-medium mb-4 text-center">Questions?</h3>
-        <p class="text-gray-400 mb-16 text-center">Everything you need to know about Fittr.</p>
+    <section class="max-w-3xl mx-auto py-16 md:py-32 px-4 md:px-6">
+        <h3 class="text-3xl md:text-4xl font-medium mb-4 text-center">Questions?</h3>
+        <p class="text-gray-400 mb-12 md:mb-16 text-center">Everything you need to know about Fittr.</p>
         <div class="space-y-4">
             <div class="bg-white p-6 rounded-[24px] shadow-soft flex justify-between items-center group cursor-pointer border border-transparent hover:border-emerald-100 transition">
                 <span class="font-medium group-hover:text-fittr-green transition">What is FITTR?</span>
@@ -329,16 +335,16 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black py-20 text-center text-white">
+    <footer class="bg-black py-16 md:py-20 text-center text-white">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-4xl font-medium mb-6">Still <span class="text-fittr-green font-light italic">not convinced</span>?</h2>
+            <h2 class="text-3xl md:text-4xl font-medium mb-6">Still <span class="text-fittr-green font-light italic">not convinced</span>?</h2>
             <p class="text-gray-400 mb-10 text-sm">Join thousands who have already changed their lives through science-backed nutrition and training.</p>
-            <button class="bg-fittr-green text-white px-10 py-4 btn-pill font-bold hover:bg-white hover:text-black transition">
+            <button class="bg-fittr-green text-white px-8 md:px-10 py-4 btn-pill font-bold hover:bg-white hover:text-black transition">
                 Book Your Free Consultation Now
             </button>
-            <div class="mt-20 flex items-center justify-center gap-2 mb-8">
+            <div class="mt-16 md:mt-20 flex items-center justify-center gap-2 mb-8">
                 <div class="w-6 h-6 bg-fittr-green rounded-md rotate-45"></div>
-                <span class="font-bold text-xl tracking-tighter uppercase">FITTR <span class="text-fittr-green">/ MYDNA</span></span>
+                <span class="font-bold text-lg md:text-xl tracking-tighter uppercase">FITTR <span class="text-fittr-green">/ MYDNA</span></span>
             </div>
             <p class="text-[10px] text-gray-600 font-bold uppercase tracking-[0.2em]">© 2025 Fittr. All rights reserved. Built for real life.</p>
         </div>
