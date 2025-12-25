@@ -3,48 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fittr x MyDNA Complete Reimagining</title>
+    <title>Fittr x MyDNA | Green Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --lavender-bg: #D6C9F5;
-            --accent-purple: #8A70D6;
-            --card-white: #FFFFFF;
-            --light-grey: #F9F7FD;
-            --text-main: #1A191D;
-            --text-muted: #7D7888;
+            /* Palette from provided images */
+            --brand-green: #11A663;    /* Green 500 */
+            --brand-green-light: #E5FFF4; /* Green 100 */
+            --brand-green-mid: #A8E0C7;   /* Green 200 */
+            
+            --white: #FFFFFF;
+            --black: #000000;
+            
+            --text-primary: #1D202C;   /* Primary Text */
+            --text-secondary: #4D5164; /* Secondary Text */
+            --text-tertiary: #737C98;  /* Tertiary Text */
+            
+            --border-light: #E8EBE9;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Inter', sans-serif;
-            background: #FFFFFF; /* Removed the purple gradient background */
-            color: var(--text-main);
-            padding: 0; /* Removed the outer layer padding */
+            background: var(--white);
+            color: var(--text-primary);
             -webkit-font-smoothing: antialiased;
         }
 
         /* --- Layout Structure --- */
         .page-wrapper {
-            width: 100%; /* Expanded the white component to fill the width */
-            background: var(--card-white);
-            /* Removed max-width, margin, border-radius, and box-shadow to remove the "card" look */
+            width: 100%;
+            background: var(--white);
             overflow: hidden;
             position: relative;
         }
 
         .section {
             padding: 100px 80px;
-            border-bottom: 1px solid #F0EBF8;
+            border-bottom: 1px solid var(--border-light);
             position: relative;
+        }
+
+        /* Alternate section background for depth */
+        .section-alt {
+            background-color: var(--brand-green-light);
         }
 
         .section-tag {
             font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--accent-purple);
+            color: var(--brand-green);
             font-weight: 700;
             margin-bottom: 20px;
             display: block;
@@ -56,12 +66,13 @@
             right: 80px;
             font-size: 5rem;
             font-weight: 200;
-            color: #F0EBF8;
+            color: var(--brand-green-mid);
+            opacity: 0.4;
             letter-spacing: -5px;
         }
 
-        h2 { font-size: 3rem; font-weight: 500; line-height: 1.1; letter-spacing: -2px; margin-bottom: 40px; }
-        h2 span { font-weight: 200; font-style: italic; }
+        h2 { font-size: 3rem; font-weight: 500; line-height: 1.1; letter-spacing: -2px; margin-bottom: 40px; color: var(--black); }
+        h2 span { font-weight: 200; font-style: italic; color: var(--brand-green); }
 
         /* --- Buttons --- */
         .btn-pill {
@@ -75,43 +86,49 @@
             letter-spacing: 1px;
             transition: 0.3s;
         }
-        .btn-dark { background: var(--text-main); color: white; }
-        .btn-outline { border: 1px solid var(--text-main); color: var(--text-main); }
+        .btn-dark { background: var(--black); color: var(--white); }
+        .btn-dark:hover { background: var(--brand-green); }
+        .btn-outline { border: 1.5px solid var(--black); color: var(--black); }
+        .btn-outline:hover { background: var(--black); color: var(--white); }
 
         /* --- /01 HERO & REGISTRATION --- */
         .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .form-container { background: var(--light-grey); padding: 40px; border-radius: 32px; }
+        .form-container { background: var(--white); padding: 40px; border-radius: 32px; border: 1px solid var(--border-light); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
-        .input-group label { display: block; font-size: 10px; text-transform: uppercase; margin-bottom: 8px; color: var(--text-muted); }
+        .input-group label { display: block; font-size: 10px; text-transform: uppercase; margin-bottom: 8px; color: var(--text-tertiary); font-weight: 600; }
         .input-group input, .input-group select {
-            width: 100%; padding: 12px 0; border: none; border-bottom: 1px solid #DDD; background: transparent; font-family: inherit; font-size: 0.9rem;
+            width: 100%; padding: 12px 0; border: none; border-bottom: 1.5px solid var(--border-light); background: transparent; font-family: inherit; font-size: 0.9rem; outline: none; transition: 0.3s;
         }
+        .input-group input:focus { border-bottom-color: var(--brand-green); }
 
         /* --- /02 TESTIMONIALS --- */
         .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .testi-card { background: var(--light-grey); padding: 40px; border-radius: 24px; position: relative; }
-        .testi-card h4 { font-size: 1.2rem; margin-bottom: 15px; }
-        .testi-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
-        .testi-img { width: 100%; height: 180px; border-radius: 16px; object-fit: cover; margin-bottom: 20px; }
+        .testi-card { background: var(--white); padding: 40px; border-radius: 24px; border: 1px solid var(--border-light); position: relative; }
+        .testi-card h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--black); }
+        .testi-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+        .testi-img { width: 100%; height: 180px; border-radius: 16px; object-fit: cover; margin-bottom: 20px; filter: grayscale(20%); }
 
         /* --- /03 WHY FITTR (6 GRID) --- */
         .grid-6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
         .feature-box { display: flex; gap: 20px; }
-        .feature-icon { font-size: 1.5rem; color: var(--accent-purple); }
+        .feature-icon { font-size: 1.5rem; filter: sepia(100%) hue-rotate(90deg) saturate(200%); } /* Quick way to green-ify generic emojis */
 
-        /* --- /04 THE PROCESS (6 STEPS) --- */
-        .process-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: #F0EBF8; border-radius: 24px; overflow: hidden; border: 1px solid #F0EBF8; }
-        .process-item { background: white; padding: 40px; display: flex; gap: 20px; transition: 0.3s; }
-        .process-item:hover { background: var(--light-grey); }
-        .step-num-small { font-weight: 700; color: var(--accent-purple); font-size: 0.8rem; }
+        /* --- /04 THE PROCESS --- */
+        .process-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border-light); border-radius: 24px; overflow: hidden; border: 1px solid var(--border-light); }
+        .process-item { background: var(--white); padding: 40px; display: flex; gap: 20px; transition: 0.3s; }
+        .process-item:hover { background: var(--brand-green-light); }
+        .step-num-small { font-weight: 700; color: var(--brand-green); font-size: 0.8rem; }
 
         /* --- /05 FAQ --- */
-        .faq-item { padding: 25px 0; border-bottom: 1px solid #F0EBF8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item { padding: 25px 0; border-bottom: 1px solid var(--border-light); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
         .faq-item:last-child { border: none; }
-        .faq-answer { display: none; padding-top: 15px; color: var(--text-muted); font-size: 0.9rem; }
+        .faq-item span:first-child { font-weight: 500; }
 
-        /* --- Footer --- */
-        footer { background: #F9F7FD; padding: 80px; text-align: center; }
+        /* Footer */
+        footer { background: var(--black); padding: 80px; text-align: center; color: var(--white); }
+        footer h2 { color: var(--white); }
+        footer .btn-pill { background: var(--brand-green); color: var(--white); }
+        footer .btn-pill:hover { background: var(--white); color: var(--black); }
 
         @media (max-width: 900px) {
             .hero-grid, .testimonial-grid, .grid-6, .process-grid { grid-template-columns: 1fr; }
@@ -125,8 +142,8 @@
 <div class="page-wrapper">
 
     <!-- HEADER NAVIGATION -->
-    <header style="padding: 40px 80px; display: flex; justify-content: space-between; align-items: center;">
-        <div style="font-weight: 700; letter-spacing: -1px; font-size: 1.2rem;">FITTR / <span>2025</span></div>
+    <header style="padding: 40px 80px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-light);">
+        <div style="font-weight: 700; letter-spacing: -1px; font-size: 1.2rem; color: var(--black);">FITTR / <span style="color: var(--brand-green);">2025</span></div>
         <a href="#" class="btn-pill btn-outline">Book Consultation</a>
     </header>
 
@@ -137,16 +154,16 @@
         <div class="hero-grid">
             <div>
                 <h2>400,000+ Lives <span>Transformed</span> by Science.</h2>
-                <p style="color: var(--text-muted); margin-bottom: 30px;">Fitness simplified for real and lasting results. Join Asia's largest fitness community.</p>
+                <p style="color: var(--text-secondary); margin-bottom: 30px; line-height: 1.6;">Fitness simplified for real and lasting results. Join Asia's largest fitness community and start your journey today.</p>
                 <a href="#" class="btn-pill btn-dark">Explore Benefits ↓</a>
             </div>
             
             <div class="form-container">
-                <p style="font-size: 0.7rem; font-weight: 700; margin-bottom: 20px;">LET'S GET STARTED / STEP 1 OF 4</p>
+                <p style="font-size: 0.7rem; font-weight: 700; margin-bottom: 20px; color: var(--brand-green);">LET'S GET STARTED / STEP 1 OF 4</p>
                 <form>
                     <div class="input-group" style="margin-bottom: 20px;">
                         <label>Full Name</label>
-                        <input type="text" placeholder="Testing ignore">
+                        <input type="text" placeholder="John Doe">
                     </div>
                     <div class="form-row">
                         <div class="input-group">
@@ -155,7 +172,7 @@
                         </div>
                         <div class="input-group">
                             <label>Age</label>
-                            <input type="number" placeholder="52">
+                            <input type="number" placeholder="28">
                         </div>
                     </div>
                     <div class="form-row">
@@ -165,7 +182,7 @@
                         </div>
                         <div class="input-group">
                             <label>Email (Optional)</label>
-                            <input type="email" placeholder="user@gmail.com">
+                            <input type="email" placeholder="user@example.com">
                         </div>
                     </div>
                     <button class="btn-pill btn-dark" style="width: 100%; border: none; cursor: pointer; margin-top: 10px;">Next Step →</button>
@@ -175,7 +192,7 @@
     </section>
 
     <!-- /02 QUANTIFY RESULTS -->
-    <section class="section">
+    <section class="section section-alt">
         <span class="section-num">/02</span>
         <span class="section-tag">Quantified Results</span>
         <h2>Transformation <span>Success Stories</span></h2>
@@ -199,7 +216,7 @@
         </div>
     </section>
 
-    <!-- /03 WHY FITTR (THE 6 FEATURES) -->
+    <!-- /03 WHY FITTR -->
     <section class="section">
         <span class="section-num">/03</span>
         <span class="section-tag">The Platform</span>
@@ -208,33 +225,33 @@
         <div class="grid-6">
             <div class="feature-box">
                 <div class="feature-icon">🛡️</div>
-                <div><h4>Proven Results</h4><p style="font-size: 0.8rem; color: var(--text-muted);">400,000+ successful transformations.</p></div>
+                <div><h4>Proven Results</h4><p style="font-size: 0.8rem; color: var(--text-secondary);">400,000+ successful transformations.</p></div>
             </div>
             <div class="feature-box">
                 <div class="feature-icon">🎓</div>
-                <div><h4>Expert Team</h4><p style="font-size: 0.8rem; color: var(--text-muted);">Certified nutritionists and dieticians.</p></div>
+                <div><h4>Expert Team</h4><p style="font-size: 0.8rem; color: var(--text-secondary);">Certified nutritionists and dieticians.</p></div>
             </div>
             <div class="feature-box">
                 <div class="feature-icon">🌿</div>
-                <div><h4>Holistic Approach</h4><p style="font-size: 0.8rem; color: var(--text-muted);">Focus on health, not just weight.</p></div>
+                <div><h4>Holistic Approach</h4><p style="font-size: 0.8rem; color: var(--text-secondary);">Focus on health, not just weight.</p></div>
             </div>
             <div class="feature-box">
                 <div class="feature-icon">🍎</div>
-                <div><h4>Safe & Natural</h4><p style="font-size: 0.8rem; color: var(--text-muted);">No crash diets or harmful supplements.</p></div>
+                <div><h4>Safe & Natural</h4><p style="font-size: 0.8rem; color: var(--text-secondary);">No crash diets or harmful supplements.</p></div>
             </div>
             <div class="feature-box">
                 <div class="feature-icon">📈</div>
-                <div><h4>Sustainable Results</h4><p style="font-size: 0.8rem; color: var(--text-muted);">Long-term lifestyle changes.</p></div>
+                <div><h4>Sustainable Results</h4><p style="font-size: 0.8rem; color: var(--text-secondary);">Long-term lifestyle changes.</p></div>
             </div>
             <div class="feature-box">
                 <div class="feature-icon">📅</div>
-                <div><h4>Flexible Scheduling</h4><p style="font-size: 0.8rem; color: var(--text-muted);">Meal plans for your busy life.</p></div>
+                <div><h4>Flexible Scheduling</h4><p style="font-size: 0.8rem; color: var(--text-secondary);">Meal plans for your busy life.</p></div>
             </div>
         </div>
     </section>
 
     <!-- /04 THE PROCESS -->
-    <section class="section">
+    <section class="section section-alt">
         <span class="section-num">/04</span>
         <span class="section-tag">The Journey</span>
         <h2>6 Steps to <span>Transformation</span></h2>
@@ -242,27 +259,27 @@
         <div class="process-grid">
             <div class="process-item">
                 <span class="step-num-small">01</span>
-                <div><h4>Book Consultation</h4><p style="font-size: 0.8rem; color: var(--text-muted);">Schedule a free call with an expert.</p></div>
+                <div><h4>Book Consultation</h4><p style="font-size: 0.8rem; color: var(--text-secondary);">Schedule a free call with an expert.</p></div>
             </div>
             <div class="process-item">
                 <span class="step-num-small">02</span>
-                <div><h4>Get a Plan</h4><p style="font-size: 0.8rem; color: var(--text-muted);">Receive your personalized diet & lifestyle plan.</p></div>
+                <div><h4>Get a Plan</h4><p style="font-size: 0.8rem; color: var(--text-secondary);">Receive your personalized diet & lifestyle plan.</p></div>
             </div>
             <div class="process-item">
                 <span class="step-num-small">03</span>
-                <div><h4>Plan in Action</h4><p style="font-size: 0.8rem; color: var(--text-muted);">Follow your journey in the Fittr App.</p></div>
+                <div><h4>Plan in Action</h4><p style="font-size: 0.8rem; color: var(--text-secondary);">Follow your journey in the Fittr App.</p></div>
             </div>
             <div class="process-item">
                 <span class="step-num-small">04</span>
-                <div><h4>Weekly Check-ins</h4><p style="font-size: 0.8rem; color: var(--text-muted);">Stay on track with 1-on-1 calls.</p></div>
+                <div><h4>Weekly Check-ins</h4><p style="font-size: 0.8rem; color: var(--text-secondary);">Stay on track with 1-on-1 calls.</p></div>
             </div>
             <div class="process-item">
                 <span class="step-num-small">05</span>
-                <div><h4>Join the Community</h4><p style="font-size: 0.8rem; color: var(--text-muted);">Access 4M+ members for inspiration.</p></div>
+                <div><h4>Join the Community</h4><p style="font-size: 0.8rem; color: var(--text-secondary);">Access 4M+ members for inspiration.</p></div>
             </div>
             <div class="process-item">
                 <span class="step-num-small">06</span>
-                <div><h4>Sustain Goals</h4><p style="font-size: 0.8rem; color: var(--text-muted);">Maintain results with continuous support.</p></div>
+                <div><h4>Sustain Goals</h4><p style="font-size: 0.8rem; color: var(--text-secondary);">Maintain results with continuous support.</p></div>
             </div>
         </div>
     </section>
@@ -274,20 +291,20 @@
         <h2>Frequently Asked <span>Questions</span></h2>
         
         <div class="faq-list">
-            <div class="faq-item"><span>What is FITTR?</span> <span>+</span></div>
-            <div class="faq-item"><span>How does the online coaching work?</span> <span>+</span></div>
-            <div class="faq-item"><span>Are the programs safe?</span> <span>+</span></div>
-            <div class="faq-item"><span>Why do prices vary?</span> <span>+</span></div>
+            <div class="faq-item"><span>What is FITTR?</span> <span style="color: var(--brand-green);">+</span></div>
+            <div class="faq-item"><span>How does the online coaching work?</span> <span style="color: var(--brand-green);">+</span></div>
+            <div class="faq-item"><span>Are the programs safe?</span> <span style="color: var(--brand-green);">+</span></div>
+            <div class="faq-item"><span>Why do prices vary?</span> <span style="color: var(--brand-green);">+</span></div>
         </div>
     </section>
 
     <!-- FINAL CTA & FOOTER -->
     <footer>
-        <h2 style="font-size: 2.5rem;">Still <span>Not Convinced</span>?</h2>
-        <p style="color: var(--text-muted); margin-bottom: 40px;">Join thousands who have already changed their lives.</p>
-        <a href="#" class="btn-pill btn-dark">Book Your Free Consultation Now</a>
-        <div style="margin-top: 100px; color: var(--accent-purple); font-weight: 700; font-size: 1.2rem;">FITTR / MYDNA</div>
-        <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 20px;">© 2025 Fittr. All rights reserved. Built for real life.</p>
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Still <span>Not Convinced</span>?</h2>
+        <p style="color: #9CA3AF; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">Join thousands who have already changed their lives through science-backed nutrition and training.</p>
+        <a href="#" class="btn-pill">Book Your Free Consultation Now</a>
+        <div style="margin-top: 100px; color: var(--brand-green); font-weight: 700; font-size: 1.2rem; letter-spacing: 2px;">FITTR / MYDNA</div>
+        <p style="font-size: 0.7rem; color: #6B7280; margin-top: 20px;">© 2025 Fittr. All rights reserved. Built for real life.</p>
     </footer>
 
 </div>
