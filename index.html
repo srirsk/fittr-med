@@ -26,7 +26,6 @@
         .thin-line {
             width: 1px;
             background: linear-gradient(to bottom, transparent, rgba(17, 166, 99, 0.3), transparent);
-            height: 100px;
         }
 
         .abstract-shape {
@@ -47,7 +46,7 @@
             transform: translateY(-2px);
         }
 
-        h1, h2 { letter-spacing: -0.05em; font-weight: 200; }
+        h1, h2, h3 { letter-spacing: -0.05em; font-weight: 200; }
         .label-tiny { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #8ba1b0; }
         
         .img-luminosity {
@@ -69,9 +68,9 @@
             <div class="flex items-center gap-12">
                 <span class="font-light text-sm tracking-[0.3em] uppercase">FITTR <span class="text-fittr-green opacity-50">/</span> 2025</span>
                 <div class="hidden md:flex gap-8">
-                    <a href="#" class="label-tiny hover:text-black transition-colors">Benefits</a>
+                    <a href="#" class="label-tiny hover:text-black transition-colors">Philosophy</a>
                     <a href="#" class="label-tiny hover:text-black transition-colors">Success Stories</a>
-                    <a href="#" class="label-tiny hover:text-black transition-colors">Coaches</a>
+                    <a href="#" class="label-tiny hover:text-black transition-colors">Protocol</a>
                     <a href="#" class="label-tiny hover:text-black transition-colors">App</a>
                 </div>
             </div>
@@ -97,7 +96,7 @@
             </h1>
 
             <div class="flex flex-col items-center">
-                <div class="thin-line mb-8"></div>
+                <div class="thin-line h-[100px] mb-8"></div>
                 <h2 class="text-3xl md:text-4xl font-light mb-6">Fitness simplified for real results.</h2>
                 <p class="max-w-md text-sm text-slate-500 font-light leading-relaxed">
                     Join Asia's largest fitness community and start your journey today. We use science-backed nutrition and training to help you reach your goals.
@@ -171,108 +170,124 @@
             </div>
         </section>
 
-        <!-- WHY FITTR GRID -->
-        <section class="py-40 border-t border-slate-100">
-            <h3 class="text-3xl text-center mb-24 font-light">Why You Need <span class="italic text-fittr-green opacity-40">Fittr</span></h3>
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-24">
-                <div class="space-y-4">
-                    <span class="text-2xl">🛡️</span>
-                    <h4 class="font-medium text-lg">Proven Results</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed font-light">400,000+ successful transformations across the globe.</p>
+        <!-- REPLACED: THE PROTOCOL OF EXCELLENCE -->
+        <section id="philosophy" class="max-w-7xl mx-auto py-40 border-t border-slate-100">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-5xl mb-12">The Protocol <br><span class="text-fittr-green italic opacity-40">of Excellence.</span></h2>
+                    <div class="space-y-12">
+                        <div class="flex gap-6">
+                            <span class="label-tiny text-fittr-green pt-1">01</span>
+                            <div>
+                                <h4 class="text-xl font-light mb-2">Quantified Nutrition</h4>
+                                <p class="text-sm text-slate-400 font-light leading-relaxed">Every gram matters. We track your fuel with molecular precision, ensuring zero waste and maximum output.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <span class="label-tiny text-fittr-green pt-1">02</span>
+                            <div>
+                                <h4 class="text-xl font-light mb-2">Sustainable Genetics</h4>
+                                <p class="text-sm text-slate-400 font-light leading-relaxed">No crash diets. We focus on long-term habit integration that alters your genetic expression for life.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <span class="label-tiny text-fittr-green pt-1">03</span>
+                            <div>
+                                <h4 class="text-xl font-light mb-2">Expert Synthesis</h4>
+                                <p class="text-sm text-slate-400 font-light leading-relaxed">Access to certified metabolic experts who translate complex data into actionable daily patterns.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="space-y-4">
-                    <span class="text-2xl">🎓</span>
-                    <h4 class="font-medium text-lg">Expert Team</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed font-light">Certified nutritionists and dieticians at your service.</p>
-                </div>
-                <div class="space-y-4">
-                    <span class="text-2xl">🌿</span>
-                    <h4 class="font-medium text-lg">Holistic Approach</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed font-light">We focus on long-term health, not just weight loss.</p>
-                </div>
-                <div class="space-y-4">
-                    <span class="text-2xl">🍎</span>
-                    <h4 class="font-medium text-lg">Safe & Natural</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed font-light">No crash diets or harmful supplements. Only real food.</p>
-                </div>
-                <div class="space-y-4">
-                    <span class="text-2xl">📈</span>
-                    <h4 class="font-medium text-lg">Sustainable Results</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed font-light">Learn habits that stay with you for a lifetime.</p>
-                </div>
-                <div class="space-y-4">
-                    <span class="text-2xl">📅</span>
-                    <h4 class="font-medium text-lg">Flexible Scheduling</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed font-light">Meal and workout plans that fit your busy life.</p>
+                <div class="relative">
+                    <div class="rounded-[60px] overflow-hidden bg-slate-900 border border-white/20">
+                        <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=800&auto=format&fit=crop" class="w-full h-[600px] object-cover img-luminosity" alt="Human Performance">
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 ethereal-blur p-10 rounded-[40px] max-w-xs shadow-2xl">
+                        <p class="text-3xl font-extralight mb-2">4.8/5</p>
+                        <p class="label-tiny">Global System Rating</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SUCCESS STORIES -->
-        <section class="py-20">
-            <h3 class="text-3xl text-center mb-20 font-light">Transformation <span class="italic text-fittr-green opacity-40">Success Stories</span></h3>
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="group">
-                    <div class="rounded-3xl overflow-hidden mb-6 bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=600" class="w-full aspect-video object-cover img-luminosity" alt="Shilpa Mehta">
-                    </div>
-                    <h4 class="font-medium">Shilpa Mehta</h4>
-                    <span class="label-tiny text-fittr-green text-[9px] mb-4 block">Weight ↓ 30kg</span>
-                    <p class="text-xs text-slate-400 leading-relaxed font-light italic">"I struggled with low energy for years... Fittr's community pushed me to shed 30kg and feel vibrant."</p>
+        <!-- REPLACED: SUCCESS STORIES (BIOLOGICAL TRANSFORMATIONS) -->
+        <section id="stories" class="py-20 border-t border-slate-100">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-24">
+                    <p class="label-tiny mb-4">Case Studies</p>
+                    <h2 class="text-5xl">Biological <span class="italic text-fittr-green opacity-40">Transformations</span></h2>
                 </div>
-                <div class="group">
-                    <div class="rounded-3xl overflow-hidden mb-6 bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=600" class="w-full aspect-video object-cover img-luminosity" alt="Dr. Anirudh">
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="group">
+                        <div class="rounded-3xl overflow-hidden mb-8 bg-black">
+                            <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=600" class="w-full aspect-[4/5] object-cover img-luminosity group-hover:scale-105" alt="Transformation">
+                        </div>
+                        <h4 class="text-xl font-light mb-2">Shilpa Mehta</h4>
+                        <p class="label-tiny text-fittr-green mb-4">Mass Variance: -30kg</p>
+                        <p class="text-xs text-slate-400 leading-relaxed font-light italic">"The complexity of my low energy was solved through simple, data-driven nutrition."</p>
                     </div>
-                    <h4 class="font-medium">Dr. Anirudh</h4>
-                    <span class="label-tiny text-fittr-green text-[9px] mb-4 block">Weight ↓ 70kg</span>
-                    <p class="text-xs text-slate-400 leading-relaxed font-light italic">"At 134kg, I felt like a ticking bomb. I lost 70kg in two years. Life feels new again."</p>
-                </div>
-                <div class="group">
-                    <div class="rounded-3xl overflow-hidden mb-6 bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1552196564-97c36a394a4c?q=80&w=600" class="w-full aspect-video object-cover img-luminosity" alt="Rajan & Richa">
+                    <div class="group pt-12">
+                        <div class="rounded-3xl overflow-hidden mb-8 bg-black">
+                            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=600" class="w-full aspect-[4/5] object-cover img-luminosity group-hover:scale-105" alt="Transformation">
+                        </div>
+                        <h4 class="text-xl font-light mb-2">Dr. Anirudh</h4>
+                        <p class="label-tiny text-fittr-green mb-4">Mass Variance: -70kg</p>
+                        <p class="text-xs text-slate-400 leading-relaxed font-light italic">"From 134kg to absolute clarity. The Fittr protocol isn't a diet; it's a rebirth."</p>
                     </div>
-                    <h4 class="font-medium">Rajan & Richa</h4>
-                    <span class="label-tiny text-fittr-green text-[9px] mb-4 block">Combined ↓ 25kg</span>
-                    <p class="text-xs text-slate-400 leading-relaxed font-light italic">"As busy doctors, we lost 25kg combined while balancing demanding careers and family."</p>
+                    <div class="group">
+                        <div class="rounded-3xl overflow-hidden mb-8 bg-black">
+                            <img src="https://images.unsplash.com/photo-1552196564-97c36a394a4c?q=80&w=600" class="w-full aspect-[4/5] object-cover img-luminosity group-hover:scale-105" alt="Transformation">
+                        </div>
+                        <h4 class="text-xl font-light mb-2">Rajan & Richa</h4>
+                        <p class="label-tiny text-fittr-green mb-4">Combined Loss: 25kg</p>
+                        <p class="text-xs text-slate-400 leading-relaxed font-light italic">"A synchronized approach for high-performance couples balancing medicine and life."</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6 STEPS SECTION -->
-        <section class="max-w-7xl mx-auto py-40">
-            <div class="ethereal-blur rounded-[60px] p-16">
-                <h3 class="text-4xl text-center mb-20 font-light">6 Steps to <span class="italic text-fittr-green opacity-40">Transformation</span></h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
-                    <div>
-                        <span class="label-tiny text-fittr-green">01</span>
-                        <h5 class="font-medium mt-2">Book Consultation</h5>
-                        <p class="text-xs text-slate-400 mt-2 font-light">Schedule a free call with an expert to discuss your goals.</p>
+        <!-- REPLACED: 6 PHASES OF ACTUALIZATION -->
+        <section id="process" class="max-w-7xl mx-auto py-40">
+            <div class="ethereal-blur rounded-[60px] p-16 border border-white">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                    <div class="col-span-1">
+                        <p class="label-tiny mb-4">The Workflow</p>
+                        <h2 class="text-4xl mb-6">6 Phases of <br><span class="italic text-fittr-green opacity-40">Actualization.</span></h2>
+                        <div class="thin-line w-px h-20"></div>
                     </div>
-                    <div>
-                        <span class="label-tiny text-fittr-green">02</span>
-                        <h5 class="font-medium mt-2">Get a Plan</h5>
-                        <p class="text-xs text-slate-400 mt-2 font-light">Receive your personalized diet & lifestyle plan based on science.</p>
-                    </div>
-                    <div>
-                        <span class="label-tiny text-fittr-green">03</span>
-                        <h5 class="font-medium mt-2">Plan in Action</h5>
-                        <p class="text-xs text-slate-400 mt-2 font-light">Follow your journey and track meals in the Fittr App.</p>
-                    </div>
-                    <div>
-                        <span class="label-tiny text-fittr-green">04</span>
-                        <h5 class="font-medium mt-2">Weekly Check-ins</h5>
-                        <p class="text-xs text-slate-400 mt-2 font-light">Stay on track with 1-on-1 calls with your mentor.</p>
-                    </div>
-                    <div>
-                        <span class="label-tiny text-fittr-green">05</span>
-                        <h5 class="font-medium mt-2">Join the Community</h5>
-                        <p class="text-xs text-slate-400 mt-2 font-light">Access 4M+ members for inspiration and daily tips.</p>
-                    </div>
-                    <div>
-                        <span class="label-tiny text-fittr-green">06</span>
-                        <h5 class="font-medium mt-2">Sustain Goals</h5>
-                        <p class="text-xs text-slate-400 mt-2 font-light">Maintain results with continuous support and knowledge.</p>
+                    <div class="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16">
+                        <div>
+                            <span class="text-fittr-green text-xs font-bold">01</span>
+                            <h5 class="font-medium mt-2">Initialize</h5>
+                            <p class="text-xs text-slate-400 mt-2 font-light">Free consultation to map your metabolic baseline.</p>
+                        </div>
+                        <div>
+                            <span class="text-fittr-green text-xs font-bold">02</span>
+                            <h5 class="font-medium mt-2">The Blueprint</h5>
+                            <p class="text-xs text-slate-400 mt-2 font-light">Personalized lifestyle synthesis based on your DNA profile.</p>
+                        </div>
+                        <div>
+                            <span class="text-fittr-green text-xs font-bold">03</span>
+                            <h5 class="font-medium mt-2">Activation</h5>
+                            <p class="text-xs text-slate-400 mt-2 font-light">Real-time tracking via the Fittr neural application.</p>
+                        </div>
+                        <div>
+                            <span class="text-fittr-green text-xs font-bold">04</span>
+                            <h5 class="font-medium mt-2">Feedback Loop</h5>
+                            <p class="text-xs text-slate-400 mt-2 font-light">Weekly 1-on-1 check-ins to calibrate performance.</p>
+                        </div>
+                        <div>
+                            <span class="text-fittr-green text-xs font-bold">05</span>
+                            <h5 class="font-medium mt-2">Collective Access</h5>
+                            <p class="text-xs text-slate-400 mt-2 font-light">Integration into the 4M+ member intelligence community.</p>
+                        </div>
+                        <div>
+                            <span class="text-fittr-green text-xs font-bold">06</span>
+                            <h5 class="font-medium mt-2">Permanence</h5>
+                            <p class="text-xs text-slate-400 mt-2 font-light">Sustainable systems that maintain results indefinitely.</p>
+                        </div>
                     </div>
                 </div>
             </div>
