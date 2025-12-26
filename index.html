@@ -3,318 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FITTR | 400,000+ Lives Transformed</title>
+    <title>Fittr | Fitness & Wellness Synchronized</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --fittr-green: #11A663;
-            --fittr-mint: #E5FFF4;
-            --dark: #1D202C;
+            /* Brand Palette (Green Success) */
+            --brand-500: #11A663;
+            --brand-400: #2BAD73;
+            --brand-100: #E5FFF4;
+            
+            /* Text Palette */
+            --text-primary: #1D202C;
+            --text-secondary: #4D5164;
+            --text-tertiary: #737C98;
+            --text-placeholder: #9C9EB9;
+            --text-link: #0372D8;
+            
+            /* Common */
+            --common-white: #ffffff;
+            --common-black: #000000;
         }
-        body { font-family: 'Inter', sans-serif; color: var(--dark); background: #fff; overflow-x: hidden; }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            color: var(--text-primary); 
+            background-color: var(--common-white);
+        }
+
+        .bg-brand { background-color: var(--brand-500); }
+        .bg-brand-light { background-color: var(--brand-100); }
+        .text-brand { color: var(--brand-500); }
+        .text-secondary { color: var(--text-secondary); }
+        .text-tertiary { color: var(--text-tertiary); }
+        .text-link { color: var(--text-link); }
+
+        .hero-clip { border-top-right-radius: 100px; }
         
-        /* Responsive Overlap Logic */
-        .hero-overlap {
-            background-color: var(--fittr-mint);
-            position: relative;
-            z-index: 10;
-            border-top-right-radius: 40px;
-            border-bottom-left-radius: 40px;
-        }
-
-        @media (min-width: 1024px) {
-            .hero-overlap {
-                margin-top: -140px;
-                margin-left: -2%;
-                padding: 80px 8%;
-                width: 65%;
-                border-bottom-left-radius: 0;
-                border-top-right-radius: 60px;
-            }
-        }
-
-        /* Decorative L-Frame - Hidden on very small screens to avoid overflow */
-        .l-frame {
-            position: relative;
-        }
+        .l-frame { position: relative; }
         @media (min-width: 640px) {
             .l-frame::before {
                 content: "";
                 position: absolute;
                 top: -15px; left: -15px;
                 width: 80px; height: 80px;
-                border-top: 8px solid var(--fittr-green);
-                border-left: 8px solid var(--fittr-green);
+                border-top: 8px solid var(--brand-500);
+                border-left: 8px solid var(--brand-500);
                 z-index: 0;
             }
         }
 
         .stat-card {
-            background: var(--fittr-mint);
+            background: var(--brand-100);
             border-radius: 24px;
             padding: 30px;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
         }
-        .stat-card:hover { transform: translateY(-5px); }
+        .stat-card:hover { transform: translateY(-5px); border: 1px solid var(--brand-400); }
 
-        .btn-black {
-            background: var(--dark);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 999px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-            white-space: nowrap;
-        }
-
-        .btn-black:hover { opacity: 0.9; transform: scale(1.02); }
-
-        /* Custom Scrollbar */
+        input::placeholder { color: var(--text-placeholder); }
+        
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: var(--fittr-green); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: var(--brand-500); border-radius: 10px; }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- 1. NAVIGATION -->
-    <header class="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6 flex justify-between items-center bg-white sticky top-0 z-[100]">
-        <div class="flex items-center gap-2">
-            <div class="w-7 h-7 bg-black rounded-lg flex items-center justify-center rotate-45">
-                <div class="w-2.5 h-2.5 bg-white rounded-full -rotate-45"></div>
+    <!-- NAVIGATION -->
+    <nav class="flex items-center justify-between px-6 md:px-10 py-6 bg-white sticky top-0 z-50 shadow-sm">
+        <div class="flex items-center gap-2 font-bold text-xl">
+            <div class="w-8 h-8 bg-black flex items-center justify-center rounded-lg text-white">
+                <span class="text-xs">⟲</span>
             </div>
-            <span class="font-bold text-lg md:text-2xl tracking-tighter uppercase">FITTR <span class="text-[#11A663]">/ 25</span></span>
+            Fittr
         </div>
-        
-        <nav class="hidden lg:flex gap-4">
-            <a href="#benefits" class="px-5 py-2 border border-gray-100 rounded-full text-sm font-medium hover:border-green-500 transition">Benefits</a>
-            <a href="#success" class="px-5 py-2 border border-gray-100 rounded-full text-sm font-medium hover:border-green-500 transition">Success Stories</a>
-            <a href="#coaches" class="px-5 py-2 border border-gray-100 rounded-full text-sm font-medium hover:border-green-500 transition">Coaches</a>
-        </nav>
-
-        <div class="flex items-center gap-3">
-            <span class="text-[10px] font-bold hidden sm:block uppercase tracking-wider text-gray-400">Consult: (800) FIT-2025</span>
-            <div class="w-10 h-10 bg-[#E5FFF4] rounded-full flex flex-col justify-center items-center gap-1 cursor-pointer hover:bg-green-100 transition">
-                <span class="w-5 h-0.5 bg-black"></span>
-                <span class="w-5 h-0.5 bg-black"></span>
-            </div>
+        <div class="hidden lg:flex gap-8 text-sm font-medium">
+            <a href="#services" class="text-secondary hover:text-black transition">Our Programs</a>
+            <a href="#process" class="text-secondary hover:text-black transition">Transformation Journey</a>
+            <a href="#specialists" class="text-secondary hover:text-black transition">Expert Coaches</a>
         </div>
-    </header>
+        <div class="flex items-center gap-4">
+            <span class="text-[10px] md:text-xs font-semibold text-tertiary uppercase tracking-widest hidden sm:block">Support: (123) 555-0100</span>
+            <button class="p-2 bg-brand rounded-full text-white hover:bg-[#2BAD73] transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </nav>
 
-    <!-- 2. HERO SECTION -->
-    <section class="max-w-7xl mx-auto px-4 md:px-6 pt-4 relative">
-        <div class="relative w-full h-[350px] md:h-[500px] lg:h-[650px] rounded-[30px] md:rounded-[50px] overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover grayscale-[0.2]" alt="Transformation">
+    <!-- HERO SECTION -->
+    <section class="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 relative">
+        <div class="relative rounded-[40px] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=2000" 
+                 alt="Fitness Health" class="w-full h-[500px] md:h-[650px] object-cover">
             
-            <!-- Floating Badge -->
-            <div class="absolute top-6 right-6 md:top-10 md:right-10 bg-white/90 backdrop-blur-md p-2 md:p-3 px-4 md:px-6 rounded-full flex items-center gap-3 shadow-lg scale-90 md:scale-100">
-                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=100" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-green-500">
+            <div class="absolute top-8 right-8 bg-white/80 backdrop-blur-md p-3 px-5 rounded-full flex items-center gap-3 shadow-lg scale-90 md:scale-100">
+                <img src="https://i.pravatar.cc/100?img=32" class="w-10 h-10 rounded-full border-2 border-white">
                 <div>
-                    <p class="text-[8px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">Top Result</p>
-                    <p class="font-bold text-xs md:text-sm">Dr. Anirudh: -70kg</p>
+                    <p class="text-[10px] font-bold">Coach Emily Carter</p>
+                    <p class="text-[8px] text-secondary">Nutrition Specialist</p>
                 </div>
+                <div class="w-2 h-2 bg-brand rounded-full animate-pulse ml-2"></div>
             </div>
-        </div>
 
-        <div class="hero-overlap p-8 md:p-12 mt-6 lg:mt-[-140px]">
-            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tighter leading-[0.9] mb-6 md:mb-8">
-                400k+ Lives <br> <span class="italic font-light text-gray-400">Transformed.</span>
-            </h1>
-            <p class="text-gray-500 text-lg md:text-xl max-w-md mb-8 md:mb-10 leading-relaxed">
-                Fitness simplified for real results. Join Asia's largest community and start your journey today.
-            </p>
-            <a href="#register" class="btn-black text-base md:text-lg py-4 md:py-5 px-8 md:px-10">Book Consultation ↗</a>
+            <div class="absolute bottom-0 left-0 bg-brand p-8 md:p-16 hero-clip max-w-2xl text-white">
+                <h1 class="text-3xl md:text-5xl font-medium leading-[1.1] mb-6">
+                    Where Your Fitness and<br>Data Work in Sync.
+                </h1>
+                <p class="text-white/80 mb-8 max-w-md text-sm leading-relaxed hidden md:block">
+                    Science-backed nutrition and training protocols designed to synchronize your lifestyle with your health goals.
+                </p>
+                <button class="bg-[#1D202C] text-white px-8 py-4 rounded-full flex items-center gap-2 group hover:bg-black transition-all text-sm md:text-base font-semibold">
+                    Start Your Transformation
+                    <span class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
+                </button>
+            </div>
         </div>
     </section>
 
-    <!-- 3. MISSION STATEMENT -->
-    <section class="py-20 md:py-40 px-6 text-center max-w-5xl mx-auto">
-        <h2 class="text-2xl md:text-5xl leading-tight font-normal text-gray-800">
-            Fittr believes wellness should be <span class="text-[#11A663] font-medium">seamless</span> and <span class="text-[#11A663] font-medium">empowering</span>, focusing on sustainable results for healthier lives.
+    <!-- MISSION STATEMENT -->
+    <section class="py-20 md:py-32 px-6 text-center max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-4xl leading-tight font-normal text-primary">
+            Fittr believes fitness should be <span class="text-brand font-medium">data-driven</span> and <span class="text-brand font-medium">sustainable</span>, focusing on integrated science for a better life.
         </h2>
     </section>
 
-    <!-- 4. ABOUT / FORM SECTION -->
+    <!-- ONBOARDING SECTION -->
     <section id="register" class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start pb-20 md:pb-40">
-        <div class="space-y-8 md:space-y-12 order-2 lg:order-1">
+        <div class="space-y-8 md:space-y-12">
             <div>
-                <p class="text-xs font-bold uppercase tracking-[0.3em] text-green-600 mb-6 md:mb-8">● Step 1: Join the Community</p>
+                <p class="text-xs font-bold uppercase tracking-[0.3em] text-brand mb-6 md:mb-8">● Phase 1: Fitness Blueprint</p>
                 <div class="space-y-4 md:space-y-6">
                     <div class="flex flex-col sm:flex-row gap-4 md:gap-6 p-6 md:p-8 rounded-[30px] bg-white border border-gray-100 shadow-sm">
-                        <div class="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full bg-green-50 flex items-center justify-center text-xl md:text-2xl">🧬</div>
+                        <div class="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full bg-brand/10 flex items-center justify-center text-xl md:text-2xl">📊</div>
                         <div>
-                            <h3 class="font-bold text-lg md:text-xl mb-1">Quantified Nutrition</h3>
-                            <p class="text-gray-500 text-sm md:text-base">Science-backed training to help you reach your goals with precision.</p>
+                            <h3 class="font-bold text-lg md:text-xl mb-1">Body Composition Analysis</h3>
+                            <p class="text-secondary text-sm md:text-base">Get a complete breakdown of your metrics to build a personalized starting point.</p>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 md:gap-6 p-6 md:p-8 rounded-[30px] bg-white border border-gray-100 shadow-sm">
-                        <div class="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full bg-green-50 flex items-center justify-center text-xl md:text-2xl">🛡️</div>
+                        <div class="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full bg-brand/10 flex items-center justify-center text-xl md:text-2xl">🥗</div>
                         <div>
-                            <h3 class="font-bold text-lg md:text-xl mb-1">Sustainable Results</h3>
-                            <p class="text-gray-500 text-sm md:text-base">No crash diets. We teach you habits that stay with you for a lifetime.</p>
+                            <h3 class="font-bold text-lg md:text-xl mb-1">Macro-Sync Nutrition</h3>
+                            <p class="text-secondary text-sm md:text-base">Customized meal plans that sync perfectly with your daily activity levels.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn-black">Learn Our Method ↗</a>
+            <button class="text-link text-xs font-bold uppercase tracking-widest flex items-center gap-2 group">
+                Explore All Plans <span class="group-hover:translate-x-1 transition-transform">↗</span>
+            </button>
         </div>
 
         <!-- Registration Form Card -->
-        <div class="l-frame bg-white p-8 md:p-10 rounded-[30px] md:rounded-[40px] shadow-2xl border border-gray-50 relative z-10 order-1 lg:order-2">
-            <p class="text-center text-green-600 font-bold tracking-widest text-xs mb-8 md:mb-10 italic">LET'S GET STARTED</p>
+        <div class="l-frame bg-white p-8 md:p-10 rounded-[30px] md:rounded-[40px] shadow-2xl border border-gray-50 relative z-10">
+            <p class="text-center text-tertiary font-bold tracking-widest text-xs mb-8 md:mb-10 uppercase">Join the Fittr Community</p>
             <div class="space-y-6 md:space-y-8">
-                <input type="text" placeholder="Full Name" class="w-full border-b border-gray-200 py-3 md:py-4 focus:outline-none focus:border-green-500 text-lg md:text-xl font-medium">
+                <input type="text" placeholder="Full Name" class="w-full border-b border-gray-200 py-3 md:py-4 focus:outline-none focus:border-brand text-lg md:text-xl font-medium">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10">
-                    <input type="number" placeholder="Age" class="w-full border-b border-gray-200 py-3 md:py-4 focus:outline-none focus:border-green-500 text-lg md:text-xl font-medium">
-                    <select class="w-full border-b border-gray-200 py-3 md:py-4 focus:outline-none focus:border-green-500 text-lg md:text-xl font-medium bg-transparent">
-                        <option>Gender</option><option>Male</option><option>Female</option>
+                    <input type="text" placeholder="Goal (Weight Loss, Muscle, etc.)" class="w-full border-b border-gray-200 py-3 md:py-4 focus:outline-none focus:border-brand text-tertiary text-lg md:text-xl font-medium">
+                    <select class="w-full border-b border-gray-200 py-3 md:py-4 focus:outline-none focus:border-brand text-lg md:text-xl font-medium bg-transparent">
+                        <option>Choose Experience</option><option>Beginner</option><option>Intermediate</option><option>Athlete</option>
                     </select>
                 </div>
-                <input type="tel" placeholder="Phone Number" class="w-full border-b border-gray-200 py-3 md:py-4 focus:outline-none focus:border-green-500 text-lg md:text-xl font-medium">
-                <button class="w-full bg-green-600 text-white py-4 md:py-6 rounded-2xl md:rounded-3xl font-bold text-lg md:text-xl shadow-xl shadow-green-100 hover:bg-green-700 transition">Next Step →</button>
+                <input type="tel" placeholder="Mobile Number" class="w-full border-b border-gray-200 py-3 md:py-4 focus:outline-none focus:border-brand text-lg md:text-xl font-medium">
+                <button class="w-full bg-brand text-white py-4 md:py-6 rounded-2xl md:rounded-3xl font-bold text-lg md:text-xl shadow-xl shadow-brand/20 hover:bg-[#2BAD73] transition">Unlock Your Plan →</button>
             </div>
         </div>
     </section>
 
-    <!-- 5. OUR ADVANTAGE (Stats) -->
-    <section class="bg-gray-50 py-20 md:py-32 mx-4 md:mx-6 rounded-[40px] md:rounded-[60px] mb-20">
+    <!-- STATS SECTION -->
+    <section class="bg-brand-light py-20 md:py-32 mx-4 md:mx-6 rounded-[40px] md:rounded-[60px] mb-20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12 md:mb-20">
-                <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-4">Our Advantage</p>
-                <h2 class="text-3xl md:text-4xl font-medium">Transforming the world, <br class="sm:hidden"> <span class="italic text-gray-400">one person at a time.</span></h2>
+                <p class="text-xs font-bold tracking-widest text-brand uppercase mb-4">Our Impact</p>
+                <h2 class="text-3xl md:text-4xl font-medium">Building a community of <br class="sm:hidden"> <span class="italic text-tertiary">synchronized wellness.</span></h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                <div class="stat-card text-center md:text-left">
-                    <h4 class="text-5xl md:text-6xl font-bold text-green-600 mb-4">400k+</h4>
-                    <p class="font-bold text-xl mb-2">Happy Users</p>
-                    <p class="text-gray-500 text-sm">Successful transformations across the globe.</p>
+                <div class="stat-card text-center md:text-left shadow-sm">
+                    <h4 class="text-5xl md:text-6xl font-bold text-primary mb-4">100k+</h4>
+                    <p class="font-bold text-xl mb-2 text-brand">Lives Transformed</p>
+                    <p class="text-secondary text-sm">Real people achieving sustainable results every day.</p>
                 </div>
-                <div class="stat-card text-center md:text-left">
-                    <h4 class="text-5xl md:text-6xl font-bold text-green-600 mb-4">4.8/5</h4>
-                    <p class="font-bold text-xl mb-2">App Rating</p>
-                    <p class="text-gray-500 text-sm">Trusted by millions on App Store and Play Store.</p>
+                <div class="stat-card text-center md:text-left shadow-sm">
+                    <h4 class="text-5xl md:text-6xl font-bold text-primary mb-4">98%</h4>
+                    <p class="font-bold text-xl mb-2 text-brand">Retention Rate</p>
+                    <p class="text-secondary text-sm">Success-driven community support and expert coaching.</p>
                 </div>
-                <div class="stat-card text-center md:text-left">
-                    <h4 class="text-5xl md:text-6xl font-bold text-green-600 mb-4">4M+</h4>
-                    <p class="font-bold text-xl mb-2">Community</p>
-                    <p class="text-gray-500 text-sm">Asia's largest fitness and wellness community.</p>
+                <div class="stat-card text-center md:text-left shadow-sm">
+                    <h4 class="text-5xl md:text-6xl font-bold text-primary mb-4">24/7</h4>
+                    <p class="font-bold text-xl mb-2 text-brand">Coach Access</p>
+                    <p class="text-secondary text-sm">Direct connection to your mentors via the Fittr App.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. PROCESS GRID -->
-    <section id="benefits" class="max-w-7xl mx-auto px-6 py-10 md:py-20">
-        <h2 class="text-3xl md:text-4xl font-medium text-center mb-12 md:mb-20">6 Steps to <span class="text-green-600 italic">Transformation</span></h2>
+    <!-- PROCESS GRID -->
+    <section id="process" class="max-w-7xl mx-auto px-6 py-10 md:py-20">
+        <h2 class="text-3xl md:text-4xl font-medium text-center mb-12 md:mb-20">6 Steps to <span class="text-brand italic">A Fitter You</span></h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0.5 bg-gray-100 rounded-[30px] md:rounded-[40px] overflow-hidden border border-gray-100">
-            <!-- Step Item -->
-            <div class="bg-white p-8 md:p-12 hover:bg-green-50 transition cursor-pointer">
-                <span class="text-green-600 font-bold text-sm">01</span>
-                <h4 class="font-bold text-xl mt-4">Consultation</h4>
-                <p class="text-gray-400 text-sm mt-3">Speak with an expert about your specific lifestyle and goals.</p>
+            <div class="bg-white p-8 md:p-12 hover:bg-brand-light transition cursor-pointer">
+                <span class="text-brand font-bold text-sm">01</span>
+                <h4 class="font-bold text-xl mt-4">Assessment</h4>
+                <p class="text-secondary text-sm mt-3">Initial lifestyle and physical assessment for planning.</p>
             </div>
-            <div class="bg-white p-8 md:p-12 hover:bg-green-50 transition cursor-pointer border-t sm:border-t-0 sm:border-l border-gray-100">
-                <span class="text-green-600 font-bold text-sm">02</span>
-                <h4 class="font-bold text-xl mt-4">Personal Plan</h4>
-                <p class="text-gray-400 text-sm mt-3">Receive a personalized diet and training plan based on science.</p>
+            <div class="bg-white p-8 md:p-12 hover:bg-brand-light transition cursor-pointer border-t sm:border-t-0 sm:border-l border-gray-100">
+                <span class="text-brand font-bold text-sm">02</span>
+                <h4 class="font-bold text-xl mt-4">Data-Sync</h4>
+                <p class="text-secondary text-sm mt-3">Wearable data integrated to track your metabolic rate.</p>
             </div>
-            <div class="bg-white p-8 md:p-12 hover:bg-green-50 transition cursor-pointer border-t lg:border-t-0 lg:border-l border-gray-100">
-                <span class="text-green-600 font-bold text-sm">03</span>
-                <h4 class="font-bold text-xl mt-4">Action Phase</h4>
-                <p class="text-gray-400 text-sm mt-3">Start your journey and track everything in the Fittr App.</p>
+            <div class="bg-white p-8 md:p-12 hover:bg-brand-light transition cursor-pointer border-t lg:border-t-0 lg:border-l border-gray-100">
+                <span class="text-brand font-bold text-sm">03</span>
+                <h4 class="font-bold text-xl mt-4">Program Design</h4>
+                <p class="text-secondary text-sm mt-3">Custom workout and meal roadmap for your goals.</p>
             </div>
-            <div class="bg-white p-8 md:p-12 hover:bg-green-50 transition cursor-pointer border-t border-gray-100">
-                <span class="text-green-600 font-bold text-sm">04</span>
-                <h4 class="font-bold text-xl mt-4">Check-ins</h4>
-                <p class="text-gray-400 text-sm mt-3">Weekly 1-on-1 calls with your mentor to stay on track.</p>
+            <div class="bg-white p-8 md:p-12 hover:bg-brand-light transition cursor-pointer border-t border-gray-100">
+                <span class="text-brand font-bold text-sm">04</span>
+                <h4 class="font-bold text-xl mt-4">Active Coaching</h4>
+                <p class="text-secondary text-sm mt-3">Direct guidance from your dedicated fitness mentor.</p>
             </div>
-            <div class="bg-white p-8 md:p-12 hover:bg-green-50 transition cursor-pointer border-t sm:border-l border-gray-100">
-                <span class="text-green-600 font-bold text-sm">05</span>
-                <h4 class="font-bold text-xl mt-4">Support</h4>
-                <p class="text-gray-400 text-sm mt-3">Access to 4M+ members for inspiration and daily motivation.</p>
+            <div class="bg-white p-8 md:p-12 hover:bg-brand-light transition cursor-pointer border-t sm:border-l border-gray-100">
+                <span class="text-brand font-bold text-sm">05</span>
+                <h4 class="font-bold text-xl mt-4">Weekly Review</h4>
+                <p class="text-secondary text-sm mt-3">Metric adjustments based on your weekly progress.</p>
             </div>
-            <div class="bg-white p-8 md:p-12 hover:bg-green-50 transition cursor-pointer border-t lg:border-l border-gray-100">
-                <span class="text-green-600 font-bold text-sm">06</span>
+            <div class="bg-white p-8 md:p-12 hover:bg-brand-light transition cursor-pointer border-t lg:border-l border-gray-100">
+                <span class="text-brand font-bold text-sm">06</span>
                 <h4 class="font-bold text-xl mt-4">Sustainability</h4>
-                <p class="text-gray-400 text-sm mt-3">Maintain your results for life with continuous knowledge.</p>
+                <p class="text-secondary text-sm mt-3">Long-term lifestyle habits for permanent health.</p>
             </div>
         </div>
     </section>
 
-    <!-- 7. COACH SECTION -->
-    <section id="coaches" class="max-w-7xl mx-auto px-6 py-20 md:py-40 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+    <!-- EXPERT LEADERSHIP SECTION -->
+    <section id="specialists" class="max-w-7xl mx-auto px-6 py-20 md:py-40 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div class="w-full lg:w-1/2 relative order-2 lg:order-1">
             <div class="l-frame">
-                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1000&auto=format&fit=crop" class="rounded-[30px] md:rounded-[40px] w-full object-cover aspect-[4/5] lg:aspect-auto" alt="Featured Coach">
+                <!-- RETAINED SPECIFIC IMAGE REQUESTED PREVIOUSLY -->
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1000&auto=format&fit=crop" class="rounded-[30px] md:rounded-[40px] w-full object-cover aspect-[4/5] shadow-xl" alt="Lead Performance Specialist">
             </div>
         </div>
         <div class="w-full lg:w-1/2 order-1 lg:order-2">
-            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Expert Mentorship</p>
-            <h2 class="text-3xl md:text-5xl font-medium mb-6 md:mb-8 leading-tight">Leading the Future of <span class="text-green-600">Personal Fitness</span></h2>
-            <p class="text-gray-500 text-lg md:text-xl leading-relaxed mb-8 md:mb-10">
-                Our certified coaches are more than trainers; they are mentors. They provide the science, the system, and the support needed to turn goals into reality.
+            <p class="text-xs font-bold text-brand uppercase tracking-widest mb-6">Expert Leadership</p>
+            <h2 class="text-3xl md:text-5xl font-medium mb-6 md:mb-8 leading-tight">Leading the Future of <span class="text-brand italic">Human Care</span></h2>
+            <p class="text-secondary text-lg md:text-xl leading-relaxed mb-8 md:mb-10">
+                Our board-certified physicians and performance coaches are pioneers in their fields, bringing decades of experience and a passion for technology-assisted healing.
             </p>
-            <div class="bg-green-50 p-6 md:p-8 rounded-[24px] md:rounded-3xl border border-green-100 inline-block w-full sm:w-auto">
-                <p class="font-bold text-green-700 text-lg">Dr. Jonathan Reyes, MD</p>
-                <p class="text-green-600 text-sm">Senior Health Advisor & Transformation Lead</p>
+            <div class="bg-brand-light p-6 md:p-8 rounded-[24px] md:rounded-3xl border border-brand/20 inline-block w-full sm:w-auto">
+                <p class="font-bold text-primary text-lg">Dr. Marcus Thorne, MD</p>
+                <p class="text-secondary text-sm">Chief of Integrated Performance</p>
             </div>
         </div>
     </section>
 
-    <!-- 8. SUCCESS STORIES -->
+    <!-- SUCCESS STORIES -->
     <section id="success" class="max-w-7xl mx-auto px-6 py-20 md:pb-40">
-        <h2 class="text-3xl md:text-4xl font-medium text-center mb-12 md:mb-20">We're trusted by the most <br> <span class="italic text-gray-400">important members.</span></h2>
+        <h2 class="text-3xl md:text-4xl font-medium text-center mb-12 md:mb-20">Trusted by our most <br> <span class="italic text-tertiary">determined members.</span></h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <!-- Card 1 -->
             <div class="p-6 md:p-8 border border-gray-100 rounded-[30px] md:rounded-[40px] bg-white shadow-sm flex flex-col">
-                <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=400" class="rounded-[24px] md:rounded-[30px] mb-6 w-full h-48 object-cover">
-                <p class="text-sm italic text-gray-600 mb-6 flex-grow">"Fittr didn't just help me lose weight; it gave me my life back. I lost 30kg and found a energy I never knew I had."</p>
-                <p class="font-bold">Shilpa Mehta</p>
-                <p class="text-xs text-green-600 font-bold uppercase">Weight ↓ 30kg</p>
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400" class="rounded-[24px] md:rounded-[30px] mb-6 w-full h-48 object-cover">
+                <p class="text-sm italic text-secondary mb-6 flex-grow">"The synchronized data meant my coach adjusted my plan instantly. I've never seen results this fast or this consistent."</p>
+                <p class="font-bold">Sarah Jenkins</p>
+                <p class="text-xs text-brand font-bold uppercase">Weight Loss Transformation</p>
             </div>
-            <!-- Card 2 -->
             <div class="p-6 md:p-8 border border-gray-100 rounded-[30px] md:rounded-[40px] bg-white shadow-sm flex flex-col">
-                <img src="https://images.unsplash.com/photo-1552196564-97c36a394a4c?q=80&w=400" class="rounded-[24px] md:rounded-[30px] mb-6 w-full h-48 object-cover">
-                <p class="text-sm italic text-gray-600 mb-6 flex-grow">"As busy doctors, we managed to lose 25kg combined while balancing our demanding careers and family."</p>
-                <p class="font-bold">Rajan & Richa</p>
-                <p class="text-xs text-green-600 font-bold uppercase">Combined ↓ 25kg</p>
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400" class="rounded-[24px] md:rounded-[30px] mb-6 w-full h-48 object-cover">
+                <p class="text-sm italic text-secondary mb-6 flex-grow">"Fittr's remote tracking allowed me to stay on course even while traveling. It's the only ecosystem that actually works."</p>
+                <p class="font-bold">David Chen</p>
+                <p class="text-xs text-brand font-bold uppercase">Athlete Performance</p>
             </div>
-            <!-- Card 3 -->
-            <div class="p-6 md:p-8 border border-gray-100 rounded-[30px] md:rounded-[40px] bg-white shadow-sm flex flex-col md:col-span-2 lg:col-span-1">
-                <img src="https://images.unsplash.com/photo-1594882645126-14020914d58d?q=80&w=400" class="rounded-[24px] md:rounded-[30px] mb-6 w-full h-48 object-cover">
-                <p class="text-sm italic text-gray-600 mb-6 flex-grow">"I struggled with low energy for years. Fittr's community and science-based plan changed everything."</p>
-                <p class="font-bold">Rahul Verma</p>
-                <p class="text-xs text-green-600 font-bold uppercase">Weight ↓ 15kg</p>
+            <div class="p-6 md:p-8 border border-gray-100 rounded-[30px] md:rounded-[40px] bg-white shadow-sm flex flex-col">
+                <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=400" class="rounded-[24px] md:rounded-[30px] mb-6 w-full h-48 object-cover">
+                <p class="text-sm italic text-secondary mb-6 flex-grow">"Finally, a brand that values my time. The workouts are efficient and the nutrition is easy to follow. Fittr is life-changing."</p>
+                <p class="font-bold">Elena Rodriguez</p>
+                <p class="text-xs text-brand font-bold uppercase">Sustainability Success</p>
             </div>
         </div>
     </section>
 
-    <!-- 9. FOOTER -->
+    <!-- FOOTER -->
     <footer class="bg-[#1D202C] text-white py-16 md:py-24 rounded-t-[40px] md:rounded-t-[60px]">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
-            <div>
-                <h2 class="text-4xl md:text-5xl font-medium mb-8 md:mb-10 leading-tight">Ready for your <br><span class="text-green-500 italic">new beginning?</span></h2>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#" class="bg-green-600 px-10 py-4 md:py-5 rounded-full font-bold text-center hover:bg-green-700 transition">Start Today</a>
-                    <a href="#" class="border border-gray-700 px-10 py-4 md:py-5 rounded-full font-bold text-center hover:bg-gray-800 transition">Contact Us</a>
+        <div class="max-w-7xl mx-auto px-10 flex flex-col md:flex-row justify-between items-start gap-12">
+            <div class="max-w-md">
+                <div class="flex items-center gap-2 font-bold text-2xl mb-6">
+                    <div class="w-8 h-8 bg-brand flex items-center justify-center rounded-lg text-white">
+                        <span class="text-xs">⟲</span>
+                    </div>
+                    Fittr
+                </div>
+                <p class="text-white/60 text-sm leading-relaxed mb-8">"Driven by science, powered by community. Providing modern wellness solutions for a synchronized life."</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-white/40 hover:text-brand transition">Instagram</a>
+                    <a href="#" class="text-white/40 hover:text-brand transition">LinkedIn</a>
+                    <a href="#" class="text-white/40 hover:text-brand transition">Twitter</a>
                 </div>
             </div>
-            <div class="lg:text-right flex flex-col justify-between">
-                <div>
-                    <p class="text-green-500 font-bold text-xl mb-2">care@fittr.com</p>
-                    <p class="text-gray-400">Join the movement for a healthier world.</p>
-                </div>
-                <div class="pt-12 md:pt-20">
-                    <div class="flex items-center gap-2 lg:justify-end mb-4">
-                        <div class="w-6 h-6 bg-green-600 rounded rotate-45"></div>
-                        <span class="font-bold text-xl md:text-2xl tracking-tighter uppercase">FITTR / 2025</span>
-                    </div>
-                    <p class="text-gray-600 text-[10px] md:text-xs font-bold uppercase tracking-widest">© 2025 Fittr Inc. All rights reserved.</p>
-                </div>
+            
+            <div class="flex flex-col md:items-end gap-6">
+                <p class="text-brand font-bold text-xl">support@fittr.com</p>
+                <button class="bg-brand text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-[#2BAD73] transition">Download App</button>
+                <p class="text-white/30 text-[10px] font-bold uppercase tracking-[0.2em] mt-12">© 2025 Fittr Ecosystem. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
