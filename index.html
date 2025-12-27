@@ -11,21 +11,16 @@
         .text-sage { color: #1A302C; }
         .bg-sage-light { background-color: #D9E8E3; }
         .bg-sage-dark { background-color: #1A302C; }
-        
-        /* Smooth transition for the overlap card */
         .overlap-card { border-top-right-radius: 80px; }
-        
         @media (max-width: 1024px) { 
             .overlap-card { 
                 border-top-right-radius: 40px; 
-                border-bottom-left-radius: 40px;
                 position: relative !important; 
                 width: 100% !important; 
-                margin-top: -60px; 
-                left: 0 !important;
+                margin-top: -40px; 
             } 
         }
-
+        /* Custom Input Styling */
         .form-input {
             background: transparent;
             border-bottom: 1px solid rgba(26, 48, 44, 0.2);
@@ -36,75 +31,70 @@
             border-color: #1A302C;
         }
         .shadow-soft { box-shadow: 0 10px 40px rgba(26, 48, 44, 0.05); }
-        
-        /* Custom scrollbar for the table on mobile */
-        .custom-scrollbar::-webkit-scrollbar { height: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #1A302C; border-radius: 10px; }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- 1. NAVIGATION -->
-    <header class="max-w-[1440px] mx-auto px-4 md:px-6 py-6 md:py-8 flex items-center justify-between">
+    <header class="max-w-[1440px] mx-auto px-6 py-8 flex items-center justify-between">
         <div class="flex items-center gap-2">
-            <div class="w-8 h-8 md:w-10 md:h-10 bg-black rounded-full flex items-center justify-center text-white italic font-bold text-sm md:text-base">X</div>
-            <span class="text-lg md:text-xl font-bold tracking-tight">Fittr</span>
+            <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white italic font-bold">X</div>
+            <span class="text-xl font-bold tracking-tight">Fittr</span>
         </div>
         
-        <nav class="hidden lg:flex items-center gap-4">
+        <nav class="hidden lg:flex items-center gap-6">
             <a href="#" class="px-5 py-2 border border-gray-100 rounded-full text-sm font-medium hover:bg-gray-50 transition">Our Service</a>
             <a href="#" class="px-5 py-2 border border-gray-100 rounded-full text-sm font-medium hover:bg-gray-50 transition">Medicine Technology</a>
             <a href="#" class="px-5 py-2 border border-gray-100 rounded-full text-sm font-medium hover:bg-gray-50 transition">About President</a>
         </nav>
 
         <div class="flex items-center gap-4">
-            <div class="hidden sm:block text-right">
-                <p class="text-[9px] uppercase text-gray-400 font-bold tracking-widest leading-none">Emergency</p>
-                <p class="text-xs md:text-sm font-bold">(123) 911-0000</p>
+            <div class="hidden md:block text-right">
+                <p class="text-[10px] uppercase text-gray-400 font-bold tracking-widest">Emergency</p>
+                <p class="text-sm font-bold">(123) 911-0000</p>
             </div>
-            <button class="w-10 h-10 md:w-12 md:h-12 bg-sage-light rounded-full flex flex-col items-center justify-center gap-1.5">
+            <button class="w-12 h-12 bg-sage-light rounded-full flex flex-col items-center justify-center gap-1.5">
                 <div class="w-5 h-[2px] bg-black"></div>
                 <div class="w-5 h-[2px] bg-black"></div>
             </button>
         </div>
     </header>
 
-    <!-- 2. HERO SECTION -->
-    <section class="max-w-[1440px] mx-auto px-4 md:px-6 relative mb-12 lg:mb-0">
-        <div class="relative h-[400px] md:h-[600px] lg:h-[850px] w-full overflow-hidden rounded-[30px] md:rounded-[40px]">
+    <!-- 2. HERO SECTION WITH CONTACT FORM -->
+    <section class="max-w-[1440px] mx-auto px-4 lg:px-6 relative">
+        <div class="relative h-[600px] lg:h-[850px] w-full overflow-hidden rounded-[40px]">
             <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?q=80&w=2070" class="w-full h-full object-cover" alt="Hero">
             
-            <div class="absolute top-6 right-6 bg-white/90 backdrop-blur p-2 rounded-full flex items-center gap-3 shadow-lg hidden md:flex">
-                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=100" class="w-8 h-8 rounded-full object-cover">
-                <div class="pr-3">
-                    <p class="text-[10px] font-bold">Dr. Emily Carter</p>
-                    <p class="text-[8px] text-gray-500 uppercase">General Surgeon</p>
+            <div class="absolute top-8 right-8 bg-white/90 backdrop-blur p-2.5 rounded-full flex items-center gap-3 shadow-lg hidden md:flex">
+                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=100" class="w-10 h-10 rounded-full object-cover">
+                <div class="pr-4">
+                    <p class="text-[11px] font-bold">Dr. Emily Carter</p>
+                    <p class="text-[9px] text-gray-500 uppercase">General Surgeon</p>
                 </div>
             </div>
         </div>
 
         <!-- Overlapping Card -->
-        <div class="lg:absolute bottom-0 left-6 bg-sage-light overlap-card p-8 md:p-12 lg:p-16 lg:w-[500px] z-10 shadow-2xl">
-            <div class="mb-6 md:mb-8">
-                <div class="bg-white/40 text-sage px-3 py-1 rounded-full inline-block text-[9px] font-bold uppercase tracking-widest mb-3">Step 1 of 4</div>
-                <h2 class="text-2xl md:text-3xl font-medium text-sage tracking-tight">Book Your Consultation</h2>
-                <p class="text-sage/60 text-xs md:text-sm mt-2">Enter your details to sync with our medical experts.</p>
+        <div class="lg:absolute bottom-0 left-6 bg-sage-light overlap-card p-10 lg:p-16 lg:w-[500px] z-10 shadow-2xl">
+            <div class="mb-8">
+                <div class="bg-white/40 text-sage px-3 py-1 rounded-full inline-block text-[10px] font-bold uppercase tracking-widest mb-4">Step 1 of 4</div>
+                <h2 class="text-3xl font-medium text-sage tracking-tight">Book Your Consultation</h2>
+                <p class="text-sage/60 text-sm mt-2">Enter your details to sync with our medical experts.</p>
             </div>
 
-            <div class="space-y-4 md:space-y-6">
+            <div class="space-y-6">
                 <div>
                     <label class="text-[9px] text-sage/50 font-bold uppercase block mb-1 tracking-widest">Full Name</label>
-                    <input type="text" placeholder="John Doe" class="form-input w-full py-2 text-base md:text-lg font-medium text-sage placeholder:text-sage/30">
+                    <input type="text" placeholder="John Doe" class="form-input w-full py-2 text-lg font-medium text-sage placeholder:text-sage/30">
                 </div>
-                <div class="grid grid-cols-2 gap-4 md:gap-6">
+                <div class="grid grid-cols-2 gap-6">
                     <div>
                         <label class="text-[9px] text-sage/50 font-bold uppercase block mb-1 tracking-widest">Age</label>
-                        <input type="number" placeholder="28" class="form-input w-full py-2 text-base md:text-lg font-medium text-sage placeholder:text-sage/30">
+                        <input type="number" placeholder="28" class="form-input w-full py-2 text-lg font-medium text-sage placeholder:text-sage/30">
                     </div>
                     <div>
                         <label class="text-[9px] text-sage/50 font-bold uppercase block mb-1 tracking-widest">Gender</label>
-                        <select class="form-input w-full py-2 text-base md:text-lg font-medium text-sage bg-transparent appearance-none cursor-pointer">
+                        <select class="form-input w-full py-2 text-lg font-medium text-sage bg-transparent appearance-none cursor-pointer">
                             <option>Male</option>
                             <option>Female</option>
                             <option>Other</option>
@@ -114,11 +104,11 @@
                 <div>
                     <label class="text-[9px] text-sage/50 font-bold uppercase block mb-1 tracking-widest">Phone Number</label>
                     <div class="flex items-center">
-                        <span class="font-bold text-sage/40 mr-3 text-base md:text-lg border-b border-sage/20 py-2">+1</span>
-                        <input type="tel" placeholder="Mobile number" class="form-input w-full py-2 text-base md:text-lg font-medium text-sage placeholder:text-sage/30">
+                        <span class="font-bold text-sage/40 mr-3 text-lg border-b border-sage/20 py-2">+1</span>
+                        <input type="tel" placeholder="Mobile number" class="form-input w-full py-2 text-lg font-medium text-sage placeholder:text-sage/30">
                     </div>
                 </div>
-                <button class="w-full bg-black text-white py-4 md:py-5 rounded-2xl md:rounded-3xl font-bold text-base md:text-lg hover:bg-sage-dark hover:scale-[1.01] transition-all shadow-lg flex items-center justify-center gap-3 mt-4">
+                <button class="w-full bg-black text-white py-5 rounded-3xl font-bold text-lg hover:bg-sage-dark hover:scale-[1.02] transition-all shadow-lg flex items-center justify-center gap-3 mt-4">
                     Next Step <span class="text-xl">→</span>
                 </button>
             </div>
@@ -126,80 +116,95 @@
     </section>
 
     <!-- 3. MISSION STATEMENT -->
-    <section class="py-16 md:py-24 lg:py-32 px-6 max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl md:text-4xl lg:text-5xl font-normal leading-tight text-gray-800">
+    <section class="py-32 px-6 max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl lg:text-5xl font-normal leading-tight text-gray-800 text-center">
             Fittr Medical Center believes healthcare should be <span class="text-gray-300 italic">seamless and empowering</span> for healthier lives.
         </h2>
     </section>
 
-    <!-- 4. WHY YOU NEED FITTR -->
-    <section class="max-w-[1440px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start py-10 md:py-20">
+    <!-- 4. WHY YOU NEED FITTR (The specific Grid Layout) -->
+    <section class="max-w-[1440px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start py-20">
         <div>
-            <div class="flex items-center gap-3 mb-8 md:mb-12">
+            <div class="flex items-center gap-3 mb-12">
                 <div class="w-2 h-2 bg-black rounded-full"></div>
                 <span class="text-[11px] font-bold uppercase tracking-widest">Why You Need Fittr</span>
             </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 md:mb-12">
-                <!-- Points -->
-                <div class="bg-gray-50 p-6 rounded-[24px] md:rounded-[32px] border border-transparent hover:border-sage-light hover:bg-white transition-all">
+            <!-- Grid of 6 Points (2 Columns) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+                <!-- 1 -->
+                <div class="bg-gray-50 p-6 rounded-[32px] border border-transparent hover:border-sage-light hover:bg-white transition-all">
                     <div class="text-2xl mb-3">🛡️</div>
                     <h3 class="text-sm font-bold mb-1">Proven Results</h3>
                     <p class="text-[12px] text-gray-500 leading-relaxed">400,000+ successful transformations across the globe.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-[24px] md:rounded-[32px] border border-transparent hover:border-sage-light hover:bg-white transition-all">
+                <!-- 2 -->
+                <div class="bg-gray-50 p-6 rounded-[32px] border border-transparent hover:border-sage-light hover:bg-white transition-all">
                     <div class="text-2xl mb-3">🎓</div>
                     <h3 class="text-sm font-bold mb-1">Expert Team</h3>
                     <p class="text-[12px] text-gray-500 leading-relaxed">Certified nutritionists and dieticians at your service.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-[24px] md:rounded-[32px] border border-transparent hover:border-sage-light hover:bg-white transition-all">
+                <!-- 3 -->
+                <div class="bg-gray-50 p-6 rounded-[32px] border border-transparent hover:border-sage-light hover:bg-white transition-all">
                     <div class="text-2xl mb-3">🌿</div>
                     <h3 class="text-sm font-bold mb-1">Holistic Approach</h3>
                     <p class="text-[12px] text-gray-500 leading-relaxed">We focus on long-term health, not just weight loss.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-[24px] md:rounded-[32px] border border-transparent hover:border-sage-light hover:bg-white transition-all">
+                <!-- 4 -->
+                <div class="bg-gray-50 p-6 rounded-[32px] border border-transparent hover:border-sage-light hover:bg-white transition-all">
                     <div class="text-2xl mb-3">🍎</div>
                     <h3 class="text-sm font-bold mb-1">Safe & Natural</h3>
                     <p class="text-[12px] text-gray-500 leading-relaxed">No crash diets or harmful supplements. Only real food.</p>
                 </div>
+                <!-- 5 -->
+                <div class="bg-gray-50 p-6 rounded-[32px] border border-transparent hover:border-sage-light hover:bg-white transition-all">
+                    <div class="text-2xl mb-3">📈</div>
+                    <h3 class="text-sm font-bold mb-1">Sustainable Results</h3>
+                    <p class="text-[12px] text-gray-500 leading-relaxed">Learn habits that stay with you for a lifetime.</p>
+                </div>
+                <!-- 6 -->
+                <div class="bg-gray-50 p-6 rounded-[32px] border border-transparent hover:border-sage-light hover:bg-white transition-all">
+                    <div class="text-2xl mb-3">📅</div>
+                    <h3 class="text-sm font-bold mb-1">Flexible Scheduling</h3>
+                    <p class="text-[12px] text-gray-500 leading-relaxed">Meal and workout plans that fit your busy life.</p>
+                </div>
             </div>
 
-            <button class="w-full sm:w-auto bg-black text-white px-10 py-5 rounded-full font-medium text-center">Start Your Journey ↗</button>
+            <button class="bg-black text-white px-10 py-5 rounded-full font-medium">Start Your Journey ↗</button>
         </div>
         
-        <div class="relative lg:sticky lg:top-10 mt-12 lg:mt-0">
-            <div class="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-32 h-32 md:w-64 md:h-64 border-t-[8px] md:border-t-[12px] border-l-[8px] md:border-l-[12px] border-sage-light rounded-tl-[40px] md:rounded-tl-[60px] z-0"></div>
-            <div class="relative z-10 rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1631815587646-b85a1bb027e1?q=80&w=1000&auto=format&fit=crop" alt="DNA Tech" class="w-full object-cover aspect-[4/5]">
+        <div class="relative sticky top-10">
+            <div class="absolute -top-10 -left-10 w-64 h-64 border-t-[12px] border-l-[12px] border-sage-light rounded-tl-[60px] z-0"></div>
+            <div class="relative z-10 rounded-[60px] overflow-hidden shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1631815587646-b85a1bb027e1?q=80&w=1000&auto=format&fit=crop" 
+                     alt="DNA Tech" 
+                     class="w-full object-cover aspect-[4/5]">
             </div>
         </div>
     </section>
 
     <!-- 5. SUCCESS STORIES -->
-    <section class="max-w-[1440px] mx-auto px-4 md:px-6 py-16 md:py-24 lg:py-32 bg-gray-50 md:rounded-[60px]">
-        <h3 class="text-3xl md:text-5xl font-normal text-center mb-12 md:mb-16">Transformation <span class="text-gray-300 italic font-light">Success Stories</span></h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <!-- Story 1 -->
-            <div class="bg-white p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-soft border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=400" class="rounded-[20px] md:rounded-[30px] mb-6 w-full h-48 object-cover">
+    <section class="max-w-[1440px] mx-auto px-6 py-32 bg-gray-50 rounded-[60px]">
+        <h3 class="text-4xl lg:text-5xl font-normal text-center mb-16">Transformation <span class="text-gray-300 italic font-light">Success Stories</span></h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-[40px] shadow-soft border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=400" class="rounded-[30px] mb-6 w-full h-48 object-cover">
                 <h4 class="font-bold text-xl text-sage">Shilpa Mehta</h4>
                 <div class="flex gap-4 mt-2 mb-4">
                     <span class="text-[10px] font-bold bg-sage-light text-sage px-3 py-1 rounded-full uppercase">Weight ↓ 30kg</span>
                 </div>
                 <p class="text-gray-500 text-sm leading-relaxed">"I struggled with low energy for years... Fittr pushed me to shed 30kg and feel vibrant again."</p>
             </div>
-            <!-- Story 2 -->
-            <div class="bg-white p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-soft border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=400" class="rounded-[20px] md:rounded-[30px] mb-6 w-full h-48 object-cover">
+            <div class="bg-white p-8 rounded-[40px] shadow-soft border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=400" class="rounded-[30px] mb-6 w-full h-48 object-cover">
                 <h4 class="font-bold text-xl text-sage">Dr. Anirudh</h4>
                 <div class="flex gap-4 mt-2 mb-4">
                     <span class="text-[10px] font-bold bg-sage-light text-sage px-3 py-1 rounded-full uppercase">Weight ↓ 70kg</span>
                 </div>
                 <p class="text-gray-500 text-sm leading-relaxed">"At 134kg, I felt like a ticking bomb. I lost 70kg in two years. Life feels new again."</p>
             </div>
-            <!-- Story 3 -->
-            <div class="hidden lg:block bg-white p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-soft border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1552196564-97c36a394a4c?q=80&w=400" class="rounded-[20px] md:rounded-[30px] mb-6 w-full h-48 object-cover">
+            <div class="bg-white p-8 rounded-[40px] shadow-soft border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1552196564-97c36a394a4c?q=80&w=400" class="rounded-[30px] mb-6 w-full h-48 object-cover">
                 <h4 class="font-bold text-xl text-sage">Rajan & Richa</h4>
                 <div class="flex gap-4 mt-2 mb-4">
                     <span class="text-[10px] font-bold bg-sage-light text-sage px-3 py-1 rounded-full uppercase">Combined ↓ 25kg</span>
@@ -209,114 +214,116 @@
         </div>
     </section>
 
-    <!-- 6. 6 STEPS -->
-    <section class="max-w-[1440px] mx-auto px-6 py-16 md:py-24 lg:py-32">
-        <h3 class="text-3xl md:text-5xl font-normal text-center mb-12 md:mb-16">6 Steps to <span class="text-gray-300 italic font-light">Transformation</span></h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            <!-- Step cards -->
-            <div class="bg-white p-8 md:p-10 rounded-[30px] md:rounded-[40px] border border-gray-100 hover:bg-sage-light/20 transition">
+    <!-- 6. 6 STEPS TO TRANSFORMATION -->
+    <section class="max-w-[1440px] mx-auto px-6 py-32">
+        <h3 class="text-4xl lg:text-5xl font-normal text-center mb-16">6 Steps to <span class="text-gray-300 italic font-light">Transformation</span></h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-10 rounded-[40px] border border-gray-100 hover:bg-sage-light/20 transition">
                 <span class="text-sage font-bold text-sm bg-sage-light px-3 py-1 rounded-full">01</span>
-                <h5 class="font-bold text-lg md:text-xl mt-6">Book Consultation</h5>
+                <h5 class="font-bold text-xl mt-6">Book Consultation</h5>
                 <p class="text-sm text-gray-500 mt-3">Schedule a free call with an expert to discuss your goals.</p>
             </div>
-            <div class="bg-white p-8 md:p-10 rounded-[30px] md:rounded-[40px] border border-gray-100 hover:bg-sage-light/20 transition">
+            <div class="bg-white p-10 rounded-[40px] border border-gray-100 hover:bg-sage-light/20 transition">
                 <span class="text-sage font-bold text-sm bg-sage-light px-3 py-1 rounded-full">02</span>
-                <h5 class="font-bold text-lg md:text-xl mt-6">Get a Plan</h5>
+                <h5 class="font-bold text-xl mt-6">Get a Plan</h5>
                 <p class="text-sm text-gray-500 mt-3">Receive your personalized diet & lifestyle plan based on science.</p>
             </div>
-            <div class="bg-white p-8 md:p-10 rounded-[30px] md:rounded-[40px] border border-gray-100 hover:bg-sage-light/20 transition">
+            <div class="bg-white p-10 rounded-[40px] border border-gray-100 hover:bg-sage-light/20 transition">
                 <span class="text-sage font-bold text-sm bg-sage-light px-3 py-1 rounded-full">03</span>
-                <h5 class="font-bold text-lg md:text-xl mt-6">Plan in Action</h5>
+                <h5 class="font-bold text-xl mt-6">Plan in Action</h5>
                 <p class="text-sm text-gray-500 mt-3">Follow your journey and track meals in the Sync App.</p>
             </div>
-            <div class="bg-white p-8 md:p-10 rounded-[30px] md:rounded-[40px] border border-gray-100 hover:bg-sage-light/20 transition">
+            <div class="bg-white p-10 rounded-[40px] border border-gray-100 hover:bg-sage-light/20 transition">
                 <span class="text-sage font-bold text-sm bg-sage-light px-3 py-1 rounded-full">04</span>
-                <h5 class="font-bold text-lg md:text-xl mt-6">Weekly Check-ins</h5>
+                <h5 class="font-bold text-xl mt-6">Weekly Check-ins</h5>
                 <p class="text-sm text-gray-500 mt-3">Stay on track with 1-on-1 calls with your mentor.</p>
             </div>
-            <div class="bg-white p-8 md:p-10 rounded-[30px] md:rounded-[40px] border border-gray-100 hover:bg-sage-light/20 transition">
+            <div class="bg-white p-10 rounded-[40px] border border-gray-100 hover:bg-sage-light/20 transition">
                 <span class="text-sage font-bold text-sm bg-sage-light px-3 py-1 rounded-full">05</span>
-                <h5 class="font-bold text-lg md:text-xl mt-6">Join Community</h5>
+                <h5 class="font-bold text-xl mt-6">Join Community</h5>
                 <p class="text-sm text-gray-500 mt-3">Access 4M+ members for inspiration and daily tips.</p>
             </div>
-            <div class="bg-white p-8 md:p-10 rounded-[30px] md:rounded-[40px] border border-gray-100 hover:bg-sage-light/20 transition">
+            <div class="bg-white p-10 rounded-[40px] border border-gray-100 hover:bg-sage-light/20 transition">
                 <span class="text-sage font-bold text-sm bg-sage-light px-3 py-1 rounded-full">06</span>
-                <h5 class="font-bold text-lg md:text-xl mt-6">Sustain Goals</h5>
+                <h5 class="font-bold text-xl mt-6">Sustain Goals</h5>
                 <p class="text-sm text-gray-500 mt-3">Maintain results with continuous support and knowledge.</p>
             </div>
         </div>
     </section>
 
-    <!-- 7. COMPARISON TABLE (NOW RESPONSIVE) -->
-    <section class="max-w-[1000px] mx-auto py-16 md:py-32 px-4 md:px-6">
-        <h3 class="text-3xl md:text-5xl font-normal mb-12 md:mb-16 text-center">What makes <span class="text-gray-300 italic">us different</span></h3>
-        <div class="bg-white rounded-[30px] md:rounded-[40px] shadow-soft overflow-hidden border border-gray-100">
-            <div class="overflow-x-auto custom-scrollbar">
-                <table class="w-full text-left min-w-[500px]">
-                    <thead>
-                        <tr class="bg-sage-light/30">
-                            <th class="p-6 md:p-8 font-bold text-sage uppercase text-[10px] tracking-widest">Features</th>
-                            <th class="p-6 md:p-8 text-center text-sage font-bold">Fittr</th>
-                            <th class="p-6 md:p-8 text-center text-gray-400 font-medium">Others</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-50 text-xs md:text-sm">
-                        <tr><td class="p-5 md:p-6 pl-8 font-medium">Personalised Diet Plans</td><td class="text-center text-sage font-bold text-xl">✔</td><td class="text-center text-gray-200">✖</td></tr>
-                        <tr><td class="p-5 md:p-6 pl-8 font-medium">1-on-1 Expert Coaching</td><td class="text-center text-sage font-bold text-xl">✔</td><td class="text-center text-sage text-xl">✔</td></tr>
-                        <tr><td class="p-5 md:p-6 pl-8 font-medium">Quantified Nutrition Tech</td><td class="text-center text-sage font-bold text-xl">✔</td><td class="text-center text-gray-200">✖</td></tr>
-                        <tr><td class="p-5 md:p-6 pl-8 font-medium">Community Access (4M+)</td><td class="text-center text-sage font-bold text-xl">✔</td><td class="text-center text-gray-200">✖</td></tr>
-                        <tr><td class="p-5 md:p-6 pl-8 font-medium">No Supplements Policy</td><td class="text-center text-sage font-bold text-xl">✔</td><td class="text-center text-gray-200">✖</td></tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- 7. COMPARISON TABLE -->
+    <section class="max-w-[1000px] mx-auto py-32 px-6">
+        <h3 class="text-4xl lg:text-5xl font-normal mb-16 text-center">What makes <span class="text-gray-300 italic">us different</span></h3>
+        <div class="bg-white rounded-[40px] shadow-soft overflow-hidden border border-gray-100">
+            <table class="w-full text-left">
+                <thead>
+                    <tr class="bg-sage-light/30">
+                        <th class="p-8 font-bold text-sage uppercase text-[10px] tracking-widest">Features</th>
+                        <th class="p-8 text-center text-sage font-bold">Fittr</th>
+                        <th class="p-8 text-center text-gray-400 font-medium">Others</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50 text-sm">
+                    <tr><td class="p-6 pl-8 font-medium">Personalised Diet Plans</td><td class="text-center text-sage font-bold text-xl">✔</td><td class="text-center text-gray-200">✖</td></tr>
+                    <tr><td class="p-6 pl-8 font-medium">1-on-1 Expert Coaching</td><td class="text-center text-sage font-bold text-xl">✔</td><td class="text-center text-sage text-xl">✔</td></tr>
+                    <tr><td class="p-6 pl-8 font-medium">Quantified Nutrition Tech</td><td class="text-center text-sage font-bold text-xl">✔</td><td class="text-center text-gray-200">✖</td></tr>
+                    <tr><td class="p-6 pl-8 font-medium">Community Access (4M+)</td><td class="text-center text-sage font-bold text-xl">✔</td><td class="text-center text-gray-200">✖</td></tr>
+                    <tr><td class="p-6 pl-8 font-medium">No Supplements Policy</td><td class="text-center text-sage font-bold text-xl">✔</td><td class="text-center text-gray-200">✖</td></tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
     <!-- 8. FAQ -->
-    <section class="max-w-3xl mx-auto py-16 md:py-32 px-6">
-        <h3 class="text-3xl md:text-5xl font-normal mb-4 text-center">Questions?</h3>
-        <p class="text-gray-400 mb-12 md:mb-16 text-center text-sm">Everything you need to know about Fittr.</p>
+    <section class="max-w-3xl mx-auto py-32 px-6">
+        <h3 class="text-4xl lg:text-5xl font-normal mb-4 text-center">Questions?</h3>
+        <p class="text-gray-400 mb-16 text-center text-sm">Everything you need to know about Fittr.</p>
         <div class="space-y-4">
-            <div class="bg-white p-6 md:p-8 rounded-[24px] md:rounded-[30px] shadow-soft flex justify-between items-center group cursor-pointer border border-transparent hover:border-sage-light transition">
-                <span class="font-bold text-sage text-sm md:text-base">What is Fittr?</span>
+            <div class="bg-white p-8 rounded-[30px] shadow-soft flex justify-between items-center group cursor-pointer border border-transparent hover:border-sage-light transition">
+                <span class="font-bold text-sage">What is Fittr?</span>
                 <span class="w-8 h-8 bg-sage-light rounded-full flex items-center justify-center text-sage">+</span>
             </div>
-            <div class="bg-white p-6 md:p-8 rounded-[24px] md:rounded-[30px] shadow-soft flex justify-between items-center group cursor-pointer border border-transparent hover:border-sage-light transition">
-                <span class="font-bold text-sage text-sm md:text-base">How does online coaching work?</span>
+            <div class="bg-white p-8 rounded-[30px] shadow-soft flex justify-between items-center group cursor-pointer border border-transparent hover:border-sage-light transition">
+                <span class="font-bold text-sage">How does online coaching work?</span>
+                <span class="w-8 h-8 bg-sage-light rounded-full flex items-center justify-center text-sage">+</span>
+            </div>
+            <div class="bg-white p-8 rounded-[30px] shadow-soft flex justify-between items-center group cursor-pointer border border-transparent hover:border-sage-light transition">
+                <span class="font-bold text-sage">Are the programs safe?</span>
                 <span class="w-8 h-8 bg-sage-light rounded-full flex items-center justify-center text-sage">+</span>
             </div>
         </div>
     </section>
 
     <!-- 9. PRE-FOOTER CTA -->
-    <section class="bg-sage-dark text-white py-20 md:py-32 text-center md:rounded-[60px] mx-0 md:mx-4 mb-10 overflow-hidden relative">
+    <section class="bg-sage-dark text-white py-32 text-center rounded-[60px] mx-4 mb-10 overflow-hidden relative">
         <div class="relative z-10 px-6">
-            <h2 class="text-3xl md:text-6xl font-normal mb-8 leading-tight">Still <span class="text-gray-400 italic font-light">not convinced</span>?</h2>
-            <p class="text-gray-400 mb-10 md:mb-12 max-w-xl mx-auto text-sm md:text-base">Join thousands who have already changed their lives through science-backed nutrition and training.</p>
-            <button class="w-full sm:w-auto bg-white text-black px-12 py-5 md:py-6 rounded-full font-bold text-base md:text-lg hover:bg-sage-light transition-all">
+            <h2 class="text-4xl lg:text-6xl font-normal mb-8 leading-tight">Still <span class="text-gray-400 italic font-light">not convinced</span>?</h2>
+            <p class="text-gray-400 mb-12 max-w-xl mx-auto">Join thousands who have already changed their lives through science-backed nutrition and training.</p>
+            <button class="bg-white text-black px-12 py-6 rounded-full font-bold text-lg hover:bg-sage-light transition-all">
                 Book Your Free Consultation Now
             </button>
         </div>
     </section>
 
     <!-- 10. FOOTER -->
-    <footer class="bg-white text-sage py-16 md:py-24 border-t border-gray-100">
+    <footer class="bg-white text-sage py-24 border-t border-gray-100">
         <div class="max-w-[1440px] mx-auto px-6">
-            <div class="flex flex-col lg:flex-row justify-between items-center pb-12 md:pb-20 mb-12 md:mb-20 gap-10">
+            <div class="flex flex-col lg:flex-row justify-between items-center pb-20 mb-20 gap-10">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 md:w-16 md:h-16 bg-black rounded-full flex items-center justify-center text-white italic font-bold text-2xl md:text-3xl">X</div>
-                    <span class="text-3xl md:text-4xl font-bold tracking-tight text-black">Fittr</span>
+                    <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white italic font-bold text-3xl">X</div>
+                    <span class="text-4xl font-bold tracking-tight text-black">Fittr</span>
                 </div>
                 <div class="text-center lg:text-right text-black">
                     <p class="text-gray-400 mb-2 font-bold uppercase text-[10px] tracking-widest">For General Inquiries</p>
-                    <p class="text-xl md:text-3xl font-medium underline">care@Fittr.com</p>
+                    <p class="text-3xl font-medium underline">care@Fittr.com</p>
                 </div>
             </div>
-            <div class="flex flex-col md:flex-row justify-between gap-6 text-gray-400 text-[10px] font-bold uppercase tracking-widest text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between gap-10 text-gray-400 text-[11px] font-bold uppercase tracking-widest">
                 <p>© 2025 Fittr Medical Center. All Rights Reserved.</p>
-                <div class="flex justify-center md:justify-end gap-6 md:gap-8">
+                <div class="flex gap-8">
                     <a href="#" class="hover:text-black">Privacy Policy</a>
                     <a href="#" class="hover:text-black">Terms of Use</a>
+                    <a href="#" class="hover:text-black">LinkedIn</a>
                 </div>
             </div>
         </div>
