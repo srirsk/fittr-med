@@ -86,6 +86,9 @@
         ::-webkit-scrollbar-track { background: #F1F5F9; }
         ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #11A663; }
+
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="antialiased">
@@ -138,14 +141,13 @@
                 <div class="glass-card rounded-[32px] md:col-span-2 flex flex-col md:flex-row overflow-hidden bg-white">
                     
                     <!-- Image: Above content on mobile (order-first), Side on desktop (order-last) -->
-                   <!-- Replace your current image container div with this -->
-<div class="relative w-full md:w-1/2 aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] order-first md:order-last overflow-hidden bg-slate-100 rounded-r-[32px] md:rounded-r-none">
-    <img 
-    src="./assets/images/doctor1.jpg"
-    class="absolute inset-0 w-full h-full object-cover object-top scale-105"
-    alt="Clear Medical Nutrition"
-/>
-</div>
+                    <div class="relative w-full md:w-1/2 aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] order-first md:order-last overflow-hidden bg-slate-100 rounded-r-[32px] md:rounded-r-none">
+                        <img 
+                            src="./assets/images/doctor1.jpg"
+                            class="absolute inset-0 w-full h-full object-cover object-top scale-105"
+                            alt="Clear Medical Nutrition"
+                        />
+                    </div>
 
                     <!-- Content -->
                     <div class="p-8 md:p-10 flex flex-col justify-between flex-1">
@@ -175,6 +177,8 @@
                 </div>
             </div>
         </section>
+
+       
 
         <!-- REGISTRATION SECTION -->
         <section class="max-w-7xl mx-auto px-6 py-24 md:py-40 bg-slate-50/50 rounded-[60px]">
@@ -255,6 +259,76 @@
             </div>
         </section>
 
+         <!-- DOCTOR PANELISTS (Horizontal Scroll) -->
+        <section class="py-24 bg-white" id="doctors">
+            <div class="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end">
+                <div class="max-w-xl">
+                    <h3 class="text-4xl md:text-5xl font-extrabold tracking-tighter uppercase italic text-slate-900">Expert <span class="text-fittr-green">Medical Panel</span></h3>
+                    <p class="text-slate-500 mt-4 font-medium">Guidance from India's leading endocrinologists, cardiologists, and lifestyle medicine specialists.</p>
+                </div>
+                <div class="hidden md:flex gap-2">
+                    <div class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400">←</div>
+                    <div class="w-10 h-10 rounded-full border border-fittr-green flex items-center justify-center text-fittr-green">→</div>
+                </div>
+            </div>
+
+            <!-- Scrollable Area -->
+            <div class="flex overflow-x-auto gap-6 px-6 md:px-[calc((100vw-1280px)/2+24px)] hide-scrollbar snap-x cursor-grab active:cursor-grabbing pb-12">
+                <!-- Doctor Card 1 -->
+                <div class="min-w-[300px] md:min-w-[350px] snap-center">
+                    <div class="glass-card rounded-[32px] overflow-hidden bg-white group">
+                        <div class="h-80 overflow-hidden bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Dr. Amit Verma">
+                        </div>
+                        <div class="p-8">
+                            <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Endocrinology</span>
+                            <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Amit Verma</h4>
+                            <p class="text-sm text-slate-500 mt-3 leading-relaxed">Specialist in Type-2 Diabetes reversal with 15+ years of clinical practice in metabolic health.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Doctor Card 2 -->
+                <div class="min-w-[300px] md:min-w-[350px] snap-center">
+                    <div class="glass-card rounded-[32px] overflow-hidden bg-white group">
+                        <div class="h-80 overflow-hidden bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Dr. Shalini Rao">
+                        </div>
+                        <div class="p-8">
+                            <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Cardiology</span>
+                            <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Shalini Rao</h4>
+                            <p class="text-sm text-slate-500 mt-3 leading-relaxed">Focusing on preventative cardiology and systemic inflammation management through nutrition.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Doctor Card 3 -->
+                <div class="min-w-[300px] md:min-w-[350px] snap-center">
+                    <div class="glass-card rounded-[32px] overflow-hidden bg-white group">
+                        <div class="h-80 overflow-hidden bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Dr. Rohan Khanna">
+                        </div>
+                        <div class="p-8">
+                            <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Lifestyle Medicine</span>
+                            <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Rohan Khanna</h4>
+                            <p class="text-sm text-slate-500 mt-3 leading-relaxed">MD in Internal Medicine, specializing in lifestyle intervention for obesity and PCOS.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Doctor Card 4 -->
+                <div class="min-w-[300px] md:min-w-[350px] snap-center">
+                    <div class="glass-card rounded-[32px] overflow-hidden bg-white group">
+                        <div class="h-80 overflow-hidden bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Dr. Priya Singh">
+                        </div>
+                        <div class="p-8">
+                            <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Functional Medicine</span>
+                            <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Priya Singh</h4>
+                            <p class="text-sm text-slate-500 mt-3 leading-relaxed">Expert in gut health and its impact on metabolic markers and mental clarity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- SUCCESS STORIES -->
         <section class="max-w-7xl mx-auto px-6 py-24" id="stories">
             <h3 class="text-4xl md:text-5xl font-extrabold tracking-tighter text-center mb-16 uppercase italic text-slate-900">Patient <span class="text-fittr-green">Outcomes</span></h3>
@@ -276,6 +350,59 @@
                     <h4 class="font-bold text-lg text-slate-900">Rajan & Richa</h4>
                     <span class="text-[9px] font-black bg-fittr-green/10 text-fittr-green px-2 py-1 rounded-full uppercase tracking-tighter inline-block mt-2">Metabolic Balance</span>
                     <p class="text-slate-500 text-xs mt-4 leading-relaxed italic">"Managing high-stress medical careers while losing 25kg combined. Results are real."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO TESTIMONIALS SECTION -->
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-extrabold tracking-tighter uppercase italic text-slate-900">Voices of <span class="text-fittr-green">Transformation</span></h3>
+                <p class="text-slate-500 mt-4">Real patients, real metrics, real life changes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div class="space-y-4">
+                    <div class="aspect-video rounded-[32px] overflow-hidden bg-slate-200 border border-slate-100 shadow-lg relative group">
+                        <!-- Replace with <iframe> for real YouTube/Vimeo -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 bg-fittr-green rounded-full flex items-center justify-center text-white pl-1 shadow-xl group-hover:scale-110 transition-transform">▶</div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover opacity-60">
+                    </div>
+                    <div class="px-2">
+                        <h5 class="font-bold text-slate-900 italic">"How I Reversed My HbA1c"</h5>
+                        <p class="text-xs text-slate-500 mt-1 uppercase font-bold tracking-widest">By Vikram Sharma • 12 Months Journey</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="space-y-4">
+                    <div class="aspect-video rounded-[32px] overflow-hidden bg-slate-200 border border-slate-100 shadow-lg relative group">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 bg-fittr-green rounded-full flex items-center justify-center text-white pl-1 shadow-xl group-hover:scale-110 transition-transform">▶</div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover opacity-60">
+                    </div>
+                    <div class="px-2">
+                        <h5 class="font-bold text-slate-900 italic">"Managing PCOS Naturally"</h5>
+                        <p class="text-xs text-slate-500 mt-1 uppercase font-bold tracking-widest">By Ananya Iyer • Metabolic Balance</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="space-y-4">
+                    <div class="aspect-video rounded-[32px] overflow-hidden bg-slate-200 border border-slate-100 shadow-lg relative group">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 bg-fittr-green rounded-full flex items-center justify-center text-white pl-1 shadow-xl group-hover:scale-110 transition-transform">▶</div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover opacity-60">
+                    </div>
+                    <div class="px-2">
+                        <h5 class="font-bold text-slate-900 italic">"The Doctor's Transformation"</h5>
+                        <p class="text-xs text-slate-500 mt-1 uppercase font-bold tracking-widest">By Dr. Rahul • 70kg Weight Loss</p>
+                    </div>
                 </div>
             </div>
         </section>
