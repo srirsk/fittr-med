@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FITTR DIABETES | Type-2 Remission & HbA1c Management</title>
+    <title>FITTR DIABETES | Reverse Type 2 Diabetes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --fittr-green: #11A663;
             --bg-light: #F8FAFC;
-            --card-glass: rgba(255, 255, 255, 0.8);
+            --card-glass: rgba(255, 255, 255, 0.9);
             --border-glass: rgba(0, 0, 0, 0.06);
             --text-main: #0F172A;
-            --text-muted: #64748B;
         }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
@@ -21,53 +20,37 @@
             color: var(--text-main);
             scroll-behavior: smooth;
         }
-        
+
+        @keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
         .glass-card {
             background: var(--card-glass);
             backdrop-filter: blur(12px);
             border: 1px solid var(--border-glass);
-            box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.02);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        /* Added Hover Effect from original bento design */
         .glass-card:hover {
             border-color: var(--fittr-green);
-            background: #FFFFFF;
-            box-shadow: 0 20px 40px -12px rgba(17, 166, 99, 0.1);
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(17, 166, 99, 0.15);
         }
-
         .text-gradient {
             background: linear-gradient(135deg, #0F172A 30%, #11A663 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: inline-block;
+            padding-bottom: 0.15em;
+            margin-bottom: -0.15em;
         }
-
-        .hero-glow {
-            position: absolute;
-            top: -10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 600px;
-            background: radial-gradient(circle, rgba(17, 166, 99, 0.08) 0%, transparent 70%);
-            z-index: -1;
-        }
-
-        /* 2025 Lead Gen Inputs - Light Mode */
-        input, select {
-            background: #FFFFFF !important;
-            border: 1px solid rgba(0, 0, 0, 0.08) !important;
-            color: var(--text-main) !important;
-            border-radius: 12px !important;
-            transition: all 0.3s ease;
-        }
-        input:focus, select:focus {
-            border-color: var(--fittr-green) !important;
-            box-shadow: 0 0 0 4px rgba(17, 166, 99, 0.1);
-            outline: none;
-        }
-
-        .btn-medical {
+    
+         .btn-medical {
             background: var(--fittr-green);
             color: #FFFFFF;
             font-weight: 800;
@@ -95,313 +78,108 @@
 
     <!-- NAVIGATION -->
     <header class="fixed top-0 w-full z-50 px-4 md:px-6 py-4">
-        <nav class="max-w-7xl mx-auto glass-card rounded-full px-6 md:px-10 py-3 flex justify-between items-center border border-white/50 shadow-lg">
-            <div class="flex items-center gap-2">
-                <div class="w-6 h-6 bg-fittr-green rounded flex items-center justify-center rotate-45">
-                    <div class="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span class="font-extrabold tracking-tighter text-xl uppercase italic text-slate-900">Fittr<span class="text-fittr-green">.</span></span>
+        <nav class="max-w-7xl mx-auto glass-card rounded-full px-6 py-3 flex justify-between items-center shadow-lg border-white/50">
+            <span class="font-extrabold tracking-tighter text-xl uppercase italic">Fittr<span class="text-fittr-green">.</span></span>
+            <div class="hidden lg:flex gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                <a href="#why">Why Fittr</a>
+                <a href="#how">Program</a>
+                <a href="#eligibility">Eligibility</a>
             </div>
-
-               <div class="hidden lg:flex gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-500">
-                <a href="#benefits" class="hover:text-fittr-green transition">The Science</a>
-                <a href="#stories" class="hover:text-fittr-green transition">Remission Stories</a>
-                <a href="#process" class="hover:text-fittr-green transition">The Protocol</a>
-            </div>
-            <button class="bg-slate-900 text-white text-[10px] font-extrabold px-6 py-2.5 rounded-full uppercase tracking-tighter hover:bg-fittr-green transition">
-                Consult Diabetologist
-            </button>
+            <a href="#form" class="bg-slate-900 text-white text-[10px] font-extrabold px-6 py-2.5 rounded-full uppercase">Free Consultation</a>
         </nav>
     </header>
 
-    <main class="relative">
-        <div class="hero-glow"></div>
-
+    <main class="pt-32">
         <!-- HERO SECTION -->
-        <section class="max-w-7xl mx-auto px-6 pt-32 md:pt-48 pb-20 text-center">
-            <div class="inline-flex items-center gap-2 bg-fittr-green/10 border border-fittr-green/20 px-4 py-1.5 rounded-full mb-8">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-fittr-green opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-fittr-green"></span>
-                </span>
-                <span class="text-[10px] font-bold text-fittr-green uppercase tracking-[0.2em]">Endocrinology & Remission Unit</span>
+        <section class="max-w-7xl mx-auto px-6 text-center mb-24">
+            <div class="inline-block bg-fittr-green/10 text-fittr-green px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest border border-fittr-green/20 mb-8">
+                India’s leading preventive healthcare ecosystem for diabetes remission
             </div>
-            
-            <h1 class="text-5xl md:text-8xl font-extrabold leading-[0.95] tracking-tighter mb-8 text-slate-900">
-                GENETICALLY <br> <span class="text-gradient italic">OPTIMIZED.</span>
+            <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter leading-[1.1] mb-8 text-slate-900">
+                REVERSE TYPE 2 DIABETES <br>
+                <span class="text-gradient italic">SAFELY, SCIENTIFICALLY, SUSTAINABLY</span>
             </h1>
-            
-            <p class="max-w-2xl mx-auto text-slate-600 text-lg md:text-xl font-medium leading-relaxed mb-12">
-                Reverse Type-2 Diabetes through <strong>insulin sensitization</strong> and lifestyle medicine. Join 400k+ users who have successfully lowered HbA1c and tapered medication safely.
+            <p class="max-w-3xl mx-auto text-slate-600 text-lg md:text-xl font-medium mb-10">
+                At Fittr, we don’t just help you manage diabetes - We help you reverse it through a structured, end-to-end health journey covering diagnosis, lifestyle intervention, continuous monitoring, and optimisation along the way.
             </p>
+            <div class="flex flex-wrap justify-center gap-6 mb-12 text-sm font-bold text-slate-700">
+                <span>✓ Backed by science</span>
+                <span>✓ Guided by certified experts</span>
+                <span>✓ Built for real-world sustainability</span>
+            </div>
+            <a href="#form" class="btn-medical px-10 py-5 rounded-2xl text-lg inline-block">👉 Check Your Eligibility | Free Consultation</a>
+        </section>
 
-            <!-- HERO BANNER (Stats Bento) - FIXED IMAGE POSITIONING & CLARITY -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
-                <div class="glass-card rounded-[32px] md:col-span-2 flex flex-col md:flex-row overflow-hidden bg-white">
-                    
-                    <!-- Image: Above content on mobile (order-first), Side on desktop (order-last) -->
-                    <div class="relative w-full md:w-1/2 aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] order-first md:order-last overflow-hidden bg-slate-100 rounded-r-[32px] md:rounded-r-none">
-                        <img 
-                            src="./assets/images/doctor1.jpg"
-                            class="absolute inset-0 w-full h-full object-cover object-top scale-105"
-                            alt="Clear Medical Nutrition"
-                        />
-                    </div>
+        <!-- WHY FITTR BENTO GRID (REPLACED SECTION) -->
+        <section class="max-w-7xl mx-auto px-6 py-24 border-t border-slate-200" id="why">
+            <div class="mb-16">
+                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter leading-tight text-slate-900 uppercase italic">Why Fittr is <br><span class="text-fittr-green">Different</span></h2>
+                <p class="text-slate-500 mt-4 max-w-xl font-medium">Fittr is a full-stack preventive healthcare ecosystem with all capabilities in-house. We take ownership of your entire journey.</p>
+            </div>
 
-                    <!-- Content -->
-                    <div class="p-8 md:p-10 flex flex-col justify-between flex-1">
-                        <div>
-                            <h2 class="text-3xl font-bold mb-4 text-slate-900">HbA1c target: <br>Below 5.7%</h2>
-                            <p class="text-slate-500 text-sm max-w-xs leading-relaxed">Our clinical protocol focuses on reducing glycemic variability and restoring pancreatic efficiency without extreme restriction.</p>
-                        </div>
-                        <div class="flex gap-4 mt-8">
-                            <div class="bg-slate-50 border border-slate-100 p-4 rounded-2xl flex-1 md:flex-none">
-                                <p class="text-2xl font-bold text-fittr-green">400K+</p>
-                                <p class="text-[9px] uppercase font-black text-slate-400">Clinical Wins</p>
-                            </div>
-                            <div class="bg-slate-50 border border-slate-100 p-4 rounded-2xl flex-1 md:flex-none">
-                                <p class="text-2xl font-bold text-fittr-green">4.8/5</p>
-                                <p class="text-[9px] uppercase font-black text-slate-400">Patient Rating</p>
-                            </div>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="md:col-span-2 glass-card p-10 rounded-[48px] bg-white flex flex-col justify-between border-l-8 border-fittr-green">
+                    <h3 class="text-3xl font-bold tracking-tight mb-4">100s of Success Stories</h3>
+                    <p class="text-slate-500 mb-8 leading-relaxed">Join <strong>450,000+ transformations</strong> across India who have achieved measurable improvements in blood sugar, energy, and long-term health.</p>
+                    <div class="flex -space-x-4">
+                        <div class="w-12 h-12 rounded-full border-4 border-white bg-slate-200"></div>
+                        <div class="w-12 h-12 rounded-full border-4 border-white bg-slate-300"></div>
+                        <div class="w-12 h-12 rounded-full border-4 border-white bg-fittr-green flex items-center justify-center text-[10px] text-white font-bold">450K+</div>
                     </div>
                 </div>
 
-                <div class="glass-card p-8 rounded-[32px] flex flex-col justify-between border-l-4 border-l-fittr-green bg-white">
-                    <div class="space-y-4">
-                        <div class="text-xs font-black uppercase text-fittr-green tracking-widest">Protocol Focus</div>
-                         <p class="text-sm text-slate-600">Using <strong>carb-cycling</strong> and resistance training to drain glycogen stores and improve peripheral insulin sensitivity.</p>
+                <div class="glass-card p-8 rounded-[40px] bg-slate-900 text-white">
+                    <div class="text-3xl mb-4">🔬</div>
+                    <h4 class="font-black uppercase text-xs tracking-widest text-fittr-green mb-2">Diagnostics</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Cutting-edge <strong>NCD clinic</strong> and biomarker analysis capabilities in-house.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-[40px] bg-white">
+                    <div class="text-3xl mb-4">👨‍⚕️</div>
+                    <h4 class="font-black uppercase text-xs tracking-widest text-slate-400 mb-2">Medical Panel</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Direct collaboration with <strong>30+ Doctors</strong> and medical experts.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-[40px] bg-white">
+                    <div class="text-3xl mb-4">🏋️</div>
+                    <h4 class="font-black uppercase text-xs tracking-widest text-slate-400 mb-2">Coaching Force</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed"><strong>700+ Certified Coaches</strong> for 1-1 nutrition and fitness intervention.</p>
+                </div>
+
+                <div class="md:col-span-3 glass-card p-10 rounded-[48px] bg-white flex items-center gap-10">
+                    <div class="hidden md:block w-32 h-32 bg-fittr-green/10 rounded-full flex items-center justify-center text-4xl">🎯</div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2 uppercase italic">Full-Stack Ownership</h3>
+                        <p class="text-slate-500 text-sm max-w-xl">From diagnostic testing to personalised lifestyle interventions and periodic reassessments—we handle it all under one roof.</p>
                     </div>
-                    <button class="text-fittr-green font-bold text-xs flex items-center gap-2 mt-4 hover:translate-x-1 transition-transform">VIEW REMISSION DATA <span>→</span></button>
                 </div>
             </div>
         </section>
 
-       
-
-       <!-- REGISTRATION SECTION -->
-        <section class="max-w-7xl mx-auto px-6 py-24 md:py-40 bg-slate-50/50 rounded-[60px]">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div class="space-y-8">
-                    <div class="bg-fittr-green/10 text-fittr-green px-4 py-1 rounded-full inline-block text-[10px] font-bold uppercase tracking-widest border border-fittr-green/20">Step 01: Glycemic Assessment</div>
-                    <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter leading-tight text-slate-900">Start Your <br><span class="text-fittr-green uppercase italic">Drug-Free Life</span></h2>
-                    <p class="text-slate-600 max-w-lg leading-relaxed text-lg font-medium">Our medical team reviews your latest lab reports to design a nutrition path that stabilizes blood sugar within the first 14 days.</p>
-                    
-                    <div class="flex gap-4 items-center">
-                        <div class="flex -space-x-4">
-                            <div class="w-12 h-12 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-700">MD</div>
-                            <div class="w-12 h-12 rounded-full border-2 border-white bg-slate-300 flex items-center justify-center text-[10px] font-bold text-slate-700">RD</div>
-                            <div class="w-12 h-12 rounded-full border-2 border-white bg-fittr-green flex items-center justify-center text-[10px] font-bold text-white italic">OS</div>
-                        </div>
-                        <div>
-                            <p class="text-sm font-bold text-slate-900">Join 4M+ Globally</p>
-                            <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Largest Diabetes Community</p>
-                        </div>
+        <!-- DEFINITION SECTION -->
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <div class="bg-slate-900 text-white rounded-[60px] p-10 md:p-20 relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-6 uppercase italic">What Do We Mean by <br><span class="text-fittr-green">Diabetes Reversal?</span></h2>
+                    <p class="text-2xl font-bold italic text-slate-300 mb-10">Eliminated dependency on medication! That's the Goal.</p>
+                    <p class="text-slate-400 max-w-4xl mb-12 leading-relaxed">
+                        At Fittr, diabetes reversal refers to achieving and sustaining healthy blood glucose levels (HbA1c) through lifestyle interventions, with eliminated dependency on medication by gradual reduction, under medical supervision (World Health Organisation).
+                    </p>
+                    <p class="text-xs font-black text-fittr-green uppercase tracking-[0.3em] mb-6">This aligns with global diabetes remission frameworks:</p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/10 font-bold text-sm italic">Improved insulin sensitivity</div>
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/10 font-bold text-sm italic">Reduced HbA1c</div>
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/10 font-bold text-sm italic">Better metabolic health markers</div>
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/10 font-bold text-sm italic">Sustainable lifestyle habits</div>
                     </div>
-                </div>
-
-                <!-- FORM -->
-                <div class="bg-white p-8 md:p-12 rounded-[40px] shadow-2xl border border-slate-100 relative">
-                    <div class="absolute -top-4 right-10 bg-slate-900 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase">Clinical Intake</div>
-                    <p class="text-fittr-green font-black mb-8 text-center text-[10px] tracking-[0.3em] uppercase italic">Diabetes Profile</p>
-                    <form class="space-y-6">
-                        <div>
-                            <label class="text-[10px] text-slate-400 font-bold uppercase mb-2 block tracking-widest">Full Name</label>
-                            <input type="text" placeholder="e.g. Rahul Sharma" class="w-full px-5 py-4 focus:outline-none">
-                        </div>
-                        <div class="grid grid-cols-2 gap-6">
-                            <div>
-                                <label class="text-[10px] text-slate-400 font-bold uppercase mb-2 block tracking-widest">Current HbA1c</label>
-                                <input type="number" step="0.1" placeholder="e.g. 7.5" class="w-full px-5 py-4 focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="text-[10px] text-slate-400 font-bold uppercase mb-2 block tracking-widest">Condition</label>
-                                <select class="w-full px-5 py-4 focus:outline-none appearance-none">
-                                    <option>Type-2 Diabetes</option>
-                                    <option>Pre-Diabetes</option>
-                                    <option>Gestational Diabetes</option>
-                                    <option>Metabolic Syndrome</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <label class="text-[10px] text-slate-400 font-bold uppercase mb-2 block tracking-widest">Mobile (For Call Slot)</label>
-                            <input type="tel" placeholder="+91 00000 00000" class="w-full px-5 py-4 focus:outline-none">
-                        </div>
-                        <button class="w-full btn-medical py-5 rounded-2xl text-lg">
-                            Request Clinical Call →
-                        </button>
-                    </form>
+                    <div class="mt-12 pt-8 border-t border-white/10">
+                        <p class="text-[10px] font-black uppercase text-slate-500 tracking-widest">⚠️ Medication changes are never abrupt and are coordinated with your treating doctor.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-<!-- WHY CHOOSE FITTR SECTION -->
-<section class="max-w-7xl mx-auto px-6 py-24" id="benefits">
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
         
-        <!-- LEFT SIDE (7 COLS) -->
-        <div class="lg:col-span-7 flex flex-col justify-between">
-            <div>
-                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-slate-900 leading-[1.1] mb-12">
-                    Why Choose Fittr for <br><span class="italic">Diabetes Reversal?</span>
-                </h2>
-
-                <div class="space-y-6">
-                    <!-- Top Row: 2 Cards -->
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <!-- Card 1: Proven Track Record -->
-                        <div class="glass-card p-8 rounded-[40px] bg-white group hover:bg-fittr-green transition-all duration-500">
-                            <div class="w-14 h-14 bg-fittr-green/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-black/5 transition-colors">
-                                <svg class="w-7 h-7 text-fittr-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                                </svg>
-                            </div>
-                            <h4 class="text-xl font-bold text-slate-900 transition-colors mb-3">Proven Track Record</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed transition-colors">
-                                Over <span class="font-bold text-fittr-green">400,000 successful transformations</span> across India. Join thousands who've reversed naturally.
-                            </p>
-                        </div>
-
-                        <!-- Card 2: End-to-End Support -->
-                        <div class="glass-card p-8 rounded-[40px] bg-white group hover:bg-fittr-green transition-all duration-500">
-                            <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-black/5 transition-colors">
-                                <svg class="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                                </svg>
-                            </div>
-                            <h4 class="text-xl font-bold text-slate-900 transition-colors mb-3">End-to-End Support</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed transition-colors">
-                                Complete personalised care from certified experts. We're with you through every milestone.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: Scientific Approach (Wide) -->
-                    <div class="glass-card p-8 md:p-10 rounded-[40px] bg-white flex flex-col md:flex-row md:items-center gap-8 border-b-4 border-b-fittr-green">
-                        <div class="w-16 h-16 bg-fittr-green/5 rounded-3xl flex items-center justify-center flex-shrink-0">
-                            <svg class="w-8 h-8 text-fittr-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.022.547l-2.387 2.387a2 2 0 102.828 2.828l3.474-3.474a4 4 0 002.573-.345l.318-.158a4 4 0 012.573-.345l3.474 3.474a2 2 0 102.828-2.828l-2.387-2.387z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="text-2xl font-bold text-slate-900 mb-2">Scientific Approach</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed max-w-xl">
-                                Evidence-based methods backed by latest diabetes research. Continuous monitoring ensures your plan evolves with you.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="text-slate-500 font-medium leading-relaxed max-w-2xl mt-12 border-l-2 border-slate-100 pl-6 italic">
-                Fittr is India's leading preventive healthcare ecosystem. We combine cutting-edge science with personalised human support to help you reverse lifestyle diseases safely and sustainably.
-            </p>
-        </div>
-
-        <!-- RIGHT SIDE (5 COLS): THE IMAGE -->
-        <div class="lg:col-span-5 relative group h-full min-h-[600px]">
-            <!-- Background Glow -->
-            <div class="absolute inset-0 bg-fittr-green/5 blur-3xl -z-10 rounded-full scale-75 group-hover:scale-100 transition-transform duration-1000"></div>
-            
-            <!-- THE FLOATING CARD (Moved outside the overflow container) -->
-            <div class="absolute top-20 -left-12 z-30 glass-card bg-white/95 px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-4 animate-bounce-slow border-l-4 border-fittr-green">
-                <div class="w-10 h-10 bg-fittr-green rounded-full flex items-center justify-center text-white shadow-lg">📉</div>
-                <div>
-                    <p class="text-[10px] font-black uppercase tracking-tighter text-slate-400">Avg. HbA1c Drop</p>
-                    <p class="text-lg font-black text-slate-900">-2.4%</p>
-                </div>
-            </div>
-
-            <!-- Image Container with Overflow Hidden -->
-            <div class="h-full w-full rounded-[60px] overflow-hidden shadow-2xl relative">
-                <img 
-                    src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1200&auto=format&fit=crop" 
-                    class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
-                    alt="Fittr Community"
-                />
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- START: HOW OUR PROGRAM WORKS (FITTR AESTHETIC) -->
-<section class="max-w-7xl mx-auto px-6 py-24" id="how-it-works">
-    <div class="mb-16">
-        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-slate-900 leading-tight">
-            How Our <span class="italic">Diabetes Reversal</span> <br>Program Works
-        </h2>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-        
-        <!-- LEFT SIDE: CLINICAL IMAGE -->
-        <div class="lg:col-span-5">
-            <div class="relative rounded-[40px] overflow-hidden shadow-xl border border-white">
-                <img 
-                    src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=1200&auto=format&fit=crop" 
-                    class="w-full h-full object-cover aspect-[4/5]" 
-                    alt="Clinical Consultation"
-                />
-            </div>
-        </div>
-
-        <!-- RIGHT SIDE: THE STEPS (IMAGE STYLE) -->
-        <div class="lg:col-span-7 space-y-10">
-            
-            <!-- Step 01 -->
-            <div class="group">
-                <p class="text-[11px] font-black text-slate-400 uppercase tracking-[0.3em] mb-4 group-hover:text-fittr-green transition-colors">01</p>
-                <div class="border-t border-slate-200 w-full mb-6"></div>
-                <h4 class="text-2xl font-bold text-slate-900 mb-3 uppercase italic tracking-tighter">Personalised Assessment</h4>
-                <p class="text-slate-500 text-sm leading-relaxed max-w-xl font-medium">
-                    Certified coaches analyse your health data, lifestyle, and goals. Every plan is uniquely crafted for your needs.
-                </p>
-            </div>
-
-            <!-- Step 02 -->
-            <div class="group">
-                <p class="text-[11px] font-black text-slate-400 uppercase tracking-[0.3em] mb-4 group-hover:text-fittr-green transition-colors">02</p>
-                <div class="border-t border-slate-200 w-full mb-6"></div>
-                <h4 class="text-2xl font-bold text-slate-900 mb-3 uppercase italic tracking-tighter">Weekly Tracking</h4>
-                <p class="text-slate-500 text-sm leading-relaxed max-w-xl font-medium">
-                    Monitor progress through blood sugar levels, weight, and energy. Plans adjust based on real-time results.
-                </p>
-            </div>
-
-            <!-- Step 03 -->
-            <div class="group">
-                <p class="text-[11px] font-black text-slate-400 uppercase tracking-[0.3em] mb-4 group-hover:text-fittr-green transition-colors">03</p>
-                <div class="border-t border-slate-200 w-full mb-6"></div>
-                <h4 class="text-2xl font-bold text-slate-900 mb-3 uppercase italic tracking-tighter">Holistic Integration</h4>
-                <p class="text-slate-500 text-sm leading-relaxed max-w-xl font-medium">
-                    Address diet, exercise, stress, and sleep together. Comprehensive support for lasting transformation.
-                </p>
-            </div>
-
-            <!-- Step 04 -->
-            <div class="group">
-                <p class="text-[11px] font-black text-slate-400 uppercase tracking-[0.3em] mb-4 group-hover:text-fittr-green transition-colors">04</p>
-                <div class="border-t border-slate-200 w-full mb-6"></div>
-                <h4 class="text-2xl font-bold text-slate-900 mb-3 uppercase italic tracking-tighter">Medical Collaboration</h4>
-                <p class="text-slate-500 text-sm leading-relaxed max-w-xl font-medium">
-                    Work alongside your healthcare provider. Safe medication management as your health improves.
-                </p>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- BOTTOM SUMMARY TEXT -->
-    <div class="mt-20 pt-10 border-t border-slate-100">
-        <p class="text-slate-500 font-medium text-lg leading-relaxed max-w-5xl">
-            Our <span class="text-slate-900 font-bold">internationally certified nutrition and fitness coaches</span> create science-backed plans tailored to your preferences. You'll receive continuous guidance, ensuring your journey is both effective and enjoyable.
-        </p>
-    </div>
-</section>
-<!-- END: HOW OUR PROGRAM WORKS -->
-
          <!-- DOCTOR PANELISTS (Horizontal Scroll) -->
         <section class="py-24 bg-white" id="doctors">
             <div class="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end">
@@ -472,33 +250,78 @@
             </div>
         </section>
 
-         <!-- SUCCESS STORIES -->
-        <section class="max-w-7xl mx-auto px-6 py-24" id="stories">
-            <h3 class="text-4xl md:text-5xl font-extrabold tracking-tighter text-center mb-16 uppercase italic text-slate-900">Remission <span class="text-fittr-green">Victories</span></h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-6 rounded-[32px] bg-white">
-                    <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=400&h=250&auto=format&fit=crop" class="rounded-2xl mb-6">
-                    <h4 class="font-bold text-lg text-slate-900">Shilpa Mehta</h4>
-                    <span class="text-[9px] font-black bg-fittr-green/10 text-fittr-green px-2 py-1 rounded-full uppercase tracking-tighter inline-block mt-2">HbA1c 8.4 → 5.6</span>
-                    <p class="text-slate-500 text-xs mt-4 leading-relaxed italic">"My doctor was shocked when I stopped my morning insulin. Fittr gave me my life back."</p>
+        <!-- SOCIAL PROOF / TESTIMONIALS -->
+        <section class="bg-white py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                    <div>
+                        <h2 class="text-4xl font-extrabold tracking-tighter uppercase italic">Real People. <span class="text-fittr-green">Real Reversals.</span></h2>
+                        <p class="text-slate-500 mt-2">Over 400,000+ transformations across India.</p>
+                    </div>
+                    <div class="mt-6 md:mt-0">
+                        <div class="bg-slate-900 text-white px-6 py-3 rounded-2xl font-black italic tracking-tighter">HbA1c REDUCTION TRACKER</div>
+                    </div>
                 </div>
-                <div class="glass-card p-6 rounded-[32px] border-fittr-green/30 bg-fittr-green/[0.02]">
-                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=400&h=250&auto=format&fit=crop" class="rounded-2xl mb-6">
-                    <h4 class="font-bold text-lg text-slate-900">Dr. Anirudh</h4>
-                    <span class="text-[9px] font-black bg-fittr-green/10 text-fittr-green px-2 py-1 rounded-full uppercase tracking-tighter inline-block mt-2">Zero Meds in 6 Months</span>
-                    <p class="text-slate-500 text-xs mt-4 leading-relaxed italic">"As a physician, I knew the science worked. Now I'm living proof of Type-2 reversal."</p>
-                </div>
-                <div class="glass-card p-6 rounded-[32px] bg-white">
-                    <img src="https://images.unsplash.com/photo-1552196564-97c36a394a4c?q=80&w=400&h=250&auto=format&fit=crop" class="rounded-2xl mb-6">
-                    <h4 class="font-bold text-lg text-slate-900">Rajan & Richa</h4>
-                    <span class="text-[9px] font-black bg-fittr-green/10 text-fittr-green px-2 py-1 rounded-full uppercase tracking-tighter inline-block mt-2">Weight Loss & Sugar Stability</span>
-                    <p class="text-slate-500 text-xs mt-4 leading-relaxed italic">"Managing Type-2 while working 12-hour shifts. The quantified nutrition was the key."</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- T1 -->
+                    <div class="glass-card p-8 rounded-[32px]">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-slate-200 rounded-full"></div>
+                            <div>
+                                <h5 class="font-bold text-slate-900 leading-none">Vikram S.</h5>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mt-1">Professional</p>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <p class="text-[10px] font-bold text-slate-400 mb-2 uppercase">HbA1c Progress</p>
+                            <div class="flex items-end gap-2 h-20">
+                                <div class="w-full bg-slate-100 rounded-t-lg h-full relative"><span class="absolute -top-6 left-0 text-[10px] font-bold text-red-400">8.2%</span></div>
+                                <div class="w-full bg-fittr-green rounded-t-lg h-[65%] relative"><span class="absolute -top-6 left-0 text-[10px] font-bold text-fittr-green">5.8%</span></div>
+                            </div>
+                        </div>
+                        <p class="text-sm italic text-slate-600">"Measured improvement in blood sugar and energy. The structured support made all the difference."</p>
+                    </div>
+                    <!-- T2 -->
+                    <div class="glass-card p-8 rounded-[32px]">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-slate-200 rounded-full"></div>
+                            <div>
+                                <h5 class="font-bold text-slate-900 leading-none">Dr. Ananya</h5>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mt-1">Medical Doctor</p>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <p class="text-[10px] font-bold text-slate-400 mb-2 uppercase">Medication Dependency</p>
+                            <div class="flex items-end gap-2 h-20">
+                                <div class="w-full bg-slate-100 rounded-t-lg h-full relative"><span class="absolute -top-6 left-0 text-[10px] font-bold">100%</span></div>
+                                <div class="w-full bg-fittr-green rounded-t-lg h-[10%] relative"><span class="absolute -top-6 left-0 text-[10px] font-bold text-fittr-green">0%</span></div>
+                            </div>
+                        </div>
+                        <p class="text-sm italic text-slate-600">"As a doctor, I was skeptical. But the science-backed protocol here is undeniable."</p>
+                    </div>
+                    <!-- T3 -->
+                    <div class="glass-card p-8 rounded-[32px]">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-slate-200 rounded-full"></div>
+                            <div>
+                                <h5 class="font-bold text-slate-900 leading-none">Rajesh K.</h5>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mt-1">IT Executive</p>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <p class="text-[10px] font-bold text-slate-400 mb-2 uppercase">Weight & Sugar Stability</p>
+                            <div class="flex items-end gap-2 h-20">
+                                <div class="w-full bg-slate-100 rounded-t-lg h-full"></div>
+                                <div class="w-full bg-fittr-green rounded-t-lg h-[40%]"></div>
+                            </div>
+                        </div>
+                        <p class="text-sm italic text-slate-600">"Achieved long-term health markers that I hadn't seen in 10 years of being diabetic."</p>
+                    </div>
                 </div>
             </div>
         </section>
-
-
-        <!-- VIDEO TESTIMONIALS SECTION -->
+ <!-- VIDEO TESTIMONIALS SECTION -->
         <section class="max-w-7xl mx-auto px-6 py-24">
             <div class="text-center mb-16">
                 <h3 class="text-4xl md:text-5xl font-extrabold tracking-tighter uppercase italic text-slate-900">Real <span class="text-fittr-green">Sugar Stats</span></h3>
@@ -547,79 +370,281 @@
             </div>
         </section>
 
-      <!-- PROCESS SECTION -->
-        <section class="max-w-7xl mx-auto px-6 py-24" id="process">
-            <h3 class="text-4xl md:text-5xl font-extrabold tracking-tighter text-center mb-16 uppercase italic text-slate-900">The 6-Step <span class="text-fittr-green">Remission Path</span></h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-1 overflow-hidden rounded-[40px] border border-slate-200 shadow-xl">
-                <div class="bg-white p-10 hover:bg-fittr-green/[0.03] transition">
-                    <span class="text-fittr-green font-black text-xs">01</span>
-                    <h5 class="font-bold text-lg mt-2 italic text-slate-900">Metabolic Audit</h5>
-                    <p class="text-xs text-slate-500 mt-2">Deep dive into your fasting insulin, HbA1c, and lipid profile.</p>
+     <!-- JOURNEY SECTION (TIMELINE FASHION) -->
+        <section id="how" class="max-w-7xl mx-auto px-6 py-24 relative">
+            <div class="mb-20">
+                <h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 uppercase italic leading-tight text-slate-900">
+                    Your End-to-End <br><span class="text-fittr-green">Diabetes Reversal Journey</span>
+                </h2>
+                <p class="text-slate-400 font-black text-[10px] uppercase tracking-[0.4em]">A 4-Phase Iterative Clinical Protocol</p>
+            </div>
+
+            <div class="relative">
+                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-slate-100 -translate-y-1/2 z-0"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-6 relative z-10">
+                    
+                    <!-- Phase 01 -->
+                    <div class="group relative">
+                        <div class="glass-card p-8 rounded-[40px] bg-white border-2 border-transparent hover:border-fittr-green transition-all duration-300 h-full flex flex-col justify-between shadow-sm hover:shadow-xl">
+                            <div>
+                                <span class="text-5xl font-black text-slate-100 block mb-4 italic group-hover:text-fittr-green/20">01</span>
+                                <h4 class="font-bold text-xl mb-4 italic text-fittr-green">Diagnose & Baseline Assessment</h4>
+                            </div>
+                            <p class="text-[11px] text-slate-500 font-bold uppercase leading-relaxed">
+                                • HbA1c, fasting glucose, metabolic markers<br>
+                                • Lifestyle, activity, sleep & nutrition assessment<br>
+                                • Risk stratification & goal setting
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 02 -->
+                    <div class="group relative">
+                        <div class="glass-card p-8 rounded-[40px] bg-white border-2 border-transparent hover:border-fittr-green transition-all duration-300 h-full flex flex-col justify-between shadow-sm hover:shadow-xl">
+                            <div>
+                                <span class="text-5xl font-black text-slate-100 block mb-4 italic group-hover:text-fittr-green/20">02</span>
+                                <h4 class="font-bold text-xl mb-4 italic text-fittr-green">Personalised Lifestyle Intervention</h4>
+                            </div>
+                            <p class="text-[11px] text-slate-500 font-bold uppercase leading-relaxed">
+                                • Custom workout & physical activity plan<br>
+                                • Structured nutrition strategy (not crash dieting)<br>
+                                • Daily guidance from certified coaches
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 03 -->
+                    <div class="group relative">
+                        <div class="glass-card p-8 rounded-[40px] bg-white border-2 border-transparent hover:border-fittr-green transition-all duration-300 h-full flex flex-col justify-between shadow-sm hover:shadow-xl">
+                            <div>
+                                <span class="text-5xl font-black text-slate-100 block mb-4 italic group-hover:text-fittr-green/20">03</span>
+                                <h4 class="font-bold text-xl mb-4 italic text-fittr-green">Continuous Monitoring & Reviews</h4>
+                            </div>
+                            <p class="text-[11px] text-slate-500 font-bold uppercase leading-relaxed">
+                                • Regular tracking of blood markers<br>
+                                • Progress reviews & pattern identification<br>
+                                • Feedback-driven plan adjustments
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 04 (Goal Card) -->
+                    <div class="group relative">
+                        <div class="glass-card p-8 rounded-[40px] bg-slate-900 text-white border-2 border-fittr-green/30 hover:border-fittr-green transition-all duration-300 h-full flex flex-col justify-between shadow-xl">
+                            <div>
+                                <span class="text-5xl font-black text-white/10 block mb-4 italic group-hover:text-fittr-green/30">04</span>
+                                <h4 class="font-bold text-xl mb-4 italic text-fittr-green">Reassessment & Optimisation</h4>
+                            </div>
+                            <p class="text-[11px] text-slate-400 font-bold uppercase leading-relaxed">
+                                • Repeat biomarker testing<br>
+                                • Fine-tuning food, activity & recovery<br>
+                                • Long-term sustainability planning
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-10 hover:bg-fittr-green/[0.03] transition">
-                    <span class="text-fittr-green font-black text-xs">02</span>
-                    <h5 class="font-bold text-lg mt-2 italic text-slate-900">Glucose Stabilizer</h5>
-                    <p class="text-xs text-slate-500 mt-2">A personalized nutrition plan designed to prevent sugar spikes.</p>
+            </div>
+            <p class="text-center mt-12 font-black text-slate-400 text-[10px] uppercase tracking-[0.3em]">This is iterative, data-led care — not a one-time plan.</p>
+        </section>
+
+        <!-- WHAT'S INCLUDED (EDITORIAL BENTO STYLE) -->
+        <section id="included" class="max-w-7xl mx-auto px-6 py-24 overflow-hidden">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                <div class="max-w-2xl">
+                    <span class="text-fittr-green font-black text-[10px] uppercase tracking-[0.4em] mb-4 block">The Remission Kit</span>
+                    <h2 class="text-5xl md:text-8xl font-extrabold tracking-tighter uppercase italic leading-[0.85] text-slate-900">
+                        EVERYTHING <br>YOU <span class="text-fittr-green">NEED.</span>
+                    </h2>
                 </div>
-                <div class="bg-white p-10 hover:bg-fittr-green/[0.03] transition">
-                    <span class="text-fittr-green font-black text-xs">03</span>
-                    <h5 class="font-bold text-lg mt-2 italic text-slate-900">Smart Monitoring</h5>
-                    <p class="text-xs text-slate-500 mt-2">Log pre/post-meal readings to see real-time plan impact.</p>
+                <div class="glass-card p-6 rounded-3xl bg-slate-900 text-white max-w-xs md:mb-2">
+                    <p class="text-xs font-bold italic leading-relaxed opacity-80">
+                        "Everything works together — because diabetes is multifactorial, not just about food or exercise alone."
+                    </p>
                 </div>
-                <div class="bg-white p-10 hover:bg-fittr-green/[0.03] transition">
-                    <span class="text-fittr-green font-black text-xs">04</span>
-                    <h5 class="font-bold text-lg mt-2 italic text-slate-900">Clinical Taper</h5>
-                    <p class="text-xs text-slate-500 mt-2">Weekly reviews to adjust medication as your body heals.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Large Image Box -->
+                <div class="md:col-span-7 relative rounded-[60px] overflow-hidden group min-h-[500px]">
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" alt="Clinical Excellence" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                    <div class="absolute top-10 right-10 glass-card bg-white/10 backdrop-blur-xl border-white/20 p-6 rounded-3xl text-white max-w-[200px] animate-bounce-slow">
+                        <p class="text-[40px] font-black italic mb-0 leading-none">5.7%</p>
+                        <p class="text-[10px] font-black uppercase tracking-widest text-fittr-green">Target HbA1c</p>
+                    </div>
+                    <div class="absolute bottom-12 left-12"><h3 class="text-white text-3xl font-bold italic uppercase tracking-tighter">Clinical Precision. <br>Personal Care.</h3></div>
                 </div>
-                <div class="bg-white p-10 hover:bg-fittr-green/[0.03] transition">
-                    <span class="text-fittr-green font-black text-xs">05</span>
-                    <h5 class="font-bold text-lg mt-2 italic text-slate-900">Resistance Build</h5>
-                    <p class="text-xs text-slate-500 mt-2">Targeted exercise to increase muscular glucose uptake.</p>
+
+                <!-- Features Stack -->
+                <div class="md:col-span-5 grid grid-cols-1 gap-6">
+                    <div class="glass-card p-10 rounded-[48px] bg-white border-b-8 border-fittr-green flex flex-col justify-between group hover:bg-slate-900 transition-all duration-500">
+                        <div class="w-12 h-12 bg-fittr-green/10 rounded-2xl flex items-center justify-center text-fittr-green group-hover:bg-fittr-green group-hover:text-white transition-colors">🏋️</div>
+                        <div class="mt-8">
+                            <h4 class="text-xl font-bold italic uppercase group-hover:text-white transition-colors">Dedicated fitness & health coach</h4>
+                            <p class="text-[11px] font-bold text-slate-400 mt-2 uppercase tracking-widest">App-based tracking & insights included</p>
+                        </div>
+                    </div>
+                    <div class="glass-card p-10 rounded-[48px] bg-white border-b-8 border-slate-200 flex flex-col justify-between group hover:bg-fittr-green transition-all duration-500">
+                        <div class="w-12 h-12 bg-slate-100 rounded-2xl flex items-center justify-center group-hover:bg-white group-hover:text-fittr-green transition-colors">🥗</div>
+                        <div class="mt-8">
+                            <h4 class="text-xl font-bold italic uppercase group-hover:text-white transition-colors">Personalised workout & activity plan</h4>
+                            <p class="text-[11px] font-bold text-slate-400 mt-2 uppercase tracking-widest group-hover:text-white/60">Structured nutrition & meal guidance</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-10 hover:bg-fittr-green/[0.03] transition">
-                    <span class="text-fittr-green font-black text-xs">06</span>
-                    <h5 class="font-bold text-lg mt-2 italic text-slate-900">Life-Long Control</h5>
-                    <p class="text-xs text-slate-500 mt-2">Maintaining HbA1c < 5.7% through lifestyle autonomy.</p>
+
+                <!-- Small Grid Items -->
+                <div class="md:col-span-4 glass-card p-8 rounded-[40px] bg-slate-50 flex items-center gap-6 group hover:bg-white transition-all">
+                    <div class="text-3xl grayscale group-hover:grayscale-0">🩸</div>
+                    <div><h5 class="font-black text-[11px] uppercase tracking-widest text-slate-900">Medical Data</h5><p class="text-[10px] font-bold text-slate-400 uppercase">Blood marker testing & reviews</p></div>
+                </div>
+                <div class="md:col-span-4 glass-card p-8 rounded-[40px] bg-slate-50 flex items-center gap-6 group hover:bg-white transition-all">
+                    <div class="text-3xl grayscale group-hover:grayscale-0">📈</div>
+                    <div><h5 class="font-black text-[11px] uppercase tracking-widest text-slate-900">Optimization</h5><p class="text-[10px] font-bold text-slate-400 uppercase">Ongoing plan optimisation</p></div>
+                </div>
+                <div class="md:col-span-4 glass-card p-8 rounded-[40px] bg-slate-50 flex items-center gap-6 group hover:bg-white transition-all">
+                    <div class="text-3xl grayscale group-hover:grayscale-0">🤝</div>
+                    <div><h5 class="font-black text-[11px] uppercase tracking-widest text-slate-900">Community</h5><p class="text-[10px] font-bold text-slate-400 uppercase">Support & accountability</p></div>
                 </div>
             </div>
         </section>
 
-
-
-       <!-- COMPARISON TABLE -->
-        <section class="max-w-5xl mx-auto px-6 py-24">
-            <h3 class="text-4xl md:text-5xl font-extrabold tracking-tighter text-center mb-16 uppercase italic text-slate-900">Why Fittr <span class="text-fittr-green">Works</span></h3>
-            <div class="bg-white rounded-[40px] overflow-hidden overflow-x-auto shadow-2xl border border-slate-100">
-                <table class="w-full text-left min-w-[500px]">
-                    <thead>
-                        <tr class="bg-slate-50">
-                            <th class="p-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Strategy</th>
-                            <th class="p-8 text-center text-fittr-green font-black">FITTR DIABETES</th>
-                            <th class="p-8 text-center text-slate-400 font-bold">TRADITIONAL CARE</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-100">
-                        <tr>
-                            <td class="p-6 pl-8 font-bold text-sm text-slate-700">Goal</td>
-                            <td class="text-center text-fittr-green font-black">REMISSION</td>
-                            <td class="text-center text-red-200">MANAGEMENT</td>
-                        </tr>
-                        <tr>
-                            <td class="p-6 pl-8 font-bold text-sm text-slate-700">Focus</td>
-                            <td class="text-center text-fittr-green font-black">INSULIN SENSITIVITY</td>
-                            <td class="text-center text-red-200">BLOOD SUGAR MASKING</td>
-                        </tr>
-                        <tr>
-                            <td class="p-6 pl-8 font-bold text-sm text-slate-700">Medication</td>
-                            <td class="text-center text-fittr-green font-black italic">TAPERED DOWN</td>
-                            <td class="text-center text-red-400">INCREASED OVER TIME</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- WHO THIS IS FOR -->
+        <section id="eligibility" class="max-w-7xl mx-auto px-6 py-24">
+            <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter text-center mb-16 uppercase italic">Who Benefits <span class="text-fittr-green">Most?</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="glass-card p-12 rounded-[48px] border-l-8 border-fittr-green">
+                    <h4 class="font-black text-fittr-green uppercase tracking-[0.2em] text-[10px] mb-8">✔ Who This Is For</h4>
+                    <ul class="space-y-4 font-bold text-slate-700">
+                        <li>• Type 2 diabetes or prediabetes</li>
+                        <li>• HbA1c typically below ~9%</li>
+                        <li>• Diagnosed within the last few years (earlier = better outcomes)</li>
+                        <li>• Willing to commit to lifestyle change</li>
+                        <li>• Looking for structured, sustainable expert-led guidance, and not gimmicks</li>
+                    </ul>
+                </div>
+                <div class="glass-card p-12 rounded-[48px] bg-slate-50 border-dashed border-2">
+                    <h4 class="font-black text-red-400 uppercase tracking-[0.2em] text-[10px] mb-8">❌ Not Suitable For</h4>
+                    <ul class="space-y-4 font-bold text-slate-400">
+                        <li>• Not designed for Type 1 diabetes</li>
+                        <li>• Not a quick-fix or medication-only solution</li>
+                    </ul>
+                    <a href="#form" class="mt-10 inline-block font-black text-xs uppercase border-b-2 border-slate-900 pb-1">Book a free consultation to assess fit and eligibility. →</a>
+                </div>
             </div>
         </section>
 
-        <!-- PURCHASE SECTION -->
+        <!-- SOCIAL PROOF / TESTIMONIALS SECTION -->
+<section id="results" class="py-24 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <!-- Header Part -->
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div class="max-w-2xl">
+                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter uppercase italic leading-tight text-slate-900">
+                    Real People. <br><span class="text-fittr-green">Real Reversals.</span>
+                </h2>
+                <p class="text-slate-500 mt-6 text-lg font-medium">
+                    From busy professionals to doctors themselves, thousands have achieved measurable improvements in blood sugar control, energy, and long-term health — with Fittr’s structured support.
+                </p>
+            </div>
+            <div class="text-right">
+                <div class="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter">400,000+</div>
+                <div class="text-[10px] font-black uppercase tracking-[0.3em] text-fittr-green">Transformations Across India</div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- LEFT: The Visual Evidence (Bar Graph) -->
+            <div class="lg:col-span-5 glass-card p-10 rounded-[48px] bg-slate-50 flex flex-col justify-between">
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-8">Clinical Impact: Avg. HbA1c Reduction</h4>
+                    
+                    <!-- Bar Graph Container -->
+                    <div class="space-y-12 py-4">
+                        <!-- Bar 1 -->
+                        <div class="relative">
+                            <div class="flex justify-between items-end mb-2">
+                                <span class="text-sm font-bold uppercase tracking-tighter">Before Fittr</span>
+                                <span class="text-2xl font-black text-slate-400 italic">8.4%</span>
+                            </div>
+                            <div class="w-full h-4 bg-slate-200 rounded-full overflow-hidden">
+                                <div class="h-full bg-slate-400 w-full rounded-full"></div>
+                            </div>
+                        </div>
+
+                        <!-- Bar 2 -->
+                        <div class="relative">
+                            <div class="flex justify-between items-end mb-2">
+                                <span class="text-sm font-bold uppercase tracking-tighter text-fittr-green italic">After 12 Weeks</span>
+                                <span class="text-3xl font-black text-fittr-green italic">5.8%</span>
+                            </div>
+                            <div class="w-full h-6 bg-fittr-green/10 rounded-full overflow-hidden border border-fittr-green/20">
+                                <div class="h-full bg-fittr-green w-[65%] rounded-full shadow-[0_0_20px_rgba(17,166,99,0.4)]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-slate-200">
+                    <p class="text-[11px] font-bold text-slate-400 uppercase leading-relaxed italic">
+                        *Aggregated data from over 400k+ users showing average improvement in metabolic markers within 90-180 days.
+                    </p>
+                </div>
+            </div>
+
+            <!-- RIGHT: Specific Testimonial Cards -->
+            <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Testimonial 1: The Doctor -->
+                <div class="glass-card p-8 rounded-[40px] bg-white border-l-8 border-fittr-green flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center text-2xl grayscale">👨‍⚕️</div>
+                            <div>
+                                <h5 class="font-extrabold text-slate-900 leading-tight">Dr. Sameer Malhotra</h5>
+                                <p class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Medical Professional</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed italic font-medium">
+                            "As a doctor, I understood the science, but Fittr provided the structure. I successfully reduced my HbA1c from 7.9 to 5.6 while maintaining a grueling hospital schedule."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2: The Busy Professional -->
+                <div class="glass-card p-8 rounded-[40px] bg-slate-900 text-white flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-2xl grayscale">💼</div>
+                            <div>
+                                <h5 class="font-extrabold text-white leading-tight">Priya Vasudevan</h5>
+                                <p class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Corporate Executive</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed italic font-medium">
+                            "The constant energy crashes were affecting my work. Within 4 months, my blood sugar stabilized, and I lost 12kg. The science-led coaching is a game changer."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Horizontal Quote Card -->
+                <div class="md:col-span-2 glass-card p-8 rounded-[40px] bg-white flex items-center gap-6">
+                    <div class="hidden md:flex w-20 h-20 bg-fittr-green/5 rounded-full items-center justify-center text-3xl">✨</div>
+                    <p class="text-lg font-bold italic tracking-tight text-slate-800">
+                        "Measurable improvements in blood sugar control and energy levels that I haven't seen in 10 years."
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+          <!-- PURCHASE SECTION -->
         <section class="max-w-7xl mx-auto px-6 py-24" id="purchase">
             <div class="text-center mb-16">
                 <h3 class="text-[10px] font-black text-fittr-green uppercase tracking-[0.3em] mb-4">Investment in Longevity</h3>
@@ -711,27 +736,89 @@
             </div>
         </section>
 
+<!-- FINAL CTA: THE REMISSION ACTIVATOR -->
+<section id="final-cta" class="max-w-7xl mx-auto px-6 py-32">
+    <div class="relative bg-[#0F172A] rounded-[40px] overflow-hidden border border-white/10">
+        
+        <!-- Background Grid -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 40px 40px;"></div>
+        
+        <!-- Gloaming effects -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-fittr-green/20 rounded-full blur-[100px]"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
 
-        <!-- FAQ SECTION -->
-        <section class="max-w-3xl mx-auto px-6 py-24">
-            <h3 class="text-4xl font-extrabold tracking-tighter text-center mb-16 uppercase italic text-slate-900">Diabetes <span class="text-fittr-green">FAQ</span></h3>
-            <div class="space-y-4">
-                <div class="glass-card p-6 rounded-3xl flex justify-between items-center group cursor-pointer bg-white">
-                    <span class="font-bold text-slate-700 group-hover:text-fittr-green transition">Can Type-2 Diabetes really be reversed?</span>
-                    <span class="text-fittr-green text-xl">+</span>
+        <div class="relative z-10 flex flex-col lg:flex-row items-stretch">
+            
+            <!-- LEFT: THE MESSAGE -->
+            <div class="lg:w-1/2 p-10 md:p-20 flex flex-col justify-center">
+                <div class="flex items-center gap-2 mb-8">
+                    <div class="h-[1px] w-8 bg-fittr-green"></div>
+                    <span class="text-[10px] font-black text-fittr-green uppercase tracking-[0.4em]">Protocol: Diabetes Remission</span>
                 </div>
-                <div class="glass-card p-6 rounded-3xl flex justify-between items-center group cursor-pointer bg-white">
-                    <span class="font-bold text-slate-700 group-hover:text-fittr-green transition">When can I expect to see lower readings?</span>
-                    <span class="text-fittr-green text-xl">+</span>
-                </div>
-                <div class="glass-card p-6 rounded-3xl flex justify-between items-center group cursor-pointer bg-white">
-                    <span class="font-bold text-slate-700 group-hover:text-fittr-green transition">Will I have to stop eating rice and rotis?</span>
-                    <span class="text-fittr-green text-xl">+</span>
+
+                <h2 class="text-5xl md:text-7xl font-black text-white uppercase italic leading-none tracking-tighter">
+                    START YOUR <br>
+                    <!-- REFINED GRADIENT: Multi-stop diagonal for metallic 'light' effect -->
+                    <span class="inline-block py-4 text-transparent bg-clip-text bg-gradient-to-br from-white via-fittr-green to-[#0ea5e9] drop-shadow-sm">
+                        REVERSAL JOURNEY
+                    </span>
+                </h2>
+
+                <p class="mt-8 text-slate-400 text-lg md:text-xl max-w-md leading-relaxed">
+                    You don’t need another diet. You need a <span class="text-white">system that adapts with you</span>. Reclaim your health with science, structure, and 1-on-1 support.
+                </p>
+            </div>
+
+            <!-- RIGHT: THE CONSOLIDATED ACTION -->
+            <div class="lg:w-1/2 p-10 md:p-20 bg-white/[0.02] border-l border-white/5 flex flex-col justify-center">
+                <div class="space-y-12">
+                    
+                    <!-- CALL TO ACTION -->
+                    <div class="relative group">
+                        <div class="absolute -inset-4 bg-fittr-green/10 rounded-[40px] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                        
+                        <a href="#form" class="relative flex items-center justify-between bg-white text-black p-2 rounded-full transition-transform duration-300 hover:scale-[1.01] active:scale-[0.99]">
+                            <div class="pl-8">
+                                <span class="block text-[9px] font-black text-black/40 uppercase tracking-widest leading-none mb-1">Check Eligibility</span>
+                                <span class="text-lg md:text-xl font-black uppercase italic tracking-tight">Book Free Consultation</span>
+                            </div>
+                            <div class="w-14 h-14 md:w-16 md:h-16 bg-[#0F172A] rounded-full flex items-center justify-center group-hover:bg-fittr-green transition-colors duration-300 group-hover:rotate-45">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- PROGRAM METADATA -->
+                    <div class="grid grid-cols-2 gap-8 pt-8 border-t border-white/5">
+                        <div>
+                            <div class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Status</div>
+                            <div class="text-white font-bold text-lg">Limited Intake</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Queue</div>
+                            <div class="text-fittr-green font-bold text-lg flex items-center gap-2">
+                                <span class="w-2 h-2 bg-fittr-green rounded-full animate-pulse"></span>
+                                Priority Open
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+    
+    <!-- DISCLAIMER -->
+    <div class="mt-8 px-10">
+        <p class="text-[9px] font-medium text-slate-600 uppercase tracking-widest text-center leading-relaxed">
+            *Clinical Disclaimer: Remission refers to maintaining blood glucose levels below the diabetic range (HbA1c < 6.5%) without medication. Results depend on adherence and individual metabolic factors. Consult your physician before changing any medication.
+        </p>
+    </div>
+</section>
 
-        <!-- FOOTER -->
+        <!-- NEW FOOTER -->
         <footer class="bg-slate-900 py-24 text-center text-white rounded-t-[60px]">
             <div class="max-w-4xl mx-auto px-6">
                 <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 uppercase italic">Say Goodbye to <span class="text-fittr-green">Spikes.</span></h2>
