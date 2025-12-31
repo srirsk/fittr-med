@@ -72,6 +72,19 @@
 
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Hide scrollbar but allow scrolling */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+#doctor-carousel {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+#doctor-carousel.active {
+    cursor: grabbing;
+}
     </style>
 </head>
 <body class="antialiased">
@@ -180,76 +193,140 @@
         </section>
 
         
-         <!-- DOCTOR PANELISTS (Horizontal Scroll) -->
-        <section class="py-24 bg-white" id="doctors">
-            <div class="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end">
-                <div class="max-w-xl">
-                    <h3 class="text-4xl md:text-5xl font-extrabold tracking-tighter uppercase italic text-slate-900">Diabetes <span class="text-fittr-green">Specialists</span></h3>
-                    <p class="text-slate-500 mt-4 font-medium">India's leading experts in Diabetes Remission, helping you move from management to reversal.</p>
+       <section class="py-24 bg-white" id="doctors">
+    <div class="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end">
+        <div class="max-w-xl">
+            <h3 class="text-4xl md:text-5xl font-extrabold tracking-tighter uppercase italic text-slate-900">Diabetes <span class="text-fittr-green">Specialists</span></h3>
+            <p class="text-slate-500 mt-4 font-medium">India's leading experts in Diabetes Remission, helping you move from management to reversal.</p>
+        </div>
+        <!-- Navigation Arrows -->
+        <div class="hidden md:flex gap-2">
+            <button id="prevBtn" class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-fittr-green hover:text-fittr-green transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button id="nextBtn" class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-fittr-green hover:text-fittr-green transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scrollable Container -->
+    <div id="doctor-carousel" class="flex overflow-x-auto gap-6 px-6 md:px-[calc((100vw-1280px)/2+24px)] hide-scrollbar snap-x cursor-grab active:cursor-grabbing pb-12">
+        
+        <!-- Dr Aakash -->
+        <div class="min-w-[300px] md:min-w-[350px] snap-center">
+            <div class="glass-card rounded-[32px] overflow-hidden bg-white group select-none">
+                <div class="h-80 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=500" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 pointer-events-none">
                 </div>
-                <div class="hidden md:flex gap-2">
-                    <div class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400">←</div>
-                    <div class="w-10 h-10 rounded-full border border-fittr-green flex items-center justify-center text-fittr-green">→</div>
+                <div class="p-8">
+                    <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Endocrinology</span>
+                    <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Aakash</h4>
+                    <p class="text-sm text-slate-500 mt-3">Specialist in metabolic health and Type-2 diabetes reversal.</p>
                 </div>
             </div>
+        </div>
 
-            <!-- Scrollable Area -->
-            <div class="flex overflow-x-auto gap-6 px-6 md:px-[calc((100vw-1280px)/2+24px)] hide-scrollbar snap-x cursor-grab active:cursor-grabbing pb-12">
-                <!-- Doctor Card 1 -->
-                <div class="min-w-[300px] md:min-w-[350px] snap-center">
-                    <div class="glass-card rounded-[32px] overflow-hidden bg-white group">
-                        <div class="h-80 overflow-hidden bg-slate-100">
-                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Dr. Amit Verma">
-                        </div>
-                        <div class="p-8">
-                            <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Endocrinology</span>
-                            <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Amit Verma</h4>
-                            <p class="text-sm text-slate-500 mt-3 leading-relaxed">Specialist in Type-2 Diabetes reversal with 15+ years of clinical practice in metabolic health.</p>
-                        </div>
-                    </div>
+        <!-- Dr Sushma -->
+        <div class="min-w-[300px] md:min-w-[350px] snap-center">
+            <div class="glass-card rounded-[32px] overflow-hidden bg-white group select-none">
+                <div class="h-80 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=500" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 pointer-events-none">
                 </div>
-                <!-- Doctor Card 2 -->
-                <div class="min-w-[300px] md:min-w-[350px] snap-center">
-                    <div class="glass-card rounded-[32px] overflow-hidden bg-white group">
-                        <div class="h-80 overflow-hidden bg-slate-100">
-                            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Dr. Shalini Rao">
-                        </div>
-                        <div class="p-8">
-                            <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Cardiology</span>
-                            <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Shalini Rao</h4>
-                            <p class="text-sm text-slate-500 mt-3 leading-relaxed">Focusing on preventative cardiology and systemic inflammation management through nutrition.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Doctor Card 3 -->
-                <div class="min-w-[300px] md:min-w-[350px] snap-center">
-                    <div class="glass-card rounded-[32px] overflow-hidden bg-white group">
-                        <div class="h-80 overflow-hidden bg-slate-100">
-                            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Dr. Rohan Khanna">
-                        </div>
-                        <div class="p-8">
-                            <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Lifestyle Medicine</span>
-                            <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Rohan Khanna</h4>
-                            <p class="text-sm text-slate-500 mt-3 leading-relaxed">MD in Internal Medicine, specializing in lifestyle intervention for obesity and PCOS.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Doctor Card 4 -->
-                <div class="min-w-[300px] md:min-w-[350px] snap-center">
-                    <div class="glass-card rounded-[32px] overflow-hidden bg-white group">
-                        <div class="h-80 overflow-hidden bg-slate-100">
-                            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Dr. Priya Singh">
-                        </div>
-                        <div class="p-8">
-                            <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Functional Medicine</span>
-                            <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Priya Singh</h4>
-                            <p class="text-sm text-slate-500 mt-3 leading-relaxed">Expert in gut health and its impact on metabolic markers and mental clarity.</p>
-                        </div>
-                    </div>
+                <div class="p-8">
+                    <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Clinical Nutrition</span>
+                    <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Sushma</h4>
+                    <p class="text-sm text-slate-500 mt-3">Focusing on dietary intervention strategies and glycemic control.</p>
                 </div>
             </div>
-        </section>
+        </div>
 
+        <!-- Dr Namrata -->
+        <div class="min-w-[300px] md:min-w-[350px] snap-center">
+            <div class="glass-card rounded-[32px] overflow-hidden bg-white group select-none">
+                <div class="h-80 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71f1536783?q=80&w=500" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 pointer-events-none">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Internal Medicine</span>
+                    <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Namrata</h4>
+                    <p class="text-sm text-slate-500 mt-3">Expert in systemic management of lifestyle diseases.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dr Shweta -->
+        <div class="min-w-[300px] md:min-w-[350px] snap-center">
+            <div class="glass-card rounded-[32px] overflow-hidden bg-white group select-none">
+                <div class="h-80 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=500" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 pointer-events-none">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Preventive Healthcare</span>
+                    <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Shweta</h4>
+                    <p class="text-sm text-slate-500 mt-3">Specializing in early detection and lifestyle modification.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dr Kashmi -->
+        <div class="min-w-[300px] md:min-w-[350px] snap-center">
+            <div class="glass-card rounded-[32px] overflow-hidden bg-white group select-none">
+                <div class="h-80 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?q=80&w=500" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 pointer-events-none">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Functional Medicine</span>
+                    <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Kashmi</h4>
+                    <p class="text-sm text-slate-500 mt-3">Advocating for root-cause resolution of insulin resistance.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dr Rashmi -->
+        <div class="min-w-[300px] md:min-w-[350px] snap-center">
+            <div class="glass-card rounded-[32px] overflow-hidden bg-white group select-none">
+                <div class="h-80 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=500" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 pointer-events-none">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Lifestyle Medicine</span>
+                    <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Rashmi</h4>
+                    <p class="text-sm text-slate-500 mt-3">Helping patients navigate medication tapering protocols.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dr Poonam -->
+        <div class="min-w-[300px] md:min-w-[350px] snap-center">
+            <div class="glass-card rounded-[32px] overflow-hidden bg-white group select-none">
+                <div class="h-80 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1591604021695-0c69b7c05981?q=80&w=500" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 pointer-events-none">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Metabolic Research</span>
+                    <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Poonam</h4>
+                    <p class="text-sm text-slate-500 mt-3">Dedicated to the science of sustainable weight management.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dr Prashant -->
+        <div class="min-w-[300px] md:min-w-[350px] snap-center">
+            <div class="glass-card rounded-[32px] overflow-hidden bg-white group select-none">
+                <div class="h-80 overflow-hidden bg-slate-100">
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=500" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 pointer-events-none">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] font-black text-fittr-green uppercase tracking-widest">Sports Medicine</span>
+                    <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Prashant</h4>
+                    <p class="text-sm text-slate-500 mt-3">Expert in physical activity design for insulin sensitivity.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
         <!-- SOCIAL PROOF / TESTIMONIALS -->
         <section class="bg-white py-24">
             <div class="max-w-7xl mx-auto px-6">
@@ -835,6 +912,53 @@
             </div>
         </footer>
     </main>
+<script>
+    const carousel = document.getElementById('doctor-carousel');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
 
+    // Arrow Button Functionality
+    nextBtn.addEventListener('click', () => {
+        const cardWidth = carousel.querySelector('div').offsetWidth + 24; // Card width + gap
+        carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    });
+
+    prevBtn.addEventListener('click', () => {
+        const cardWidth = carousel.querySelector('div').offsetWidth + 24;
+        carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
+
+    // Mouse Drag Functionality
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carousel.classList.add('active');
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+        carousel.style.scrollBehavior = 'auto'; // Disable smooth scroll while dragging
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.classList.remove('active');
+    });
+
+    carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        carousel.classList.remove('active');
+        carousel.style.scrollBehavior = 'smooth'; // Re-enable smooth scroll
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2; // Scroll speed multiplier
+        carousel.scrollLeft = scrollLeft - walk;
+    });
+</script>
 </body>
 </html>
