@@ -121,13 +121,16 @@
     </header>
 
     <main>
-       <!-- UPDATED HERO SECTION -->
+  <!-- REPLACED HERO SECTION -->
 <section class="hero-section relative min-h-screen flex items-center pt-32 pb-10 lg:pt-20 overflow-hidden">
-    <div class="hero-glow"></div>
+    
+    <!-- FULL-WIDTH TOP GRADIENT: w-screen and negative translation ensure it hits the edges on mobile -->
+    <div class="hero-glow absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[500px] md:h-[700px] opacity-60 pointer-events-none z-0"></div>
+
     <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             
-            <!-- LEFT SIDE: CENTERED ON MOBILE, LEFT ON DESKTOP -->
+            <!-- LEFT SIDE: CENTERED ON MOBILE -->
             <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
                 <div class="inline-flex items-center gap-2 bg-fittr-green/10 border border-fittr-green/20 px-4 py-1.5 rounded-full mb-6">
                     <span class="relative flex h-2 w-2">
@@ -145,7 +148,7 @@
                     Beat Type-2 Diabetes <strong class="text-white">@20000</strong>. Evidence-based protocols designed to optimize HbA1c and insulin sensitivity.
                 </p>
 
-                <!-- TIMER + BUTTON ROW: CENTERED ON MOBILE -->
+                <!-- TIMER + BUTTON ROW -->
                 <div class="flex flex-col lg:flex-row items-center lg:items-end gap-8">
                     <div class="flex flex-col items-center lg:items-start gap-4">
                         <span class="text-gray-500 font-bold uppercase tracking-widest text-[11px]">Offer ends in:</span>
@@ -190,7 +193,7 @@
             <!-- RIGHT SIDE -->
             <div class="flex flex-col gap-6">
                 <div class="relative">
-                    <!-- CONTENT INSIDE THIS CARD IS LEFT-ALIGNED (items-start text-left) -->
+                    <!-- CONTENT INSIDE THIS CARD STAYS LEFT ALIGNED -->
                     <div class="glass-card-dark p-8 md:p-10 rounded-[40px] flex flex-col items-start justify-between min-h-[350px] lg:min-h-[420px] relative overflow-hidden border border-white/10 shadow-2xl text-left">
                         <div class="relative z-20 max-w-[90%] lg:max-w-[75%]">
                             <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight text-white">Safely, Scientifically, <br>Sustainably</h2>
