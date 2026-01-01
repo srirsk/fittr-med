@@ -128,7 +128,7 @@
     <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
-            <!-- LEFT SIDE: FULLY RESPONSIVE ALIGNMENT -->
+            <!-- LEFT SIDE: REFINED TYPOGRAPHY -->
             <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
                 
                 <!-- BADGE -->
@@ -145,46 +145,36 @@
                    REVERSE<br> <span class="text-gradient-hero italic">DIABETES.</span>
                 </h1>
                 
-                <!-- RESPONSIVE PRICING SECTION -->
-                <div class="max-w-xl mb-10">
-                    <p class="text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-4">
-                        Beat Type-2 Diabetes at
-                    </p>
-                    <div class="flex flex-row items-baseline justify-center lg:justify-start gap-3">
-                        <span class="text-white font-black text-4xl md:text-5xl tracking-tight">₹20,000</span>
-                        <span class="text-gray-600 line-through text-lg md:text-2xl decoration-fittr-green/50">₹39,999</span>
-                    </div>
-                </div>
+                <!-- REFINED PRICING: Not too big, balanced for mobile -->
+                <p class="max-w-xl text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-10 flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1">
+                    Beat Type-2 Diabetes at 
+                    <span class="flex items-baseline gap-2">
+                        <span class="text-white font-bold text-2xl md:text-3xl">₹20,000</span>
+                        <span class="text-gray-500 line-through text-base md:text-lg decoration-fittr-green/40">₹39,999</span>
+                    </span>
+                </p>
 
                 <!-- TIMER + BUTTON ROW -->
                 <div class="flex flex-col lg:flex-row items-center lg:items-end gap-10 w-full">
                     
-                    <!-- TIMER CONTAINER -->
                     <div class="flex flex-col items-center lg:items-start gap-4">
                         <span class="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Offer ends in:</span>
                         
                         <div class="flex gap-2 md:gap-3 items-center">
-                            <!-- Hours -->
                             <div class="flex flex-col items-center gap-1.5">
                                 <div class="bg-zinc-900 border border-white/10 w-14 h-14 md:w-20 md:h-20 flex items-center justify-center rounded-xl md:rounded-2xl shadow-inner">
                                     <span id="h" class="text-xl md:text-4xl font-black text-fittr-green tabular-nums">02</span>
                                 </div>
                                 <span class="text-[8px] md:text-[9px] uppercase font-bold text-gray-600 tracking-tighter">Hours</span>
                             </div>
-                            
                             <span class="text-lg font-bold text-zinc-800 mb-5">:</span>
-
-                            <!-- Mins -->
                             <div class="flex flex-col items-center gap-1.5">
                                 <div class="bg-zinc-900 border border-white/10 w-14 h-14 md:w-20 md:h-20 flex items-center justify-center rounded-xl md:rounded-2xl shadow-inner">
                                     <span id="m" class="text-xl md:text-4xl font-black text-fittr-green tabular-nums">45</span>
                                 </div>
                                 <span class="text-[8px] md:text-[9px] uppercase font-bold text-gray-600 tracking-tighter">Mins</span>
                             </div>
-
                             <span class="text-lg font-bold text-zinc-800 mb-5">:</span>
-
-                            <!-- Secs -->
                             <div class="flex flex-col items-center gap-1.5">
                                 <div class="bg-zinc-900 border border-white/10 w-14 h-14 md:w-20 md:h-20 flex items-center justify-center rounded-xl md:rounded-2xl shadow-inner">
                                     <span id="s" class="text-xl md:text-4xl font-black text-fittr-green tabular-nums">00</span>
@@ -194,7 +184,6 @@
                         </div>
                     </div>
 
-                    <!-- CTA BUTTON -->
                     <button class="w-full sm:w-auto group relative px-8 lg:px-10 py-5 rounded-full bg-gradient-to-b from-zinc-800 via-zinc-900 to-black border-t border-white/20 border-x border-white/5 shadow-[0_20px_40px_rgba(0,0,0,0.5)] transition-all duration-500 hover:shadow-[0_0_30px_rgba(74,222,128,0.15)] hover:-translate-y-1">
                         <div class="flex items-center justify-center gap-4">
                             <span class="text-white font-black text-xs md:text-sm tracking-[0.15em]">CLAIM DISCOUNT</span>
@@ -208,7 +197,7 @@
                 </div>
             </div>
 
-            <!-- RIGHT SIDE: CARDS -->
+            <!-- RIGHT SIDE -->
             <div class="flex flex-col gap-6 w-full">
                 <div class="relative">
                     <div class="glass-card-dark p-8 md:p-10 rounded-[32px] md:rounded-[40px] flex flex-col items-start justify-between min-h-[380px] lg:min-h-[420px] relative overflow-hidden border border-white/10 shadow-2xl text-left">
@@ -245,7 +234,6 @@
         </div>
     </div>
 </section>
-
 <!-- WHY FITTR BENTO GRID (REPLACED SECTION) -->
 <section class="max-w-7xl mx-auto px-6 py-24 border-t border-slate-200" id="why">
     <div class="mb-16">
