@@ -144,10 +144,25 @@
         <span>✓ Built for real-world sustainability</span>
     </div>
 
-   <!-- Premium Button -->
-<a href="#form" class="inline-block w-full sm:w-auto px-6 py-4 md:px-12 md:py-5 bg-slate-900 text-white text-base md:text-lg font-bold rounded-xl hover:bg-black transition-all duration-300 shadow-xl hover:shadow-2xl tracking-wide border-t border-white/10">
-    Check Your Eligibility | Free Consultation
-</a>
+   <!-- PREMIUM HERO CTA (THICK GRADIENT OUTLINE) -->
+<div class="flex justify-center px-6">
+    <a href="#form" class="group relative inline-block p-[2.5px] rounded-full bg-gradient-to-r from-[#10b981] via-[#059669] to-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] active:scale-95">
+        
+        <!-- Inner Button -->
+        <div class="relative bg-[#000] rounded-full px-7 py-3 md:px-12 md:py-5 flex items-center justify-center">
+            
+            <!-- Text Label -->
+            <span class="text-[12px] md:text-base font-black uppercase italic tracking-[0.1em] text-white flex items-center gap-2">
+                Check Eligibility 
+                <span class="h-3 w-[1px] bg-white/20 rotate-[15deg] mx-1"></span> 
+                Free Consultation
+            </span>
+
+            <!-- Subtle Pulse Overlay -->
+            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-[#10b981]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        </div>
+    </a>
+</div>
 </section>
 
 <!-- WHY FITTR BENTO GRID (REPLACED SECTION) -->
@@ -851,62 +866,68 @@
         <div class="relative z-10 flex flex-col lg:flex-row items-stretch">
             
             <!-- LEFT: THE MESSAGE -->
-            <div class="lg:w-1/2 p-8 md:p-20 flex flex-col justify-center">
-                <div class="flex items-center gap-3 mb-6 md:mb-8">
+            <div class="lg:w-1/2 p-10 md:p-20 flex flex-col justify-center">
+                <div class="flex items-center gap-3 mb-8">
                     <!-- GRADIENT LINE -->
-                    <div class="h-[2px] w-8 md:w-10 bg-gradient-to-r from-[#059669] to-[#34d399]"></div>
+                    <div class="h-[2px] w-10 bg-gradient-to-r from-[#059669] to-[#34d399]"></div>
                     <!-- GRADIENT TEXT LABEL -->
-                    <span class="text-[10px] md:text-[12px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] bg-gradient-to-r from-[#10b981] to-[#34d399] bg-clip-text text-transparent">
+                    <span class="text-[12px] font-black uppercase tracking-[0.4em] bg-gradient-to-r from-[#10b981] to-[#34d399] bg-clip-text text-transparent">
                         Protocol: Diabetes Remission
                     </span>
                 </div>
 
-                <h2 class="text-4xl md:text-7xl font-black text-white uppercase italic leading-none tracking-tighter">
+                <h2 class="text-5xl md:text-7xl font-black text-white uppercase italic leading-none tracking-tighter">
                     START YOUR <br>
-                    <span class="inline-block py-2 md:py-4 text-transparent bg-clip-text bg-gradient-to-br from-white via-[#10b981] to-[#34d399] drop-shadow-md">
+                    <!-- REFINED GREEN GRADIENT -->
+                    <span class="inline-block py-4 text-transparent bg-clip-text bg-gradient-to-br from-white via-[#10b981] to-[#34d399] drop-shadow-md">
                         REVERSAL JOURNEY
                     </span>
                 </h2>
 
-                <p class="mt-6 md:mt-8 text-slate-300 text-base md:text-xl max-w-md leading-relaxed">
+                <p class="mt-8 text-slate-300 text-lg md:text-xl max-w-md leading-relaxed">
                     You don’t need another diet. You need a <span class="text-white font-bold">system that adapts with you</span>. Reclaim your health with science and 1-on-1 support.
                 </p>
             </div>
 
             <!-- RIGHT: THE CONSOLIDATED ACTION -->
-            <div class="lg:w-1/2 p-8 md:p-20 bg-white/[0.02] border-t lg:border-t-0 lg:border-l border-white/5 flex flex-col justify-center">
-                <div class="space-y-8 md:space-y-12">
+            <div class="lg:w-1/2 p-10 md:p-20 bg-white/[0.02] border-t lg:border-t-0 lg:border-l border-white/5 flex flex-col justify-center">
+                <div class="space-y-12">
                     
-                    <!-- CALL TO ACTION -->
-                    <div class="relative group">
-                        <!-- Emerald Glow on Hover -->
+                    <!-- CALL TO ACTION (FIXED FOR MOBILE) -->
+                    <div class="relative group w-fit lg:w-full">
                         <div class="absolute -inset-4 bg-[#10b981]/10 rounded-[40px] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                         
-                        <!-- ADJUSTED BUTTON SIZES FOR MOBILE -->
-                        <a href="#form" class="relative flex items-center justify-between bg-white text-black p-1.5 md:p-2 rounded-full transition-transform duration-300 hover:scale-[1.01] active:scale-[0.99]">
-                            <div class="pl-5 md:pl-8">
-                                <span class="block text-[9px] md:text-[10px] font-black text-black/40 uppercase tracking-widest leading-none mb-1">Check Eligibility</span>
-                                <span class="text-base md:text-xl font-black uppercase italic tracking-tight block">Book Free Consultation</span>
-                            </div>
-                            <!-- Adjusted Icon Circle Size -->
-                            <div class="w-12 h-12 md:w-16 md:h-16 bg-[#0F172A] rounded-full flex items-center justify-center group-hover:bg-[#10b981] transition-colors duration-300 group-hover:rotate-45 shrink-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
+                        <!-- THICK GRADIENT OUTLINE WRAPPER -->
+                        <a href="#form" class="relative flex items-center justify-between bg-gradient-to-r from-[#10b981] to-black p-[2.5px] rounded-full transition-transform duration-300 hover:scale-[1.01] active:scale-[0.99] shadow-xl">
+                            
+                            <!-- INNER BUTTON BODY -->
+                            <div class="bg-black w-full rounded-full flex items-center justify-between p-1.5 md:p-2">
+                                <div class="pl-5 md:pl-8">
+                                    <span class="block text-[8px] md:text-[10px] font-black text-white/40 uppercase tracking-widest leading-none mb-1">Check Eligibility</span>
+                                    <span class="text-sm md:text-xl font-black text-white uppercase italic tracking-tight whitespace-nowrap">Book Free Consultation</span>
+                                </div>
+                                
+                                <!-- Adjusted Icon Circle -->
+                                <div class="w-10 h-10 md:w-16 md:h-16 bg-[#10b981] rounded-full flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 shrink-0 ml-4 md:ml-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </div>
                             </div>
                         </a>
                     </div>
 
                     <!-- PROGRAM METADATA -->
-                    <div class="grid grid-cols-2 gap-4 md:gap-8 pt-8 border-t border-white/10">
+                    <div class="grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
                         <div>
-                            <div class="text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Status</div>
-                            <div class="text-white font-bold text-base md:text-lg">Limited Intake</div>
+                            <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Status</div>
+                            <div class="text-white font-bold text-lg">Limited Intake</div>
                         </div>
                         <div>
-                            <div class="text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Queue</div>
-                            <div class="font-bold text-base md:text-lg flex items-center gap-2 bg-gradient-to-r from-[#10b981] to-[#34d399] bg-clip-text text-transparent">
-                                <span class="w-2 h-2 md:w-2.5 md:h-2.5 bg-[#10b981] rounded-full animate-pulse shadow-[0_0_12px_#10b981]"></span>
+                            <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Queue</div>
+                            <!-- GREEN GRADIENT TEXT FOR PRIORITY -->
+                            <div class="font-bold text-lg flex items-center gap-2 bg-gradient-to-r from-[#10b981] to-[#34d399] bg-clip-text text-transparent">
+                                <span class="w-2.5 h-2.5 bg-[#10b981] rounded-full animate-pulse shadow-[0_0_12px_#10b981]"></span>
                                 Priority Open
                             </div>
                         </div>
@@ -918,28 +939,41 @@
     </div>
     
     <!-- DISCLAIMER -->
-    <div class="mt-8 px-4 md:px-10">
-        <p class="text-[8px] md:text-[9px] font-medium text-slate-500 uppercase tracking-widest text-center leading-relaxed">
+    <div class="mt-8 px-10">
+        <p class="text-[9px] font-medium text-slate-500 uppercase tracking-widest text-center leading-relaxed">
             *Clinical Disclaimer: Remission refers to maintaining blood glucose levels below the diabetic range (HbA1c < 6.5%) without medication. Results depend on adherence and individual metabolic factors.
         </p>
     </div>
 </section>
         <!-- NEW FOOTER -->
-        <footer class="bg-black py-24 text-center text-white rounded-t-[60px]">
-            <div class="max-w-4xl mx-auto px-6">
-                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 uppercase italic">Say Goodbye to <span class="text-fittr-green">Spikes.</span></h2>
-                <p class="text-slate-400 mb-12 text-lg">Your journey to an HbA1c below 5.7% starts with a single clinical assessment.</p>
-                <button class="btn-medical px-10 py-5 rounded-2xl text-xl">
-                    Request Remission Call
-                </button>
-                
-                <div class="mt-24 flex items-center justify-center gap-2 mb-8 opacity-100">
-                    <div class="w-6 h-6 bg-fittr-green rounded-md rotate-45"></div>
-                    <span class="font-black text-xl tracking-tighter uppercase italic">FITTR <span class="text-fittr-green">/ DIABETES</span></span>
+<!-- NEW FOOTER -->
+<footer class="bg-black py-24 text-center text-white rounded-t-[60px]">
+    <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 uppercase italic">
+            Say Goodbye to <span class="text-[#10b981]">Spikes.</span>
+        </h2>
+        <p class="text-slate-400 mb-12 text-lg">
+            Your journey to an HbA1c below 5.7% starts with a single clinical assessment.
+        </p>
+        
+        <!-- PREMIUM BUTTON (NO ARROW, EXACT CONTENT) -->
+        <div class="flex justify-center">
+            <a href="#form" class="group relative inline-block p-[2.5px] rounded-full bg-gradient-to-r from-[#10b981] via-[#059669] to-black transition-all duration-300 active:scale-95 shadow-xl">
+                <div class="relative bg-black rounded-full px-10 py-4 md:px-14 md:py-5">
+                    <span class="text-lg md:text-xl font-black uppercase italic tracking-tight text-white">
+                        Request Remission Call
+                    </span>
                 </div>
-                <p class="text-[10px] text-slate-500 font-black uppercase tracking-[0.4em]">© 2025 Fittr Global. Clinical Diabetes Remission Program.</p>
-            </div>
-        </footer>
+            </a>
+        </div>
+        
+        <div class="mt-24 flex items-center justify-center gap-2 mb-8 opacity-100">
+            <div class="w-6 h-6 bg-[#10b981] rounded-md rotate-45"></div>
+            <span class="font-black text-xl tracking-tighter uppercase italic">FITTR <span class="text-[#10b981]">/ DIABETES</span></span>
+        </div>
+        <p class="text-[10px] text-slate-500 font-black uppercase tracking-[0.4em]">© 2025 Fittr Global. Clinical Diabetes Remission Program.</p>
+    </div>
+</footer>
     </main>
 <script>
     const carousel = document.getElementById('doctor-carousel');
