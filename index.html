@@ -26,6 +26,7 @@
             border: 1px solid var(--border-glass);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        
         .glass-card:hover {
             border-color: var(--fittr-green);
             background: rgba(17, 166, 99, 0.05);
@@ -110,55 +111,106 @@
     <main class="relative">
         <div class="hero-glow"></div>
 
-        <!-- HERO SECTION -->
-        <section class="max-w-7xl mx-auto px-6 pt-32 md:pt-48 pb-20 text-center">
+<section class="max-w-7xl mx-auto px-6 pt-32 md:pt-48 pb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        
+        <!-- LEFT SIDE -->
+        <div class="text-left">
             <div class="inline-flex items-center gap-2 bg-fittr-green/10 border border-fittr-green/20 px-4 py-1.5 rounded-full mb-8">
                 <span class="relative flex h-2 w-2">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-fittr-green opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-fittr-green"></span>
                 </span>
-                <span class="text-[10px] font-bold text-fittr-green uppercase tracking-[0.2em]">Clinical Metabolic Unit</span>
+                <span class="text-[10px] font-bold text-fittr-green uppercase tracking-[0.2em]">India's leading preventive healthcare ecosystem</span>
             </div>
             
-            <h1 class="text-5xl md:text-8xl font-extrabold leading-[0.95] tracking-tighter mb-8">
-                GENETICALLY <br> <span class="text-gradient italic">OPTIMIZED.</span>
+            <h1 class="text-4xl md:text-6xl xl:text-6xl font-extrabold leading-[0.95] tracking-tighter mb-8">
+                REVERSE <br> <span class="text-gradient italic">TYPE-2 DIABETES.</span>
             </h1>
             
-            <p class="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-12">
-                Asia's most advanced lifestyle intervention. We utilize <strong>quantified nutrition</strong> and clinical biomarkers to help 400k+ users reverse chronic conditions.
+            <p class="max-w-xl text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-8">
+                At Fittr, we don’t just manage diabetes — <strong>we help youreverse it</strong> through a proven, step-by-step program built around diagnosis, lifestyle coaching, continuous monitoring, and ongoing optimisation.
             </p>
+        </div>
 
-            <!-- HERO BANNER (Stats Bento) -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
-                <div class="glass-card p-8 rounded-[32px] md:col-span-2 flex flex-col justify-between min-h-[300px] relative overflow-hidden">
-                    <div class="relative z-10">
-                        <h2 class="text-3xl font-bold mb-4">Metabolic health <br>simplified.</h2>
-                        <p class="text-gray-400 text-sm max-w-xs leading-relaxed">Evidence-based protocols designed to optimize HbA1c, insulin sensitivity, and lipid profiles.</p>
-                    </div>
-                    <div class="flex gap-4 relative z-10 mt-8">
-                        <div class="bg-white/5 border border-white/10 p-4 rounded-2xl">
-                            <p class="text-2xl font-bold text-fittr-green">400K+</p>
-                            <p class="text-[9px] uppercase font-black text-gray-500">Clinical Wins</p>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 p-4 rounded-2xl">
-                            <p class="text-2xl font-bold text-fittr-green">4.8/5</p>
-                            <p class="text-[9px] uppercase font-black text-gray-500">Patient Rating</p>
-                        </div>
-                    </div>
-                    <!-- Abstract Image Decor -->
-                    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-fittr-green/10 to-transparent"></div>
-                    <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=400&h=400&auto=format&fit=crop" class="absolute top-0 right-0 w-1/2 h-full object-cover opacity-20 grayscale" alt="">
+        <!-- RIGHT SIDE -->
+        <div class="grid grid-cols-1 gap-6">
+            <!-- Top Card -->
+            <div class="glass-card p-8 rounded-[32px] flex flex-col justify-between min-h-[280px] relative overflow-hidden border border-white/10">
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold mb-4">Metabolic health <br>simplified.</h2>
+                    <p class="text-gray-400 text-sm max-w-xs leading-relaxed">Evidence-based protocols designed to optimize HbA1c, insulin sensitivity, and lipid profiles.</p>
                 </div>
-
-                <div class="glass-card p-8 rounded-[32px] flex flex-col justify-between border-l-4 border-l-fittr-green">
-                    <div class="space-y-4">
-                        <div class="text-xs font-black uppercase text-fittr-green tracking-widest">Protocol Focus</div>
-                        <p class="text-sm text-gray-300">Every gram of your nutrition is quantified to manage systemic inflammation and hormonal balance.</p>
+                <div class="flex gap-4 relative z-10 mt-8">
+                    <div class="bg-white/5 border border-white/10 p-4 rounded-2xl">
+                        <p class="text-2xl font-bold text-fittr-green">400K+</p>
+                        <p class="text-[9px] uppercase font-black text-gray-500">Clinical Wins</p>
                     </div>
-                    <button class="text-fittr-green font-bold text-xs flex items-center gap-2 mt-4">VIEW MYDNA REPORT <span>→</span></button>
+                    <div class="bg-white/5 border border-white/10 p-4 rounded-2xl">
+                        <p class="text-2xl font-bold text-fittr-green">4.8/5</p>
+                        <p class="text-[9px] uppercase font-black text-gray-500">Patient Rating</p>
+                    </div>
                 </div>
+                <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=400&h=400&auto=format&fit=crop" class="absolute top-0 right-0 w-1/2 h-full object-cover opacity-20 grayscale" alt="">
             </div>
-        </section>
+
+            <!-- GREEN GRADIENT TIMER CARD -->
+            <div class="bg-gradient-to-br from-[#00ffa3] via-[#00d185] to-[#055136] p-8 rounded-[32px] flex flex-col md:flex-row justify-between items-center gap-6 shadow-xl shadow-fittr-green/20 border border-white/10">
+                
+                <div class="flex flex-col gap-2">
+                    <span class="text-black font-black uppercase tracking-widest text-xs">Offer ends in</span>
+                    
+                    <div class="flex gap-4 items-center">
+                        <div class="flex flex-col">
+                            <span id="h" class="text-4xl font-black text-black leading-none tabular-nums">02</span>
+                            <span class="text-[10px] uppercase font-bold text-black/60">Hrs</span>
+                        </div>
+                        <span class="text-2xl font-bold text-black/40 mb-4">:</span>
+                        <div class="flex flex-col">
+                            <span id="m" class="text-4xl font-black text-black leading-none tabular-nums">45</span>
+                            <span class="text-[10px] uppercase font-bold text-black/60">Min</span>
+                        </div>
+                        <span class="text-2xl font-bold text-black/40 mb-4">:</span>
+                        <div class="flex flex-col">
+                            <span id="s" class="text-4xl font-black text-black leading-none tabular-nums">00</span>
+                            <span class="text-[10px] uppercase font-bold text-black/60">Sec</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="w-full md:w-auto bg-black text-fittr-green px-10 py-4 rounded-2xl font-black text-sm hover:bg-white hover:text-black transition-all duration-300">
+                    CLAIM DISCOUNT NOW
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // Countdown Timer Logic (2 Hours 45 Minutes)
+    let totalSeconds = 9900; 
+
+    const hourEl = document.getElementById('h');
+    const minEl = document.getElementById('m');
+    const secEl = document.getElementById('s');
+
+    function updateCountdown() {
+        if (totalSeconds <= 0) return;
+        
+        totalSeconds--;
+        
+        const hours = Math.floor(totalSeconds / 3600);
+        const mins = Math.floor((totalSeconds % 3600) / 60);
+        const secs = totalSeconds % 60;
+
+        hourEl.innerText = hours.toString().padStart(2, '0');
+        minEl.innerText = mins.toString().padStart(2, '0');
+        secEl.innerText = secs.toString().padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+</script>
 
         <!-- REGISTRATION SECTION (Clinical Lead Gen) -->
         <section class="max-w-7xl mx-auto px-6 py-24 md:py-40">
