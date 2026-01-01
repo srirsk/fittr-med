@@ -121,13 +121,13 @@
     </header>
 
     <main>
-        <!-- REPLACED HERO SECTION -->
-<section class="hero-section relative min-h-screen flex items-center pt-28 pb-10 lg:pt-20 overflow-hidden">
+       <!-- UPDATED HERO SECTION -->
+<section class="hero-section relative min-h-screen flex items-center pt-32 pb-10 lg:pt-20 overflow-hidden">
     <div class="hero-glow"></div>
     <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             
-            <!-- LEFT SIDE: CONTENT + TIMER -->
+            <!-- LEFT SIDE: CENTERED ON MOBILE, LEFT ON DESKTOP -->
             <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
                 <div class="inline-flex items-center gap-2 bg-fittr-green/10 border border-fittr-green/20 px-4 py-1.5 rounded-full mb-6">
                     <span class="relative flex h-2 w-2">
@@ -142,10 +142,10 @@
                 </h1>
                 
                 <p class="max-w-xl text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-8">
-                    Beat Type-2 Diabetes <strong class="text-white">@20000</strong>
+                    Beat Type-2 Diabetes <strong class="text-white">@20000</strong>. Evidence-based protocols designed to optimize HbA1c and insulin sensitivity.
                 </p>
 
-                <!-- SLEEK TIMER + BUTTON ROW -->
+                <!-- TIMER + BUTTON ROW: CENTERED ON MOBILE -->
                 <div class="flex flex-col lg:flex-row items-center lg:items-end gap-8">
                     <div class="flex flex-col items-center lg:items-start gap-4">
                         <span class="text-gray-500 font-bold uppercase tracking-widest text-[11px]">Offer ends in:</span>
@@ -190,18 +190,19 @@
             <!-- RIGHT SIDE -->
             <div class="flex flex-col gap-6">
                 <div class="relative">
-                    <div class="glass-card-dark p-8 md:p-10 rounded-[40px] flex flex-col items-center lg:items-start justify-between min-h-[350px] lg:min-h-[420px] relative overflow-hidden border border-white/10 shadow-2xl">
-                        <div class="relative z-20 max-w-full lg:max-w-[75%] text-center lg:text-left">
-                            <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight text-white">Safely, Scientifically, <br class="hidden lg:block">Sustainably</h2>
+                    <!-- CONTENT INSIDE THIS CARD IS LEFT-ALIGNED (items-start text-left) -->
+                    <div class="glass-card-dark p-8 md:p-10 rounded-[40px] flex flex-col items-start justify-between min-h-[350px] lg:min-h-[420px] relative overflow-hidden border border-white/10 shadow-2xl text-left">
+                        <div class="relative z-20 max-w-[90%] lg:max-w-[75%]">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight text-white">Safely, Scientifically, <br>Sustainably</h2>
                             <p class="text-gray-400 text-sm md:text-base leading-relaxed">Fittr goes beyond management — we guide you to reversal with science and continuous monitoring.</p>
                         </div>
                         
                         <div class="flex gap-4 md:gap-6 relative z-20 mt-8 lg:mt-0">
-                            <div class="bg-black/40 backdrop-blur-md border border-white/10 p-4 md:p-6 rounded-3xl text-center">
+                            <div class="bg-black/40 backdrop-blur-md border border-white/10 p-4 md:p-6 rounded-3xl">
                                 <p class="text-2xl md:text-3xl font-bold text-fittr-green">400K+</p>
                                 <p class="text-[9px] uppercase font-black text-gray-500 tracking-widest mt-1">Clinical Wins</p>
                             </div>
-                            <div class="bg-black/40 backdrop-blur-md border border-white/10 p-4 md:p-6 rounded-3xl text-center">
+                            <div class="bg-black/40 backdrop-blur-md border border-white/10 p-4 md:p-6 rounded-3xl">
                                 <p class="text-2xl md:text-3xl font-bold text-fittr-green">4.8/5</p>
                                 <p class="text-[9px] uppercase font-black text-gray-500 tracking-widest mt-1">Patient Rating</p>
                             </div>
