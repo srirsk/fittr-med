@@ -133,59 +133,98 @@ p { font-size: 1rem; }
     </header>
 
     <main class="pt-32">
-<!-- HERO SECTION -->
-<section class="max-w-7xl mx-auto px-6 text-center mb-24">
-    <!-- Top Pill -->
-    <div class="inline-block bg-fittr-green/10 text-fittr-green px-4 py-1.5 rounded-full xxsmall-text font-bold uppercase tracking-widest border border-fittr-green/20 mb-8">
-        India's leading preventive healthcare ecosystem for diabetes remission
-    </div>
-
-    <h1 class="mb-10 px-2">
-        <!-- Line 1: Optimized mobile size to text-6xl -->
-        <span class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] md:leading-none italic block bg-gradient-to-r from-[#00D084] to-black bg-clip-text text-transparent pb-2">
-            REVERSE
-        </span>
-        <!-- Line 2: Optimized mobile size to text-6xl -->
-        <span class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] md:leading-none italic block text-black">
-            TYPE-2 DIABETES
-        </span>
-
-        <!-- Enhanced Subtitle -->
-        <span class="italic block text-slate-400 text-xs md:text-sm font-bold uppercase tracking-[0.3em] mt-8">
-            SAFELY <span class="mx-2 text-slate-300">•</span> SCIENTIFICALLY <span class="mx-2 text-slate-300">•</span> SUSTAINABLY
-        </span>
-    </h1>
-    <p class="max-w-3xl mx-auto text-slate-600 text-lg md:text-xl font-medium mb-10">
-        At Fittr, we don't just help you manage diabetes - We help you reverse it through a structured, end-to-end health journey covering diagnosis, lifestyle intervention, continuous monitoring, and optimisation along the way.
-    </p>
-
-    <div class="flex flex-wrap justify-center gap-6 mb-12 small-text font-bold text-slate-700">
-        <span>✓ Backed by science</span>
-        <span>✓ Guided by certified experts</span>
-        <span>✓ Built for real-world sustainability</span>
-    </div>
-
-   <!-- PREMIUM HERO CTA (THICK GRADIENT OUTLINE) -->
-<div class="flex justify-center px-6">
-    <a href="#form" class="group relative inline-block p-[2.5px] rounded-full bg-gradient-to-r from-[#10b981] via-[#059669] to-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] active:scale-95">
+<!-- HERO SECTION: PREMIUM DARK GREEN MARKETING STYLE -->
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#022c22] py-24">
+    
+    <!-- Background Architectural Elements (Marketing Vibe) -->
+    <div class="absolute inset-0 overflow-hidden">
+        <!-- Main Radiant Glow -->
+        <div class="absolute -top-[10%] -left-[10%] w-[70%] h-[70%] bg-emerald-500/20 rounded-full blur-[120px]"></div>
+        <div class="absolute -bottom-[10%] -right-[10%] w-[60%] h-[60%] bg-fittr-green/10 rounded-full blur-[100px]"></div>
         
-        <!-- Inner Button -->
-        <div class="relative bg-[#000] rounded-full px-7 py-3 md:px-12 md:py-5 flex items-center justify-center">
-            
-            <!-- Text Label -->
-            <span class="xxsmall-text md:small-text font-black uppercase italic tracking-[0.1em] text-white flex items-center gap-2">
-                Check Eligibility 
-                <span class="h-3 w-[1px] bg-white/20 rotate-[15deg] mx-1"></span> 
-                Free Consultation
-            </span>
-
-            <!-- Subtle Pulse Overlay -->
-            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-[#10b981]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <!-- Subtle Grid Pattern -->
+        <div class="absolute inset-0 opacity-[0.15]" 
+             style="background-image: linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px); background-size: 40px 40px;">
         </div>
-    </a>
-</div>
-</section>
+    </div>
 
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        
+        <!-- Trusted By / Top Badge -->
+        <div class="inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-2 rounded-full mb-10 shadow-2xl">
+            <div class="flex -space-x-2">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 border-2 border-[#022c22] flex items-center justify-center text-[10px] text-white font-bold">✓</div>
+                <div class="w-6 h-6 rounded-full bg-emerald-400 border-2 border-[#022c22]"></div>
+                <div class="w-6 h-6 rounded-full bg-emerald-300 border-2 border-[#022c22]"></div>
+            </div>
+            <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-emerald-400">
+                10,000+ Success Stories Across India
+            </span>
+        </div>
+
+        <h1 class="mb-8">
+            <!-- Main Catchphrase -->
+            <span class="block text-4xl md:text-6xl font-medium text-emerald-400 tracking-tight mb-2">
+                Stop Managing. Start Healing.
+            </span>
+            <!-- Hero Title -->
+            <span class="text-7xl md:text-[120px] font-black tracking-tighter leading-[0.85] italic block text-white">
+                REVERSE <br class="hidden md:block"> 
+                <span class="bg-gradient-to-r from-emerald-400 to-lime-300 bg-clip-text text-transparent">TYPE-2 DIABETES</span>
+            </span>
+        </h1>
+
+        <p class="max-w-3xl mx-auto text-emerald-100/80 text-lg md:text-2xl leading-relaxed mb-12 font-light">
+            India's most powerful <span class="text-white font-semibold">science-backed ecosystem</span> designed to put your diabetes into remission and get you off medication for good.
+        </p>
+
+        <!-- Marketing Proof Points -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-4 rounded-2xl">
+                <div class="text-emerald-400 text-2xl font-black mb-1 italic">94%</div>
+                <div class="text-white/60 text-xs uppercase font-bold tracking-tighter">HbA1c Reduction Rate</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-4 rounded-2xl">
+                <div class="text-emerald-400 text-2xl font-black mb-1 italic">24/7</div>
+                <div class="text-white/60 text-xs uppercase font-bold tracking-tighter">CGM Cloud Monitoring</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-4 rounded-2xl">
+                <div class="text-emerald-400 text-2xl font-black mb-1 italic">0%</div>
+                <div class="text-white/60 text-xs uppercase font-bold tracking-tighter">Restrictive Dieting</div>
+            </div>
+        </div>
+
+        <!-- THE "ULTIMATE" CTA -->
+        <div class="flex flex-col items-center gap-6">
+            <a href="#form" class="group relative inline-block">
+                <!-- Glowing Aura behind button -->
+                <div class="absolute inset-0 bg-emerald-400 blur-2xl opacity-20 group-hover:opacity-50 transition-opacity duration-500"></div>
+                
+                <!-- The Main Button -->
+                <div class="relative bg-emerald-500 hover:bg-emerald-400 text-emerald-950 px-10 py-6 md:px-16 md:py-8 rounded-full flex items-center gap-4 transition-all duration-300 transform group-hover:-translate-y-1">
+                    <span class="text-lg md:text-xl font-black uppercase italic tracking-tighter">
+                        Check My Eligibility — <span class="opacity-70">Free</span>
+                    </span>
+                    <svg class="w-6 h-6 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </div>
+            </a>
+            <p class="text-emerald-500/60 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span> 
+                Limited spots available for March cohort
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Bottom Wave Decal (Premium transition to next section) -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] transform rotate-180">
+        <svg class="relative block w-full h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+        </svg>
+    </div>
+</section>
 <!-- WHY FITTR BENTO GRID (REPLACED SECTION) -->
 <section class="max-w-7xl mx-auto px-6 py-24 border-t border-slate-200" id="why">
     <div class="mb-16">
