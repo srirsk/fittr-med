@@ -486,7 +486,7 @@
 </section>
        
  
- <!-- JOURNEY SECTION (TIMELINE FASHION) -->
+<!-- JOURNEY SECTION (CAROUSEL ON MOBILE, GRID ON DESKTOP) -->
 <section id="how" class="max-w-7xl mx-auto px-6 py-24 relative">
     <div class="mb-20">
         <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-6 uppercase italic leading-tight text-slate-900">
@@ -499,16 +499,16 @@
         <!-- Connecting Line (Desktop Only) -->
         <div class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-slate-100 -translate-y-1/2 z-0"></div>
         
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6 relative z-10">
+        <!-- Modified Container: Flex + Overflow-X on Mobile, Grid on Desktop -->
+        <div class="flex lg:grid lg:grid-cols-4 gap-6 relative z-10 overflow-x-auto lg:overflow-x-visible hide-scrollbar snap-x snap-mandatory -mx-6 px-6 lg:mx-0 lg:px-0">
             
             <!-- Phase 01 -->
-            <div class="group relative">
+            <div class="group relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 snap-center">
                 <div class="glass-card p-8 rounded-[40px] bg-white border-2 border-transparent hover:border-fittr-green transition-all duration-300 h-full flex flex-col justify-between shadow-sm hover:shadow-xl">
                     <div>
                         <span class="text-5xl font-black text-slate-100 block mb-4 italic group-hover:text-fittr-green/20">01</span>
                         <h4 class="font-bold text-xl mb-6 italic text-fittr-green">Diagnose & Baseline Assessment</h4>
                     </div>
-                    <!-- Responsive Text: text-[11px] on mobile, lg:xxsmall-text on desktop -->
                     <div class="text-[11px] lg:xxsmall-text text-slate-500 font-bold uppercase leading-relaxed space-y-4 lg:space-y-2">
                         <div class="grid grid-cols-[12px_1fr] items-start">
                             <span class="text-fittr-green">•</span>
@@ -527,7 +527,7 @@
             </div>
 
             <!-- Phase 02 -->
-            <div class="group relative">
+            <div class="group relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 snap-center">
                 <div class="glass-card p-8 rounded-[40px] bg-white border-2 border-transparent hover:border-fittr-green transition-all duration-300 h-full flex flex-col justify-between shadow-sm hover:shadow-xl">
                     <div>
                         <span class="text-5xl font-black text-slate-100 block mb-4 italic group-hover:text-fittr-green/20">02</span>
@@ -540,7 +540,7 @@
                         </div>
                         <div class="grid grid-cols-[12px_1fr] items-start">
                             <span class="text-fittr-green">•</span>
-                            <span>Structured nutrition strategy (not crash dieting)</span>
+                            <span>Structured nutrition strategy</span>
                         </div>
                         <div class="grid grid-cols-[12px_1fr] items-start">
                             <span class="text-fittr-green">•</span>
@@ -551,7 +551,7 @@
             </div>
 
             <!-- Phase 03 -->
-            <div class="group relative">
+            <div class="group relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 snap-center">
                 <div class="glass-card p-8 rounded-[40px] bg-white border-2 border-transparent hover:border-fittr-green transition-all duration-300 h-full flex flex-col justify-between shadow-sm hover:shadow-xl">
                     <div>
                         <span class="text-5xl font-black text-slate-100 block mb-4 italic group-hover:text-fittr-green/20">03</span>
@@ -574,8 +574,8 @@
                 </div>
             </div>
 
-            <!-- Phase 04 (Goal Card) -->
-            <div class="group relative">
+            <!-- Phase 04 -->
+            <div class="group relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 snap-center">
                 <div class="glass-card p-8 rounded-[40px] bg-black text-white border-2 border-fittr-green/30 hover:border-fittr-green transition-all duration-300 h-full flex flex-col justify-between shadow-xl">
                     <div>
                         <span class="text-5xl font-black text-white/10 block mb-4 italic group-hover:text-fittr-green/30">04</span>
@@ -599,9 +599,11 @@
             </div>
         </div>
     </div>
-    <p class="text-center mt-12 font-black text-slate-400 xxsmall-text uppercase tracking-[0.3em]">This is iterative, data-led care — not a one-time plan.</p>
+    <p class="text-center mt-12 font-black text-slate-400 xxsmall-text uppercase tracking-[0.3em]">
+        <span class="lg:hidden">Swipe to explore the phases →</span>
+        <span class="hidden lg:inline">This is iterative, data-led care — not a one-time plan.</span>
+    </p>
 </section>
-
     <section id="included" class="bg-[#0a0a0a] text-white py-24 px-6 overflow-hidden">
     <div class="max-w-7xl mx-auto">
         
