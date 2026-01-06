@@ -1272,66 +1272,56 @@
     </div>
 </footer>
 <!-- CLEAN DOCTOR MODAL -->
-<!-- FULLY RESPONSIVE DOCTOR MODAL -->
-<div id="doctorModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-0 md:p-6">
-    <!-- Backdrop with blur -->
-    <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeModal()"></div>
+<!-- OVERLAY POPUP MODAL (Optimized for Mobile & Desktop) -->
+<div id="doctorModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 md:p-6">
+    <!-- Backdrop: Semi-transparent to show context behind -->
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
     
     <!-- Modal Container -->
-    <!-- Mobile: Full screen height | Desktop: 85vh height -->
-    <div class="relative bg-white w-full max-w-5xl md:rounded-[40px] shadow-2xl flex flex-col md:flex-row h-full md:h-[85vh] z-10 overflow-hidden">
+    <!-- Removed 'h-full' on mobile. Now uses 'max-h-[90vh]' to ensure it never touches the screen top/bottom edges -->
+    <div class="relative bg-white w-full max-w-4xl rounded-[32px] md:rounded-[40px] shadow-2xl flex flex-col md:flex-row max-h-[85vh] md:h-[80vh] z-10 overflow-hidden">
         
-        <!-- Close Button: Mobile friendly position and size -->
-        <button onclick="closeModal()" class="absolute top-4 right-4 md:top-6 md:right-6 z-[110] bg-white/90 md:bg-slate-100 p-3 rounded-full shadow-lg hover:bg-fittr-green hover:text-white transition-all active:scale-95">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        <!-- Close Button: Placed inside the white box to be clearly visible -->
+        <button onclick="closeModal()" class="absolute top-4 right-4 z-[110] bg-slate-100 hover:bg-fittr-green hover:text-white p-2.5 rounded-full transition-all shadow-md active:scale-95">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
 
-        <!-- Left Side: Image -->
-        <!-- Mobile: Fixed height (300px) | Desktop: Full height of modal -->
-        <div class="w-full md:w-2/5 h-[300px] md:h-full flex-shrink-0 bg-slate-200">
+        <!-- Left/Top Side: Image -->
+        <!-- Fixed height on mobile so it doesn't take over the screen -->
+        <div class="w-full md:w-2/5 h-64 md:h-full flex-shrink-0 bg-slate-50">
             <img id="modalImg" src="" class="w-full h-full object-cover object-top">
         </div>
 
         <!-- Right Side: Content -->
-        <!-- Both mobile and desktop now scroll independently within this container -->
-        <div class="w-full md:w-3/5 p-6 md:p-16 overflow-y-auto bg-white flex flex-col custom-scrollbar">
-            <!-- Header section inside scrollable area -->
-            <div class="mb-6 md:mb-8">
-                <h2 id="modalName" class="text-3xl md:text-5xl font-black text-slate-900 leading-[1.1] md:leading-none tracking-tighter mb-4"></h2>
-                <p id="modalQual" class="text-fittr-green font-bold text-lg md:text-xl uppercase tracking-tight"></p>
+        <div class="w-full md:w-3/5 p-8 md:p-14 overflow-y-auto bg-white custom-scrollbar">
+            <div class="mb-6">
+                <h2 id="modalName" class="text-2xl md:text-4xl font-black text-slate-900 leading-tight tracking-tight"></h2>
+                <p id="modalQual" class="text-fittr-green font-bold text-base md:text-lg mt-1 uppercase tracking-tight"></p>
             </div>
             
-            <hr class="border-slate-100 mb-6 md:mb-8">
+            <hr class="border-slate-100 mb-6">
 
-            <!-- Verbatim Bio Content -->
-            <div id="modalBio" class="text-slate-600 leading-relaxed text-base md:text-lg space-y-4 pb-10">
-                <!-- Content injected here via JS -->
+            <!-- Biography Content -->
+            <div id="modalBio" class="text-slate-600 leading-relaxed text-sm md:text-base space-y-4 pb-4">
+                <!-- Content injected here -->
             </div>
         </div>
     </div>
 </div>
 
 <style>
-    /* Premium scrollbar for the text area */
+    /* Styling the scrollbar for the popup */
     .custom-scrollbar::-webkit-scrollbar {
-        width: 5px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-        background: transparent;
+        width: 4px;
     }
     .custom-scrollbar::-webkit-scrollbar-thumb {
         background: #11A663;
-        border-radius: 20px;
+        border-radius: 10px;
     }
-    
-    /* Ensure modal doesn't jump on mobile browsers with dynamic URL bars */
-    @media (max-width: 768px) {
-        #doctorModal .relative {
-            height: 100%;
-            border-radius: 0;
-        }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f8fafc;
     }
 </style>
     </main>
@@ -1432,50 +1422,36 @@
             if(sElem) sElem.innerText = secs.toString().padStart(2, '0');
         }
         setInterval(updateCountdown, 1000);
-      // --- RESPONSIVE MODAL LOGIC ---
-const doctorModal = document.getElementById('doctorModal');
-const modalScrollArea = doctorModal.querySelector('.overflow-y-auto');
+      const modal = document.getElementById('doctorModal');
+const scrollArea = modal.querySelector('.overflow-y-auto');
 
 function openModal(card) {
     const data = card.dataset;
-    // Get verbatim text from the hidden div inside the card
     const fullBio = card.querySelector('.full-bio-content').innerHTML;
 
-    // Fill Modal
     document.getElementById('modalName').innerText = data.name;
     document.getElementById('modalQual').innerText = data.qual;
     document.getElementById('modalImg').src = data.img;
     document.getElementById('modalBio').innerHTML = fullBio;
 
-    // Reset scroll position to top
-    if (modalScrollArea) modalScrollArea.scrollTop = 0;
+    // Reset scroll to top of the content area
+    if (scrollArea) scrollArea.scrollTop = 0;
 
-    // Show Modal
-    doctorModal.classList.remove('hidden');
-    doctorModal.classList.add('flex');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
     
-    // Prevent background scrolling (Body Lock)
+    // Lock background scroll
     document.body.style.overflow = 'hidden';
-    document.body.style.touchAction = 'none'; // Extra mobile fix
 }
 
 function closeModal() {
-    doctorModal.classList.add('hidden');
-    doctorModal.classList.remove('flex');
-    
-    // Restore scrolling
-    document.body.style.overflow = '';
-    document.body.style.touchAction = '';
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto'; 
 }
 
-// Attach listeners to cards
 document.querySelectorAll('.doctor-card').forEach(card => {
     card.addEventListener('click', () => openModal(card));
-});
-
-// Close on Escape Key
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
 });
     </script>
     
