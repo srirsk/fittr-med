@@ -1272,32 +1272,55 @@
     </div>
 </footer>
 <!-- CLEAN DOCTOR MODAL -->
+<!-- FIXED IMAGE SCROLLABLE CONTENT MODAL -->
 <div id="doctorModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 md:p-6">
+    <!-- Backdrop -->
     <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeModal()"></div>
     
-    <div class="relative bg-white w-full max-w-5xl rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh] overflow-y-auto z-10">
-        <button onclick="closeModal()" class="absolute top-6 right-6 z-50 bg-slate-100 p-2 rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <!-- Modal Container: Set to a fixed max-height -->
+    <div class="relative bg-white w-full max-w-5xl rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row h-auto md:h-[85vh] z-10">
+        
+        <!-- Close Button -->
+        <button onclick="closeModal()" class="absolute top-6 right-6 z-50 bg-slate-100 p-2 rounded-full hover:bg-slate-200 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
 
-        <!-- Image -->
-        <div class="w-full md:w-2/5 h-80 md:h-auto">
-            <img id="modalImg" src="" class="w-full h-full object-cover">
+        <!-- Left Side: Image (FIXED) -->
+        <!-- On desktop, this stays at h-full and doesn't scroll -->
+        <div class="w-full md:w-2/5 h-80 md:h-full flex-shrink-0 bg-slate-100">
+            <img id="modalImg" src="" class="w-full h-full object-cover object-top">
         </div>
 
-        <!-- Text Content -->
-        <div class="w-full md:w-3/5 p-10 md:p-16">
+        <!-- Right Side: Content (SCROLLABLE) -->
+        <!-- overflow-y-auto is placed here so only the text moves -->
+        <div class="w-full md:w-3/5 p-10 md:p-16 overflow-y-auto bg-white custom-scrollbar">
             <h2 id="modalName" class="text-3xl md:text-5xl font-black text-slate-900 leading-tight mb-4"></h2>
             <p id="modalQual" class="text-fittr-green font-bold text-lg mb-8"></p>
             
             <hr class="border-slate-100 mb-8">
 
-            <div id="modalBio" class="text-slate-600 leading-relaxed text-lg"></div>
+            <!-- This is the verbatim content that will scroll -->
+            <div id="modalBio" class="text-slate-600 leading-relaxed text-lg pb-4"></div>
         </div>
     </div>
 </div>
+
+<style>
+    /* Optional: Make the scrollbar look cleaner */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #11A663; 
+        border-radius: 10px;
+    }
+</style>
     </main>
 <script>
     const carousel = document.getElementById('doctor-carousel');
@@ -1396,8 +1419,8 @@
             if(sElem) sElem.innerText = secs.toString().padStart(2, '0');
         }
         setInterval(updateCountdown, 1000);
-       
-       const modal = document.getElementById('doctorModal');
+      //doctor modal logic 
+      const modal = document.getElementById('doctorModal');
 
 function openModal(card) {
     const data = card.dataset;
@@ -1405,13 +1428,12 @@ function openModal(card) {
 
     document.getElementById('modalName').innerText = data.name;
     document.getElementById('modalQual').innerText = data.qual;
-    
-    const mImg = document.getElementById('modalImg');
-    mImg.src = data.img;
-    // ENSURE MODAL IMAGE ALSO SHOWS FROM TOP
-    mImg.classList.add('object-top');
-
+    document.getElementById('modalImg').src = data.img;
     document.getElementById('modalBio').innerHTML = fullBio;
+
+    // IMPORTANT: Reset the scroll to the top of the text area
+    const contentArea = document.querySelector('#doctorModal .overflow-y-auto');
+    if (contentArea) contentArea.scrollTop = 0;
 
     modal.classList.remove('hidden');
     modal.classList.add('flex');
