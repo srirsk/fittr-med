@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FITTR DIABETES | Reverse Type 2 Diabetes</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Removed Plus Jakarta Sans, keeping only Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --fittr-green: #11A663;
             --bg-light: #F8FAFC;
-            --bg-dark: #05070A; /* Added from Code 1 */
-            --card-glass-dark: rgba(255, 255, 255, 0.03); /* Added from Code 1 */
-            --border-glass-dark: rgba(255, 255, 255, 0.08); /* Added from Code 1 */
+            --bg-dark: #05070A;
+            --card-glass-dark: rgba(255, 255, 255, 0.03);
+            --border-glass-dark: rgba(255, 255, 255, 0.08);
             --card-glass: rgba(255, 255, 255, 0.9);
             --border-glass: rgba(0, 0, 0, 0.06);
             --text-main: #0F172A;
@@ -25,11 +26,11 @@
             scroll-behavior: smooth;
         }
 
-        /* --- HERO SPECIFIC STYLES (From Code 1) --- */
+        /* --- HERO SPECIFIC STYLES --- */
         .hero-section {
             background-color: var(--bg-dark);
             color: #FFFFFF;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Inter', sans-serif; /* Changed from Plus Jakarta Sans to Inter */
         }
 
         .glass-card-dark {
@@ -70,7 +71,7 @@
             box-shadow: 0 0 20px rgba(17, 166, 99, 0.2);
         }
 
-        /* --- EXISTING STYLES (From Code 2) --- */
+        /* --- EXISTING STYLES --- */
         .glass-card {
             background: var(--card-glass);
             backdrop-filter: blur(12px);
@@ -86,14 +87,25 @@
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Font size consistency */
-        h2 { font-size: 3rem; line-height: 1.1; }
+        /* Updated font sizes according to brand guidelines - BODY TEXT ONLY */
+        /* Body text - 14pt Medium */
+        .body-text { font-size: 14pt; font-weight: 500; }
+        
+        /* Description text - 14pt Regular */
+        .description-text { font-size: 14pt; font-weight: 400; }
+        
+        /* Utility classes */
         .xxsmall-text { font-size: 0.625rem; }
         .xsmall-text { font-size: 0.75rem; }
         .small-text { font-size: 0.875rem; }
+        
+        /* Default paragraph styles */
+        p { font-size: 14pt; font-weight: 400; }
 
         @media (max-width: 768px) {
-            h2 { font-size: 2rem; }
+            .body-text { font-size: 12pt; }
+            .description-text { font-size: 12pt; }
+            p { font-size: 12pt; }
         }
     </style>
     <style>
@@ -156,7 +168,7 @@
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-fittr-green"></span>
                     </span>
                     <span class="text-[10px] font-bold text-fittr-green uppercase tracking-[0.2em]">
-                        India’s leading scientific preventive healthcare ecosystem for diabetes remission.
+                        India's leading scientific preventive healthcare ecosystem for diabetes remission.
                     </span>
                 </div>
                 
@@ -166,7 +178,7 @@
                 </h1>
                 
                 <!-- REFINED PRICING -->
-                <p class="max-w-xl text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-10 flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1">
+                <p class="max-w-xl text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-10 flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1 description-text">
                     Beat Type-2 Diabetes at 
                     <span class="flex items-baseline gap-2">
                         <span class="text-white font-bold text-2xl md:text-3xl">₹20,000</span>
@@ -238,7 +250,7 @@
                     <div class="glass-card-dark p-8 md:p-10 rounded-[32px] md:rounded-[40px] flex flex-col items-start justify-between min-h-[380px] lg:min-h-[420px] relative overflow-hidden border border-white/10 shadow-2xl text-left">
                         <div class="relative z-20 max-w-[90%] lg:max-w-[75%]">
                             <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight text-white">Safely, Scientifically, <br>Sustainably</h2>
-                            <p class="text-gray-400 text-sm md:text-base leading-relaxed">Fittr goes beyond management — we guide you to reversal with science and continuous monitoring.</p>
+                            <p class="text-gray-400 text-sm md:text-base leading-relaxed description-text">Fittr goes beyond management — we guide you to reversal with science and continuous monitoring.</p>
                         </div>
                         
                         <div class="flex gap-4 md:gap-6 relative z-20 mt-8 lg:mt-0">
@@ -282,7 +294,7 @@
         <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter leading-tight text-slate-900 uppercase italic">
             Why Fittr is <br><span class="text-fittr-green">Different</span>
         </h2>
-        <p class="text-slate-500 mt-4 max-w-xl font-medium">
+        <p class="text-slate-500 mt-4 max-w-xl font-medium body-text">
             Most programs stop at advice. Fittr takes ownership of your <strong>entire health journey.</strong> <br>
             <strong>Fittr is a full-stack preventive healthcare ecosystem with all capabilities in-house:</strong>
         </p>
@@ -291,7 +303,7 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div class="md:col-span-2 glass-card p-10 rounded-[48px] bg-white flex flex-col justify-between border-l-8 border-fittr-green">
             <h3 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">100s of Success Stories</h3>
-            <p class="text-slate-500 mb-8 leading-relaxed">Join <strong>450,000+ transformations</strong> across India who have achieved measurable improvements in blood sugar, energy, and long-term health.</p>
+            <p class="text-slate-500 mb-8 leading-relaxed body-text">Join <strong>450,000+ transformations</strong> across India who have achieved measurable improvements in blood sugar, energy, and long-term health.</p>
             <div class="flex -space-x-4">
                 <div class="w-12 h-12 rounded-full border-4 border-white bg-slate-200"></div>
                 <div class="w-12 h-12 rounded-full border-4 border-white bg-slate-300"></div>
@@ -302,26 +314,26 @@
         <div class="glass-card p-8 rounded-[40px] bg-black text-white">
             <div class="text-3xl mb-4">🔬</div>
             <h4 class="font-black uppercase xxsmall-text tracking-widest text-fittr-green mb-2">Diagnostics</h4>
-            <p class="small-text text-slate-400 leading-relaxed">Cutting-edge <strong>NCD clinic</strong> and biomarker analysis capabilities in-house.</p>
+            <p class="small-text text-slate-400 leading-relaxed body-text">Cutting-edge <strong>NCD clinic</strong> and biomarker analysis capabilities in-house.</p>
         </div>
 
         <div class="glass-card p-8 rounded-[40px] bg-white">
             <div class="text-3xl mb-4">👨‍⚕️</div>
             <h4 class="font-black uppercase xxsmall-text tracking-widest text-slate-400 mb-2">Medical Panel</h4>
-            <p class="small-text text-slate-500 leading-relaxed">Direct collaboration with <strong>30+ Doctors</strong> and medical experts.</p>
+            <p class="small-text text-slate-500 leading-relaxed body-text">Direct collaboration with <strong>30+ Doctors</strong> and medical experts.</p>
         </div>
 
         <div class="glass-card p-8 rounded-[40px] bg-white">
             <div class="text-3xl mb-4">🏋️</div>
             <h4 class="font-black uppercase xxsmall-text tracking-widest text-slate-400 mb-2">Coaching Force</h4>
-            <p class="small-text text-slate-500 leading-relaxed"><strong>700+ Certified Coaches</strong> for 1-1 nutrition and fitness intervention.</p>
+            <p class="small-text text-slate-500 leading-relaxed body-text"><strong>700+ Certified Coaches</strong> for 1-1 nutrition and fitness intervention.</p>
         </div>
 
         <div class="md:col-span-3 glass-card p-10 rounded-[48px] bg-white flex items-center gap-10">
             <div class="hidden md:block w-32 h-32 bg-fittr-green/10 rounded-full flex items-center justify-center text-4xl">🎯</div>
             <div>
                 <h3 class="text-xl md:text-2xl font-bold mb-2 uppercase italic">Full-Stack Ownership</h3>
-                <p class="text-slate-500 small-text max-w-xl">From diagnostic testing to personalised lifestyle interventions and periodic reassessments—we handle it all under one roof.</p>
+                <p class="text-slate-500 small-text max-w-xl body-text">From diagnostic testing to personalised lifestyle interventions and periodic reassessments—we handle it all under one roof.</p>
             </div>
         </div>
     </div>
@@ -340,7 +352,7 @@
             </p>
 
             <!-- Description: Verbatim content. text-[13px] for mobile legibility, md:text-lg for desktop -->
-            <p class="text-slate-400 max-w-4xl mb-10 leading-relaxed text-[13px] md:text-lg">
+            <p class="text-slate-400 max-w-4xl mb-10 leading-relaxed description-text">
                 At Fittr, diabetes reversal refers to achieving and sustaining healthy blood glucose levels (HbA1c) through lifestyle interventions, with eliminated dependency on medication by gradual reduction, under medical supervision (World Health Organisation).
             </p>
 
@@ -380,7 +392,7 @@
     <div class="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end">
         <div class="max-w-xl">
             <h3 class="text-3xl md:text-5xl font-extrabold tracking-tighter uppercase italic text-slate-900">Diabetes <span class="text-fittr-green">Specialists</span></h3>
-            <p class="text-slate-500 mt-4 font-medium">India's leading experts in Diabetes Remission, helping you move from management to reversal.</p>
+            <p class="text-slate-500 mt-4 font-medium body-text">India's leading experts in Diabetes Remission, helping you move from management to reversal.</p>
         </div>
         <!-- Navigation Arrows -->
         <div class="hidden md:flex gap-2">
@@ -405,7 +417,7 @@
                 <div class="p-8">
                     <span class="xxsmall-text font-black text-fittr-green uppercase tracking-widest">Endocrinology</span>
                     <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Aakash</h4>
-                    <p class="small-text text-slate-500 mt-3">Specialist in metabolic health and Type-2 diabetes reversal.</p>
+                    <p class="small-text text-slate-500 mt-3 body-text">Specialist in metabolic health and Type-2 diabetes reversal.</p>
                 </div>
             </div>
         </div>
@@ -419,7 +431,7 @@
                 <div class="p-8">
                     <span class="xxsmall-text font-black text-fittr-green uppercase tracking-widest">Clinical Nutrition</span>
                     <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Sushma</h4>
-                    <p class="small-text text-slate-500 mt-3">Focusing on dietary intervention strategies and glycemic control.</p>
+                    <p class="small-text text-slate-500 mt-3 body-text">Focusing on dietary intervention strategies and glycemic control.</p>
                 </div>
             </div>
         </div>
@@ -433,7 +445,7 @@
                 <div class="p-8">
                     <span class="xxsmall-text font-black text-fittr-green uppercase tracking-widest">Internal Medicine</span>
                     <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Namrata</h4>
-                    <p class="small-text text-slate-500 mt-3">Expert in systemic management of lifestyle diseases.</p>
+                    <p class="small-text text-slate-500 mt-3 body-text">Expert in systemic management of lifestyle diseases.</p>
                 </div>
             </div>
         </div>
@@ -447,7 +459,7 @@
                 <div class="p-8">
                     <span class="xxsmall-text font-black text-fittr-green uppercase tracking-widest">Preventive Healthcare</span>
                     <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Shweta</h4>
-                    <p class="small-text text-slate-500 mt-3">Specializing in early detection and lifestyle modification.</p>
+                    <p class="small-text text-slate-500 mt-3 body-text">Specializing in early detection and lifestyle modification.</p>
                 </div>
             </div>
         </div>
@@ -461,7 +473,7 @@
                 <div class="p-8">
                     <span class="xxsmall-text font-black text-fittr-green uppercase tracking-widest">Functional Medicine</span>
                     <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Kashmi</h4>
-                    <p class="small-text text-slate-500 mt-3">Advocating for root-cause resolution of insulin resistance.</p>
+                    <p class="small-text text-slate-500 mt-3 body-text">Advocating for root-cause resolution of insulin resistance.</p>
                 </div>
             </div>
         </div>
@@ -475,7 +487,7 @@
                 <div class="p-8">
                     <span class="xxsmall-text font-black text-fittr-green uppercase tracking-widest">Lifestyle Medicine</span>
                     <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Rashmi</h4>
-                    <p class="small-text text-slate-500 mt-3">Helping patients navigate medication tapering protocols.</p>
+                    <p class="small-text text-slate-500 mt-3 body-text">Helping patients navigate medication tapering protocols.</p>
                 </div>
             </div>
         </div>
@@ -489,7 +501,7 @@
                 <div class="p-8">
                     <span class="xxsmall-text font-black text-fittr-green uppercase tracking-widest">Metabolic Research</span>
                     <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Poonam</h4>
-                    <p class="small-text text-slate-500 mt-3">Dedicated to the science of sustainable weight management.</p>
+                    <p class="small-text text-slate-500 mt-3 body-text">Dedicated to the science of sustainable weight management.</p>
                 </div>
             </div>
         </div>
@@ -503,7 +515,7 @@
                 <div class="p-8">
                     <span class="xxsmall-text font-black text-fittr-green uppercase tracking-widest">Sports Medicine</span>
                     <h4 class="text-xl font-bold text-slate-900 mt-1">Dr. Prashant</h4>
-                    <p class="small-text text-slate-500 mt-3">Expert in physical activity design for insulin sensitivity.</p>
+                    <p class="small-text text-slate-500 mt-3 body-text">Expert in physical activity design for insulin sensitivity.</p>
                 </div>
             </div>
         </div>
@@ -645,7 +657,7 @@
                 </h2>
             </div>
             <div class="border-l border-white/10 pl-8 max-w-xs">
-                <p class="xsmall-text font-bold italic leading-relaxed text-slate-400 uppercase tracking-tight">
+                <p class="xsmall-text font-bold italic leading-relaxed text-slate-400 uppercase tracking-tight body-text">
                     "Everything works together — because diabetes is multifactorial, not just about food or exercise alone."
                 </p>
             </div>
@@ -723,7 +735,7 @@
     <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12 text-left">
         <div class="glass-card p-12 rounded-[48px] border-l-8 border-fittr-green">
             <h4 class="font-black text-fittr-green uppercase tracking-[0.2em] xxsmall-text mb-8">✔ Who This Is For</h4>
-            <ul class="space-y-4 font-bold text-slate-700">
+            <ul class="space-y-4 font-bold text-slate-700 body-text">
                 <li>• Type 2 diabetes or prediabetes</li>
                 <li>• HbA1c typically below ~9%</li>
                 <li>• Diagnosed within the last few years (earlier = better outcomes)</li>
@@ -735,7 +747,7 @@
         <!-- Hover override to red -->
         <div class="glass-card p-12 rounded-[48px] bg-slate-50 border-dashed border-2 hover:!border-red-500 hover:!shadow-none">
             <h4 class="font-black text-red-400 uppercase tracking-[0.2em] xxsmall-text mb-8">❌ Not Suitable For</h4>
-            <ul class="space-y-4 font-bold text-slate-400">
+            <ul class="space-y-4 font-bold text-slate-400 body-text">
                 <li>• Not designed for Type 1 diabetes</li>
                 <li>• Not a quick-fix or medication-only solution</li>
             </ul>
@@ -755,7 +767,7 @@
                 <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter uppercase italic leading-tight text-slate-900">
                     Real People. <br><span class="text-fittr-green">Real Reversals.</span>
                 </h2>
-                <p class="text-slate-500 mt-6 text-lg font-medium">
+                <p class="text-slate-500 mt-6 text-lg font-medium body-text">
                     From busy professionals to doctors themselves, thousands have achieved measurable improvements in blood sugar control, energy, and long-term health — with Fittr's structured support.
                 </p>
             </div>
@@ -819,7 +831,7 @@
                                 <p class="xxsmall-text font-black text-fittr-green uppercase tracking-widest">Medical Professional</p>
                             </div>
                         </div>
-                        <p class="small-text text-slate-600 leading-relaxed italic font-medium">
+                        <p class="small-text text-slate-600 leading-relaxed italic font-medium body-text">
                             "As a doctor, I understood the science, but Fittr provided the structure. I successfully reduced my HbA1c from 7.9 to 5.6 while maintaining a grueling hospital schedule."
                         </p>
                     </div>
@@ -835,7 +847,7 @@
                                 <p class="xxsmall-text font-black text-fittr-green uppercase tracking-widest">Corporate Executive</p>
                             </div>
                         </div>
-                        <p class="small-text text-slate-400 leading-relaxed italic font-medium">
+                        <p class="small-text text-slate-400 leading-relaxed italic font-medium body-text">
                             "The constant energy crashes were affecting my work. Within 4 months, my blood sugar stabilized, and I lost 12kg. The science-led coaching is a game changer."
                         </p>
                     </div>
@@ -844,7 +856,7 @@
                 <!-- Horizontal Quote Card -->
                 <div class="md:col-span-2 glass-card p-8 rounded-[40px] bg-white flex items-center gap-6">
                     <div class="hidden md:flex w-20 h-20 bg-fittr-green/5 rounded-full items-center justify-center text-3xl">✨</div>
-                    <p class="text-lg font-bold italic tracking-tight text-slate-800">
+                    <p class="text-lg font-bold italic tracking-tight text-slate-800 body-text">
                         "Measurable improvements in blood sugar control and energy levels that I haven't seen in 10 years."
                     </p>
                 </div>
@@ -884,31 +896,31 @@
                             <div class="mt-1 w-5 h-5 rounded-full bg-fittr-green/10 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-3 h-3 text-fittr-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-slate-600 small-text"><strong>Certified Diabetologist</strong> consultations & medical review</span>
+                            <span class="text-slate-600 small-text body-text"><strong>Certified Diabetologist</strong> consultations & medical review</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div class="mt-1 w-5 h-5 rounded-full bg-fittr-green/10 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-3 h-3 text-fittr-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-slate-600 small-text"><strong>Personalized Nutrition</strong> based on your Glycemic Response</span>
+                            <span class="text-slate-600 small-text body-text"><strong>Personalized Nutrition</strong> based on your Glycemic Response</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div class="mt-1 w-5 h-5 rounded-full bg-fittr-green/10 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-3 h-3 text-fittr-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-slate-600 small-text"><strong>Resistance Training</strong> plans to improve insulin sensitivity</span>
+                            <span class="text-slate-600 small-text body-text"><strong>Resistance Training</strong> plans to improve insulin sensitivity</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <div class="mt-1 w-5 h-5 rounded-full bg-fittr-green/10 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-3 h-3 text-fittr-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-slate-600 small-text"><strong>Daily Monitoring</strong> of sugar spikes and medication tapering</span>
+                            <span class="text-slate-600 small-text body-text"><strong>Daily Monitoring</strong> of sugar spikes and medication tapering</span>
                         </li>
                     </ul>
 
                     <div class="mt-10 p-4 bg-slate-50 rounded-2xl border border-slate-100 flex items-center gap-4">
                         <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">🛡️</div>
-                        <p class="xxsmall-text text-slate-500 font-bold leading-relaxed uppercase">Clinical safety protocol followed for all medication adjustments.</p>
+                        <p class="xxsmall-text text-slate-500 font-bold leading-relaxed uppercase body-text">Clinical safety protocol followed for all medication adjustments.</p>
                     </div>
                 </div>
 
@@ -923,7 +935,7 @@
                     <button class="w-full btn-medical py-5 rounded-2xl text-lg mb-4">
                         Join The Protocol
                     </button>
-                    <p class="xxsmall-text text-slate-400 font-medium">Equated Monthly Installments (EMI) available <br>starting from ₹1,750/mo</p>
+                    <p class="xxsmall-text text-slate-400 font-medium body-text">Equated Monthly Installments (EMI) available <br>starting from ₹1,750/mo</p>
                 </div>
             </div>
         </div>
@@ -980,7 +992,7 @@
                 </div>
             </button>
             <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white/50">
-                <div class="px-8 pb-8 text-slate-500 font-medium leading-relaxed">
+                <div class="px-8 pb-8 text-slate-500 font-medium leading-relaxed body-text">
                     Type 2 diabetes is highly responsive to lifestyle intervention. Many people achieve remission with structured, sustained changes in nutrition, physical activity, and metabolic monitoring.
                 </div>
             </div>
@@ -998,7 +1010,7 @@
                 </div>
             </button>
             <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white/50">
-                <div class="px-8 pb-8 text-slate-500 font-medium leading-relaxed">
+                <div class="px-8 pb-8 text-slate-500 font-medium leading-relaxed body-text">
                     No changes are made without medical oversight. Our protocol is designed to work alongside your doctor. As your blood sugar markers improve, medication may be reduced safely and systematically.
                 </div>
             </div>
@@ -1016,7 +1028,7 @@
                 </div>
             </button>
             <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white/50">
-                <div class="px-8 pb-8 text-slate-500 font-medium leading-relaxed">
+                <div class="px-8 pb-8 text-slate-500 font-medium leading-relaxed body-text">
                     Most programs run between 6–12 months. However, significant improvements in glycemic control and insulin sensitivity are often observed within the first 12 weeks of consistent protocol adherence.
                 </div>
             </div>
@@ -1034,7 +1046,7 @@
                 </div>
             </button>
             <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white/50">
-                <div class="px-8 pb-8 text-slate-500 font-medium leading-relaxed">
+                <div class="px-8 pb-8 text-slate-500 font-medium leading-relaxed body-text">
                     Yes. The program is built on clinical science and evidence-based medicine. It is designed around gradual, monitored improvement and avoids extreme protocols or crash dieting.
                 </div>
             </div>
@@ -1074,7 +1086,7 @@
                     </span>
                 </h2>
 
-                <p class="mt-8 text-slate-300 text-lg max-w-md leading-relaxed">
+                <p class="mt-8 text-slate-300 text-lg max-w-md leading-relaxed body-text">
                     You don't need another diet. You need a <span class="text-white font-bold">system that adapts with you</span>. Reclaim your health with science and 1-on-1 support.
                 </p>
             </div>
@@ -1130,7 +1142,7 @@
     
     <!-- DISCLAIMER -->
     <div class="mt-8 px-10">
-        <p class="xxsmall-text font-medium text-slate-500 uppercase tracking-widest text-center leading-relaxed">
+        <p class="xxsmall-text font-medium text-slate-500 uppercase tracking-widest text-center leading-relaxed body-text">
             *Clinical Disclaimer: Remission refers to maintaining blood glucose levels below the diabetic range (HbA1c < 6.5%) without medication. Results depend on adherence and individual metabolic factors.
         </p>
     </div>
@@ -1141,7 +1153,7 @@
         <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-8 uppercase italic">
             Say Goodbye to <span class="text-[#2bad73]">Spikes.</span>
         </h2>
-        <p class="text-slate-400 mb-12 text-lg">
+        <p class="text-slate-400 mb-12 text-lg body-text">
             Your journey to an HbA1c below 5.7% starts with a single clinical assessment.
         </p>
         
