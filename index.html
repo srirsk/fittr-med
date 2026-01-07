@@ -127,30 +127,54 @@
 </head>
 <body class="antialiased">
 <!-- NAVIGATION -->
-<header class="fixed top-0 w-full z-50 px-0 md:px-6 py-4">
-    <nav class="max-w-7xl mx-auto glass-card-dark rounded-full px-6 md:px-10 py-3 flex justify-between items-center border border-white/10 shadow-lg">
+<!-- FLOATING PILL NAVBAR (EXTENDED WIDTH) -->
+<header class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-7xl">
+    <nav class="flex items-center justify-between px-8 md:pr-3 py-3 rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-white/20 bg-black/40 md:bg-white/10 backdrop-blur-xl transition-all duration-500 hover:shadow-[0_8px_40px_rgba(0,0,0,0.2)]">
         
-        <!-- LOGO REPLACED HERE -->
-        <a href="/" class="flex items-center">
+        <!-- LOCAL LOGO (Replaced HouseSimple icon) -->
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="mr-10 select-none cursor-pointer hover:scale-105 transition-transform shrink-0">
             <img 
                 src="./assets/images/FITTR Logo white.png" 
                 alt="Fittr Logo" 
-                class="h-3.5 md:h-4 w-auto object-contain"
+                class="h-5 md:h-6 w-auto object-contain"
             />
         </a>
 
-        <div class="hidden lg:flex gap-8 xxsmall-text font-bold uppercase tracking-widest text-gray-400">
-            <a href="#benefits" class="hover:text-fittr-green transition">The Science</a>
-            <a href="#results" class="hover:text-fittr-green transition">Remission Stories</a>
-            <a href="#how" class="hover:text-fittr-green transition">The Protocol</a>
-        </div>
-        
-        <button class="bg-white text-black xxsmall-text font-extrabold px-6 py-2.5 rounded-full uppercase tracking-tighter hover:bg-fittr-green hover:text-white transition">
+        <!-- Desktop Nav (Extended spacing) -->
+        <ul class="hidden md:flex items-center space-x-10 text-xs font-bold uppercase tracking-widest text-gray-200">
+            <li><a href="#benefits" class="hover:text-white transition-colors">The Science</a></li>
+            <li><a href="#results" class="hover:text-white transition-colors">Results</a></li>
+            <li><a href="#how" class="hover:text-white transition-colors">The Protocol</a></li>
+            <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+        </ul>
+
+        <!-- Desktop CTA Button (Consult Diabetologist) -->
+        <a href="#final-cta" class="hidden md:block ml-10 px-8 py-2.5 rounded-full font-bold text-[10px] uppercase tracking-widest bg-gradient-to-r from-white/90 to-white/70 text-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.4)] hover:scale-[1.05] hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.6)] active:scale-[0.98] transition-all duration-300">
             Consult Diabetologist
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <svg id="close-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
     </nav>
-</header>
 
+    <!-- Mobile Menu Container -->
+    <div id="mobile-menu" class="hidden md:hidden mt-3 px-6 py-8 rounded-3xl border border-white/20 bg-black/80 backdrop-blur-2xl shadow-xl">
+        <ul class="flex flex-col space-y-6 text-gray-200 font-bold uppercase tracking-widest text-xs">
+            <li><a href="#benefits" class="mobile-link block hover:text-white">The Science</a></li>
+            <li><a href="#results" class="mobile-link block hover:text-white">Results</a></li>
+            <li><a href="#how" class="mobile-link block hover:text-white">The Protocol</a></li>
+            <li><a href="#faq" class="mobile-link block hover:text-white">FAQ</a></li>
+            <li class="pt-4">
+                <a href="#final-cta" class="mobile-link w-full inline-block text-center px-6 py-4 rounded-full font-black bg-white text-black transition-all">
+                    Consult Diabetologist
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
     <main>
 <!-- UPDATED HERO SECTION -->
 <section class="hero-section relative min-h-screen flex items-center pt-24 pb-10 lg:pt-20 overflow-hidden bg-black">
@@ -1452,6 +1476,38 @@ function closeModal() {
 
 document.querySelectorAll('.doctor-card').forEach(card => {
     card.addEventListener('click', () => openModal(card));
+});
+
+
+// Toggle Logic for Mobile Menu
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = document.getElementById('menu-icon');
+const closeIcon = document.getElementById('close-icon');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+function toggleMenu() {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+    } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    }
+}
+
+menuToggle.addEventListener('click', toggleMenu);
+
+// Close menu when a link is clicked
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    });
 });
     </script>
     
