@@ -45,7 +45,7 @@
         }
 
         .text-gradient-hero {
-            background: linear-gradient(135deg, #fff 30%, #11A663 100%);
+            background: linear-gradient(135deg, #000 30%, #11A663 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -129,23 +129,23 @@
 <!-- NAVIGATION -->
 <!-- FLOATING PILL NAVBAR (EXTENDED WIDTH) -->
 <header class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-7xl">
-    <nav class="flex items-center justify-between px-8 md:pr-3 py-3 rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-white/20 bg-black/40 md:bg-white/10 backdrop-blur-xl transition-all duration-500 hover:shadow-[0_8px_40px_rgba(0,0,0,0.2)]">
+    <nav class="flex items-center justify-between px-8 md:pr-3 py-3 rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-white/20 bg-white/10 md:bg-white/10 backdrop-blur-xl transition-all duration-500 hover:shadow-[0_8px_40px_rgba(0,0,0,0.2)]">
         
         <!-- LOCAL LOGO (Replaced HouseSimple icon) -->
         <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="mr-10 select-none cursor-pointer hover:scale-105 transition-transform shrink-0">
             <img 
-                src="./assets/images/FITTR Logo white.png" 
+                src="./assets/images/FITTR Logo.png" 
                 alt="Fittr Logo" 
                 class="h-4 md:h-5 w-auto object-contain"
             />
         </a>
 
         <!-- Desktop Nav (Extended spacing) -->
-        <ul class="hidden md:flex items-center space-x-10 text-xs font-bold uppercase tracking-widest text-gray-200">
-            <li><a href="#benefits" class="hover:text-white transition-colors">The Science</a></li>
-            <li><a href="#results" class="hover:text-white transition-colors">Results</a></li>
-            <li><a href="#how" class="hover:text-white transition-colors">The Protocol</a></li>
-            <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+        <ul class="hidden md:flex items-center space-x-10 text-xs font-bold uppercase tracking-widest text-gray-700">
+            <li><a href="#benefits" class="hover:text-gray-500 transition-colors">The Science</a></li>
+            <li><a href="#results" class="hover:text-gray-500 transition-colors">Results</a></li>
+            <li><a href="#how" class="hover:text-gray-500 transition-colors">The Protocol</a></li>
+            <li><a href="#faq" class="hover:text-gray-500 transition-colors">FAQ</a></li>
         </ul>
 
         <!-- Desktop CTA Button (Consult Diabetologist) -->
@@ -154,7 +154,7 @@
         </a>
 
         <!-- Mobile Hamburger Toggle -->
-        <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+        <button id="menu-toggle" class="md:hidden text-black focus:outline-none">
             <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             <svg id="close-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
@@ -176,90 +176,82 @@
     </div>
 </header>
     <main>
-<!-- UPDATED HERO SECTION -->
-<section class="hero-section relative min-h-screen flex items-center pt-24 pb-10 lg:pt-20 overflow-hidden bg-black">
-    <div class="hero-glow"></div>
+<!-- UPDATED HERO SECTION (FULL LIGHT THEME) -->
+<section class="hero-section relative min-h-screen flex items-center pt-24 pb-10 lg:pt-20 overflow-hidden bg-white">
+    <!-- Soft ambient glow -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_-20%,#2bad7310,transparent_70%)]"></div>
+    
     <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
-            <!-- LEFT SIDE: REFINED TYPOGRAPHY -->
+            <!-- LEFT SIDE -->
             <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
                 
-                <!-- BADGE (No Container) -->
-                <div class="inline-flex items-center gap-2 mb-6">
+                <!-- BADGE -->
+                <div class="inline-flex items-center gap-2 mb-6 bg-slate-100 px-4 py-2 rounded-full border border-slate-200">
                     <span class="relative flex h-2 w-2">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-fittr-green opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-fittr-green"></span>
                     </span>
-                    <span class="text-[10px] font-bold text-fittr-green uppercase tracking-[0.2em]">
-                        India's leading scientific preventive healthcare ecosystem for diabetes remission.
+                    <span class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.2em]">
+                        India's leading scientific preventive healthcare
                     </span>
                 </div>
                 
-                <!-- MAIN HEADING (Updated Mobile Font Size) -->
-                <h1 class="text-6xl xs:text-7xl md:text-7xl lg:text-8xl font-extrabold leading-[0.9] tracking-tighter mb-6">
+                <!-- MAIN HEADING (Darkened) -->
+                <h1 class="text-6xl xs:text-7xl md:text-7xl lg:text-8xl font-extrabold leading-[0.9] tracking-tighter mb-6 text-slate-900">
                    REVERSE<br> <span class="text-gradient-hero italic">DIABETES.</span>
                 </h1>
                 
-                <!-- REFINED PRICING -->
-                <p class="max-w-xl text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-10 flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1 description-text">
+                <!-- PRICING (Darkened) -->
+                <p class="max-w-xl text-slate-500 text-lg md:text-xl font-medium leading-relaxed mb-10 flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1">
                     Beat Type-2 Diabetes at 
                     <span class="flex items-baseline gap-2">
-                        <span class="text-white font-bold text-2xl md:text-3xl">₹20,000</span>
-                        <span class="text-gray-500 line-through text-base md:text-lg decoration-fittr-green/40">₹39,999</span>
+                        <span class="text-slate-900 font-black text-2xl md:text-3xl">₹20,000</span>
+                        <span class="text-slate-400 line-through text-base md:text-lg decoration-fittr-green/40">₹39,999</span>
                     </span>
                 </p>
 
                 <!-- TIMER + BUTTON ROW -->
                 <div class="flex flex-col lg:flex-row items-center lg:items-end gap-10 w-full lg:w-auto">
                     
-                   <!-- TIMER -->
-<div class="flex flex-col items-center lg:items-start gap-4">
-    <span class="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Offer ends in:</span>
-    
-    <div class="flex gap-3 md:gap-3 items-center">
-        <!-- HOURS -->
-        <div class="flex flex-col items-center gap-2">
-            <div class="bg-zinc-900 border border-white/10 w-[68px] h-[68px] md:w-20 md:h-20 flex items-center justify-center rounded-2xl shadow-inner">
-                <span id="h" class="text-3xl md:text-4xl font-black text-fittr-green tabular-nums">02</span>
-            </div>
-            <span class="text-[10px] md:text-[9px] uppercase font-bold text-gray-600 tracking-tighter">Hours</span>
-        </div>
+                    <!-- TIMER (Light Theme) -->
+                    <div class="flex flex-col items-center lg:items-start gap-4">
+                        <span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Offer ends in:</span>
+                        
+                        <div class="flex gap-3 items-center">
+                            <div class="flex flex-col items-center gap-2">
+                                <div class="bg-slate-50 border border-slate-200 w-[68px] h-[68px] md:w-20 md:h-20 flex items-center justify-center rounded-2xl shadow-sm">
+                                    <span id="h" class=" text-3xl md:text-4xl font-black text-black tabular-nums">02</span>
+                                </div>
+                                <span class="text-[10px] uppercase font-bold text-slate-500">Hours</span>
+                            </div>
+                            <span class="text-2xl font-bold text-slate-300 mb-6">:</span>
+                            <div class="flex flex-col items-center gap-2">
+                                <div class="bg-slate-50 border border-slate-200 w-[68px] h-[68px] md:w-20 md:h-20 flex items-center justify-center rounded-2xl shadow-sm">
+                                    <span id="m" class="text-3xl md:text-4xl font-black text-black tabular-nums">45</span>
+                                </div>
+                                <span class="text-[10px] uppercase font-bold text-slate-500">Mins</span>
+                            </div>
+                            <span class="text-2xl font-bold text-slate-300 mb-6">:</span>
+                            <div class="flex flex-col items-center gap-2">
+                                <div class="bg-slate-50 border border-slate-200 w-[68px] h-[68px] md:w-20 md:h-20 flex items-center justify-center rounded-2xl shadow-sm">
+                                    <span id="s" class="text-3xl md:text-4xl font-black text-black tabular-nums">00</span>
+                                </div>
+                                <span class="text-[10px] uppercase font-bold text-slate-500">Secs</span>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- COLON -->
-        <span class="text-2xl md:text-4xl font-bold text-zinc-800 mb-6">:</span>
-
-        <!-- MINUTES -->
-        <div class="flex flex-col items-center gap-2">
-            <div class="bg-zinc-900 border border-white/10 w-[68px] h-[68px] md:w-20 md:h-20 flex items-center justify-center rounded-2xl shadow-inner">
-                <span id="m" class="text-3xl md:text-4xl font-black text-fittr-green tabular-nums">45</span>
-            </div>
-            <span class="text-[10px] md:text-[9px] uppercase font-bold text-gray-600 tracking-tighter">Mins</span>
-        </div>
-
-        <!-- COLON -->
-        <span class="text-2xl md:text-4xl font-bold text-zinc-800 mb-6">:</span>
-
-        <!-- SECONDS -->
-        <div class="flex flex-col items-center gap-2">
-            <div class="bg-zinc-900 border border-white/10 w-[68px] h-[68px] md:w-20 md:h-20 flex items-center justify-center rounded-2xl shadow-inner">
-                <span id="s" class="text-3xl md:text-4xl font-black text-fittr-green tabular-nums">00</span>
-            </div>
-            <span class="text-[10px] md:text-[9px] uppercase font-bold text-gray-600 tracking-tighter">Secs</span>
-        </div>
-    </div>
-</div>
-
-                    <!-- SILVER METALLIC BUTTON -->
-                    <button class="group relative px-10 py-5 rounded-full overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 shadow-[0_20px_40px_rgba(0,0,0,0.3)] 
-                        bg-gradient-to-b from-white via-slate-200 to-slate-400 border-t-2 border-white/80">
+                    <!-- PEARL METALLIC BUTTON (Text changed to Slate-900) -->
+                    <button class="group relative px-10 py-5 rounded-full overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 shadow-xl bg-gradient-to-b from-white via-slate-50 to-slate-200 border border-slate-300">
                         <div class="absolute inset-0 w-full h-full">
-                            <div class="animate-shine absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-[-25deg]"></div>
+                            <div class="animate-shine absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/80 to-transparent skew-x-[-25deg]"></div>
                         </div>
                         <div class="relative z-10 flex items-center gap-4">
                             <span class="text-slate-900 font-black text-sm tracking-[0.15em]">CLAIM DISCOUNT</span>
-                            <div class="flex items-center justify-center bg-black/10 rounded-full p-1 group-hover:bg-fittr-green transition-colors duration-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5" stroke="currentColor" class="w-4 h-4 text-slate-900 group-hover:text-black">
+                            <div class="flex items-center justify-center bg-slate-900 rounded-full p-1 group-hover:bg-fittr-green transition-colors duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5" stroke="currentColor" class="w-4 h-4 text-white group-hover:text-slate-900">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                                 </svg>
                             </div>
@@ -271,38 +263,44 @@
             <!-- RIGHT SIDE -->
             <div class="flex flex-col gap-6 w-full">
                 <div class="relative">
-                    <div class="glass-card-dark p-8 md:p-10 rounded-[32px] md:rounded-[40px] flex flex-col items-start justify-between min-h-[380px] lg:min-h-[420px] relative overflow-hidden border border-white/10 shadow-2xl text-left">
+                    <!-- Light Card -->
+                    <div class="bg-slate-50 p-8 md:p-10 rounded-[32px] md:rounded-[40px] flex flex-col items-start justify-between min-h-[380px] lg:min-h-[420px] relative overflow-hidden border border-slate-200 shadow-lg text-left">
+                        
                         <div class="relative z-20 max-w-[90%] lg:max-w-[75%]">
-                            <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight text-white">Safely, Scientifically, <br>Sustainably</h2>
-                            <p class="text-gray-400 text-sm md:text-base leading-relaxed description-text">Fittr goes beyond management — we guide you to reversal with science and continuous monitoring.</p>
+                            <!-- Title changed to Slate-900 -->
+                            <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight text-slate-900">Safely, Scientifically, <br>Sustainably</h2>
+                            <p class="text-slate-500 text-sm md:text-base leading-relaxed">Fittr goes beyond management — we guide you to reversal with science and continuous monitoring.</p>
                         </div>
                         
                         <div class="flex gap-4 md:gap-6 relative z-20 mt-8 lg:mt-0">
-                            <div class="bg-black/40 backdrop-blur-md border border-white/10 p-4 md:p-6 rounded-2xl md:rounded-3xl">
-                                <p class="text-2xl md:text-3xl font-bold text-fittr-green">400K+</p>
-                                <p class="text-[9px] uppercase font-black text-gray-500 tracking-widest mt-1">Clinical Wins</p>
+                            <!-- Stat Boxes -->
+                            <div class="bg-white/80 backdrop-blur-md border border-slate-200 p-4 md:p-6 rounded-2xl shadow-sm">
+                                <p class="text-2xl md:text-3xl font-bold text-black">400K+</p>
+                                <p class="text-[9px] uppercase font-black text-slate-400 tracking-widest mt-1">Clinical Wins</p>
                             </div>
-                            <div class="bg-black/40 backdrop-blur-md border border-white/10 p-4 md:p-6 rounded-2xl md:rounded-3xl">
-                                <p class="text-2xl md:text-3xl font-bold text-fittr-green">4.8/5</p>
-                                <p class="text-[9px] uppercase font-black text-gray-500 tracking-widest mt-1">Patient Rating</p>
+                            <div class="bg-white/80 backdrop-blur-md border border-slate-200 p-4 md:p-6 rounded-2xl shadow-sm">
+                                <p class="text-2xl md:text-3xl font-bold text-black">4.8/5</p>
+                                <p class="text-[9px] uppercase font-black text-slate-400 tracking-widest mt-1">Patient Rating</p>
                             </div>
                         </div>
 
-                        <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black via-black/40 to-transparent z-10"></div>
+                        <!-- Light Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-50 via-slate-50/40 to-transparent z-10"></div>
                         <img src="./assets/images/hero1.jpg" 
-                             class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale z-0" 
+                             class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale z-0" 
                              alt="Athlete">
                     </div>
                 </div>
 
-                <!-- CHECK ELIGIBILITY BUTTON -->
+                <!-- ELIGIBILITY BUTTON (Ensured Dark Text) -->
                 <div class="relative group w-full">
-                    <div class="absolute -inset-2 bg-[#2bad73]/15 rounded-[30px] blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div class="absolute -inset-1 bg-[#2bad73]/20 rounded-[30px] blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                     <button onclick="document.getElementById('eligibility').scrollIntoView({behavior: 'smooth'})" 
-                            class="relative w-full bg-gradient-to-r from-[#2bad73] via-[#11A663] to-black p-[2.5px] rounded-full transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-                        <div class="bg-black w-full rounded-full py-5 px-3 md:px-6 flex items-center justify-center">
-                            <span class="text-white font-black text-[11px] md:text-sm uppercase italic tracking-tighter md:tracking-[0.1em] whitespace-nowrap">
-                                Check Your Eligibility <span class="mx-1.5 md:mx-4 text-[#2bad73] not-italic opacity-50">|</span> Free Consultation
+                            class="relative w-full bg-gradient-to-r from-[#2bad73] via-[#11A663] to-slate-900 p-[2px] rounded-full transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] shadow-md">
+                        <div class="bg-white hover:bg-slate-50 transition-colors w-full rounded-full py-5 px-3 md:px-6 flex items-center justify-center">
+                            <!-- Text changed to Slate-900 -->
+                            <span class="text-slate-900 font-black text-[11px] md:text-sm uppercase italic tracking-tighter md:tracking-[0.1em] whitespace-nowrap">
+                                Check Your Eligibility <span class="mx-1.5 md:mx-4 text-[#2bad73] not-italic opacity-30">|</span> Free Consultation
                             </span>
                         </div>
                     </button>
@@ -1512,4 +1510,4 @@ mobileLinks.forEach(link => {
     </script>
     
 </body>
-</html> 
+</html>
