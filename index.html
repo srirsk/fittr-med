@@ -1257,7 +1257,7 @@
 
 <!-- FAQ SECTION -->
 <section id="faq" class="max-w-4xl mx-auto px-6 py-12 md:py-20">
-    <div class="text-center mb-10">
+    <div class="text-center mb-10 md:mb-16">
         <span class="text-green-500 font-black text-[10px] md:xxsmall-text uppercase tracking-[0.4em] mb-2 md:mb-4 block">Common Queries</span>
         <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter uppercase italic text-primary leading-tight">
             Everything you <br><span class="text-green-500">Need to know</span>
@@ -1265,57 +1265,68 @@
     </div>
 
     <div class="space-y-3 md:space-y-4">
-        <!-- Question Template (Strictly keeping content) -->
-        <div class="faq-item glass-card rounded-[24px] md:rounded-[32px] border border-slate-100">
-            <button class="faq-trigger w-full px-6 md:px-8 py-5 md:py-8 flex items-center justify-between text-left group">
+        <!-- Question 1 -->
+        <div class="faq-item glass-card rounded-[24px] md:rounded-[32px] border border-slate-100 bg-white transition-all duration-300">
+            <button class="faq-trigger w-full px-6 md:px-8 py-5 md:py-8 flex items-center justify-between text-left group outline-none">
                 <span class="text-base md:text-lg font-bold text-primary pr-4 italic uppercase tracking-tight">Can diabetes really be reversed?</span>
-                <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-all">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 6v12M6 12h12"/></svg>
+                <div class="faq-icon-wrapper w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-green-500 transition-all duration-300 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-primary group-hover:text-white transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12M6 12h12" />
+                    </svg>
                 </div>
             </button>
-            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 bg-white/50">
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                 <div class="px-6 md:px-8 pb-6 md:pb-8 text-sm md:text-base text-secondary font-medium leading-relaxed body-text">
                     Type 2 diabetes is highly responsive to lifestyle intervention. Many people achieve remission with structured, sustained changes in nutrition, physical activity, and metabolic monitoring.
                 </div>
             </div>
         </div>
 
-        <div class="faq-item glass-card rounded-[24px] md:rounded-[32px] border border-slate-100">
-            <button class="faq-trigger w-full px-6 md:px-8 py-5 md:py-8 flex items-center justify-between text-left group">
+        <!-- Question 2 -->
+        <div class="faq-item glass-card rounded-[24px] md:rounded-[32px] border border-slate-100 bg-white transition-all duration-300">
+            <button class="faq-trigger w-full px-6 md:px-8 py-5 md:py-8 flex items-center justify-between text-left group outline-none">
                 <span class="text-base md:text-lg font-bold text-primary pr-4 italic uppercase tracking-tight">Will I have to stop my medication?</span>
-                <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-all">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 6v12M6 12h12"/></svg>
+                <div class="faq-icon-wrapper w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-green-500 transition-all duration-300 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-primary group-hover:text-white transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12M6 12h12" />
+                    </svg>
                 </div>
             </button>
-            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 bg-white/50">
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                 <div class="px-6 md:px-8 pb-6 md:pb-8 text-sm md:text-base text-secondary font-medium leading-relaxed body-text">
                     No changes are made without medical oversight. Our protocol is designed to work alongside your doctor. As your blood sugar markers improve, medication may be reduced safely and systematically.
                 </div>
             </div>
         </div>
 
-        <div class="faq-item glass-card rounded-[24px] md:rounded-[32px] border border-slate-100">
-            <button class="faq-trigger w-full px-6 md:px-8 py-5 md:py-8 flex items-center justify-between text-left group">
+        <!-- Question 3 -->
+        <div class="faq-item glass-card rounded-[24px] md:rounded-[32px] border border-slate-100 bg-white transition-all duration-300">
+            <button class="faq-trigger w-full px-6 md:px-8 py-5 md:py-8 flex items-center justify-between text-left group outline-none">
                 <span class="text-base md:text-lg font-bold text-primary pr-4 italic uppercase tracking-tight">How long does it take?</span>
-                <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-all">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 6v12M6 12h12"/></svg>
+                <div class="faq-icon-wrapper w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-green-500 transition-all duration-300 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-primary group-hover:text-white transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12M6 12h12" />
+                    </svg>
                 </div>
             </button>
-            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 bg-white/50">
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                 <div class="px-6 md:px-8 pb-6 md:pb-8 text-sm md:text-base text-secondary font-medium leading-relaxed body-text">
                     Most programs run between 6–12 months. However, significant improvements in glycemic control and insulin sensitivity are often observed within the first 12 weeks of consistent protocol adherence.
                 </div>
             </div>
         </div>
 
-        <div class="faq-item glass-card rounded-[24px] md:rounded-[32px] border border-slate-100">
-            <button class="faq-trigger w-full px-6 md:px-8 py-5 md:py-8 flex items-center justify-between text-left group">
+        <!-- Question 4 -->
+        <div class="faq-item glass-card rounded-[24px] md:rounded-[32px] border border-slate-100 bg-white transition-all duration-300">
+            <button class="faq-trigger w-full px-6 md:px-8 py-5 md:py-8 flex items-center justify-between text-left group outline-none">
                 <span class="text-base md:text-lg font-bold text-primary pr-4 italic uppercase tracking-tight">Is this safe?</span>
-                <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-all">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 6v12M6 12h12"/></svg>
+                <div class="faq-icon-wrapper w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-green-500 transition-all duration-300 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-primary group-hover:text-white transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12M6 12h12" />
+                    </svg>
                 </div>
             </button>
-            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 bg-white/50">
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                 <div class="px-6 md:px-8 pb-6 md:pb-8 text-sm md:text-base text-secondary font-medium leading-relaxed body-text">
                     Yes. The program is built on clinical science and evidence-based medicine. It is designed around gradual, monitored improvement and avoids extreme protocols or crash dieting.
                 </div>
@@ -1323,6 +1334,44 @@
         </div>
     </div>
 </section>
+
+<!-- 2. JAVASCRIPT FOR FAQ FUNCTIONALITY -->
+<script>
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const item = trigger.closest('.faq-item');
+            const content = item.querySelector('.faq-content');
+            const icon = trigger.querySelector('svg');
+            const wrapper = trigger.querySelector('.faq-icon-wrapper');
+
+            // Close all other FAQ items (Optional - remove if you want multiple open)
+            document.querySelectorAll('.faq-content').forEach(otherContent => {
+                if (otherContent !== content) {
+                    otherContent.style.maxHeight = null;
+                    const otherItem = otherContent.closest('.faq-item');
+                    otherItem.querySelector('svg').style.transform = 'rotate(0deg)';
+                    otherItem.querySelector('.faq-icon-wrapper').classList.remove('bg-green-500');
+                    otherItem.querySelector('.faq-icon-wrapper').classList.add('bg-slate-50');
+                }
+            });
+
+            // Toggle current item
+            if (content.style.maxHeight) {
+                // If already open, close it
+                content.style.maxHeight = null;
+                icon.style.transform = 'rotate(0deg)';
+                wrapper.classList.remove('bg-green-500');
+                wrapper.classList.add('bg-slate-50');
+            } else {
+                // If closed, open it
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.style.transform = 'rotate(45deg)'; // Rotates + to x
+                wrapper.classList.remove('bg-slate-50');
+                wrapper.classList.add('bg-green-500');
+            }
+        });
+    });
+</script>
 
 <!-- FINAL CTA -->
 <section id="final-cta" class="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20">
@@ -1393,37 +1442,42 @@
         </p>
     </div>
 </section>
-     <!-- NEW FOOTER -->
-<footer class="bg-black py-8 text-center text-white rounded-t-[60px]">
+    <!-- OPTIMIZED FOOTER -->
+<footer class="bg-black py-16 md:py-24 text-center text-white rounded-t-[40px] md:rounded-t-[80px]">
     <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-8 uppercase italic text-light-primary">
+        
+        <!-- HEADING: Tightened leading for mobile -->
+        <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4 md:mb-6 uppercase italic text-light-primary leading-[0.95] md:leading-none">
             Say Goodbye to <span class="text-green-400">Spikes.</span>
         </h2>
-        <p class="text-tertiary mb-12 text-lg body-text">
+        
+        <!-- SUBTEXT: Reduced size on mobile -->
+        <p class="text-slate-400 mb-10 md:mb-12 text-sm md:text-lg max-w-md mx-auto leading-relaxed">
             Your journey to an HbA1c below 5.7% starts with a single clinical assessment.
         </p>
         
-        <!-- PREMIUM BUTTON -->
+        <!-- PREMIUM BUTTON: Responsive width -->
         <div class="flex justify-center">
-            <a href="#form" class="group relative inline-block p-[2.5px] rounded-full bg-gradient-to-r from-green-400 via-green-500 to-black transition-all duration-300 active:scale-95 shadow-xl">
-                <div class="relative bg-black rounded-full px-10 py-4 md:px-14 md:py-5">
-                    <span class="text-lg font-black uppercase italic tracking-tight text-light-primary">
+            <a href="#form" class="group relative inline-block p-[2px] rounded-full bg-gradient-to-r from-green-400 via-green-500 to-green-900 transition-all duration-300 active:scale-95 shadow-xl shadow-green-500/10">
+                <div class="relative bg-black rounded-full px-8 py-4 md:px-14 md:py-5">
+                    <span class="text-base md:text-lg font-black uppercase italic tracking-tighter md:tracking-tight text-white whitespace-nowrap">
                         Request Remission Call
                     </span>
                 </div>
             </a>
         </div>
         
-        <!-- LOGO REPLACED HERE -->
-        <div class="mt-24 flex items-center justify-center mb-8">
+        <!-- LOGO: Reduced top margin for mobile -->
+        <div class="mt-16 md:mt-24 flex items-center justify-center mb-6">
             <img 
                 src="./assets/images/FITTR Logo white.png" 
                 alt="Fittr Logo" 
-                class="h-10 md:h-12 w-auto object-contain"
+                class="h-8 md:h-12 w-auto object-contain opacity-80"
             />
         </div>
 
-        <p class="xxsmall-text text-tertiary font-black uppercase tracking-[0.4em]">
+        <!-- COPYRIGHT: Responsive tracking -->
+        <p class="text-[8px] md:xxsmall-text text-slate-500 font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] px-4">
             © 2025 Fittr Global. Clinical Diabetes Remission Program.
         </p>
     </div>
