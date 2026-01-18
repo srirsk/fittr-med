@@ -345,89 +345,97 @@
     </div>
 </header>
     <main>
-<!-- UPDATED HERO SECTION -->
-<section class="hero-section relative min-h-screen flex items-center pt-24 pb-10 lg:pt-20 overflow-hidden bg-white">
+<!-- OPTIMIZED HERO SECTION -->
+<section class="hero-section relative min-h-screen flex items-center pt-28 pb-12 md:pt-20 overflow-hidden bg-white">
+    <!-- Subtle Background Glow -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_-20%,#2bad7310,transparent_70%)]"></div>
     
     <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-20 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             
-            <!-- LEFT SIDE -->
+            <!-- LEFT SIDE: Content -->
             <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
                 
-                <div class="inline-flex items-center gap-2 mb-4 md:mb-6 bg-slate-100 px-2.5 py-1 md:px-4 md:py-2 rounded-full border border-slate-200 transition-all">
-                    <span class="relative flex h-1.5 w-1.5 md:h-2 md:w-2">
+                <!-- Pill Badge: Optimized tracking for small screens -->
+                <div class="inline-flex items-center gap-2 mb-6 bg-slate-50 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-slate-200 shadow-sm">
+                    <span class="relative flex h-2 w-2">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-1.5 w-1.5 md:h-2 md:w-2 bg-green-500"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                     </span>
-                    <span class="text-[8px] md:text-[10px] font-bold text-secondary uppercase tracking-wider md:tracking-[0.2em] leading-none">
-                       India's leading scientific preventive healthcare ecosystem
+                    <span class="text-[9px] md:text-[10px] font-bold text-secondary uppercase tracking-wider md:tracking-[0.2em] leading-none">
+                       India's leading scientific healthcare ecosystem
                     </span>
                 </div>
                 
-                <h1 class="text-6xl xs:text-7xl md:text-7xl lg:text-8xl font-extrabold leading-[0.9] tracking-tighter mb-6 text-primary">
+                <!-- H1: Fluid font sizing to prevent overflow on small devices -->
+                <h1 class="text-5xl xs:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[0.95] md:leading-[0.9] tracking-tighter mb-6 text-primary">
                    REVERSE<br> <span class="text-gradient-hero italic">DIABETES.</span>
                 </h1>
                 
-                <p class="max-w-xl text-secondary text-lg md:text-xl font-medium leading-relaxed mb-10">
-                    Reverse Type-2 Diabetes Only @ <span class="text-primary font-black text-2xl md:text-3xl">₹20,000</span>
+                <!-- Price: Prominent visual hierarchy -->
+                <p class="max-w-xl text-secondary text-base md:text-xl font-medium leading-relaxed mb-8 md:mb-10">
+                    Reverse Type-2 Diabetes Only @ <span class="text-primary font-black text-2xl md:text-3xl whitespace-nowrap">₹20,000</span>
                 </p>
 
-                <!-- DESKTOP ONLY BUTTON (Hidden on Mobile/Tablet) -->
+                <!-- DESKTOP CTA -->
                 <div class="hidden lg:block relative group w-full">
-                    <div class="absolute -inset-1 bg-green-400/20 rounded-[30px] blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div class="absolute -inset-1 bg-green-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                     <button onclick="document.getElementById('eligibility').scrollIntoView({behavior: 'smooth'})" 
                             class="relative w-full bg-gradient-to-r from-green-400 via-green-500 to-slate-900 p-[2px] rounded-full transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] shadow-md">
-                        <div class="bg-white hover:bg-slate-50 transition-colors w-full rounded-full py-5 px-3 md:px-6 flex items-center justify-center">
-                            <span class="text-primary font-black text-[12px] md:text-[14px] uppercase italic tracking-tighter md:tracking-[0.1em] whitespace-nowrap">
-                                Check Your Eligibility <span class="mx-1.5 md:mx-4 text-green-400 not-italic opacity-30">|</span> Free Consultation
+                        <div class="bg-white hover:bg-slate-50 transition-colors w-full rounded-full py-5 px-6 flex items-center justify-center">
+                            <span class="text-primary font-black text-[14px] uppercase italic tracking-[0.1em] whitespace-nowrap">
+                                Check Your Eligibility <span class="mx-4 text-green-400 not-italic opacity-30">|</span> Free Consultation
                             </span>
                         </div>
                     </button>
                 </div>
             </div>
 
-            <!-- RIGHT SIDE -->
+            <!-- RIGHT SIDE: Info Card & Mobile CTA -->
             <div class="flex flex-col gap-6 w-full">
                 <div class="relative">
-                    <div class="bg-slate-50 p-8 md:p-10 rounded-[32px] md:rounded-[40px] flex flex-col items-start justify-between min-h-[380px] lg:min-h-[420px] relative overflow-hidden border border-slate-200 shadow-lg text-left">
+                    <!-- Adjusted min-h for mobile to save vertical space -->
+                    <div class="bg-slate-50 p-6 md:p-10 rounded-[32px] md:rounded-[40px] flex flex-col items-start justify-between min-h-[300px] md:min-h-[420px] relative overflow-hidden border border-slate-200 shadow-xl text-left">
                         
-                        <div class="relative z-20 max-w-[90%] lg:max-w-[75%]">
-                            <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight text-primary">Safely, Scientifically, <br>Sustainably</h2>
-                            <p class="text-secondary text-sm md:text-base leading-relaxed description-text">Fittr goes beyond management — we guide you to reversal with science and continuous monitoring.</p>
+                        <div class="relative z-20 max-w-full lg:max-w-[75%]">
+                            <h2 class="text-2xl md:text-4xl font-bold mb-3 md:mb-4 leading-tight text-primary">Safely, Scientifically, <br class="hidden md:block">Sustainably</h2>
+                            <p class="text-secondary text-xs md:text-base leading-relaxed opacity-80">Fittr goes beyond management — we guide you to reversal with science and continuous monitoring.</p>
                         </div>
                         
-                        <div class="flex gap-4 md:gap-6 relative z-20 mt-8 lg:mt-0">
-                            <div class="bg-white/80 backdrop-blur-md border border-slate-200 p-4 md:p-6 rounded-2xl shadow-sm">
-                                <p class="text-2xl md:text-3xl font-bold text-primary">400K+</p>
-                                <p class="text-[9px] uppercase font-black text-secondary tracking-widest mt-1">Clinical Wins</p>
+                        <!-- Stats: Grid on mobile to save vertical space -->
+                        <div class="grid grid-cols-2 gap-3 md:gap-6 w-full relative z-20 mt-6 lg:mt-0">
+                            <div class="bg-white/90 backdrop-blur-md border border-slate-200 p-3 md:p-6 rounded-2xl shadow-sm">
+                                <p class="text-xl md:text-3xl font-black text-primary">400K+</p>
+                                <p class="text-[8px] md:text-[9px] uppercase font-bold text-secondary tracking-widest mt-1">Clinical Wins</p>
                             </div>
-                            <div class="bg-white/80 backdrop-blur-md border border-slate-200 p-4 md:p-6 rounded-2xl shadow-sm">
-                                <p class="text-2xl md:text-3xl font-bold text-primary">4.8/5</p>
-                                <p class="text-[9px] uppercase font-black text-secondary tracking-widest mt-1">Patient Rating</p>
+                            <div class="bg-white/90 backdrop-blur-md border border-slate-200 p-3 md:p-6 rounded-2xl shadow-sm">
+                                <p class="text-xl md:text-3xl font-black text-primary">4.8/5</p>
+                                <p class="text-[8px] md:text-[9px] uppercase font-bold text-secondary tracking-widest mt-1">Patient Rating</p>
                             </div>
                         </div>
 
-                        <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-50 via-slate-50/40 to-transparent z-10"></div>
+                        <!-- Gradient Overlay & Image -->
+                        <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-50 via-slate-50/60 to-transparent z-10"></div>
                         <img src="./assets/images/hero1.jpg" 
                              class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale z-0" 
-                             alt="Athlete">
+                             alt="Healthcare Success">
                     </div>
                 </div>
 
-                <!-- MOBILE/TABLET ONLY BUTTON (Hidden on Desktop) -->
+                <!-- MOBILE CTA: Sits higher up on mobile screens -->
                 <div class="block lg:hidden relative group w-full">
-                    <div class="absolute -inset-1 bg-green-400/20 rounded-[30px] blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div class="absolute -inset-1 bg-green-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                     <button onclick="document.getElementById('eligibility').scrollIntoView({behavior: 'smooth'})" 
-                            class="relative w-full bg-gradient-to-r from-green-400 via-green-500 to-slate-900 p-[2px] rounded-full transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] shadow-md">
-                        <div class="bg-white hover:bg-slate-50 transition-colors w-full rounded-full py-5 px-3 md:px-6 flex items-center justify-center">
-                            <span class="text-primary font-black text-[12px] md:text-[14px] uppercase italic tracking-tighter md:tracking-[0.1em] whitespace-nowrap">
-                                Check Your Eligibility <span class="mx-1.5 md:mx-4 text-green-400 not-italic opacity-30">|</span> Free Consultation
+                            class="relative w-full bg-gradient-to-r from-green-400 via-green-500 to-slate-900 p-[2px] rounded-full transition-all duration-300 active:scale-[0.98] shadow-lg">
+                        <div class="bg-white active:bg-slate-50 transition-colors w-full rounded-full py-4 px-4 flex items-center justify-center">
+                            <span class="text-primary font-black text-[11px] sm:text-[13px] uppercase italic tracking-tighter whitespace-nowrap">
+                                Check Your Eligibility <span class="mx-2 text-green-400 not-italic opacity-30">|</span> Free Consultation
                             </span>
                         </div>
                     </button>
                 </div>
             </div>
+            
         </div>
     </div>
 </section>
